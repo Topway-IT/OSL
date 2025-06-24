@@ -1,0 +1,46 @@
+{
+    "subclass_of": [
+        "Category:Item"
+    ],
+    "type": [
+        "Category:Category"
+    ],
+    "uuid": "b2d7e6a2-eff9-4c82-b7f1-f2699d5b0ee3",
+    "label": [
+        {
+            "text": "Project",
+            "lang": "en"
+        },
+        {
+            "text": "Projekt",
+            "lang": "de"
+        }
+    ],
+    "short_name": [
+        {
+            "text": "Project",
+            "lang": "en"
+        },
+        {
+            "text": "Projekt",
+            "lang": "de"
+        }
+    ],
+    "description": [
+        {
+            "text": "An enterprise (potentially individual but typically collaborative), planned to achieve a particular aim.",
+            "lang": "en"
+        },
+        {
+            "text": "Ein (möglicherweise individuelles, in der Regel aber gemeinschaftliches) Unternehmen oder Unternehmung, das auf ein bestimmtes Ziel ausgerichtet ist",
+            "lang": "de"
+        }
+    ],
+    "name": "Project",
+    "utf8_icon": [
+        "💰"
+    ],
+    "instance_rdf_type": [
+        "schema:Project"
+    ]
+}

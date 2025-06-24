@@ -1,0 +1,40 @@
+{
+    "subclass_of": [
+        "Category:OSW44deaa5b806d41a2a88594f562b110e9"
+    ],
+    "uuid": "90640829-797c-4b85-9548-a796f8f6dca6",
+    "label": [
+        {
+            "text": "External person",
+            "lang": "en"
+        },
+        {
+            "text": "Externe Person",
+            "lang": "de"
+        }
+    ],
+    "short_name": [
+        {
+            "text": "External",
+            "lang": "en"
+        },
+        {
+            "text": "Externer",
+            "lang": "en"
+        }
+    ],
+    "description": [
+        {
+            "text": "A person that is not employed by the company hosting this LIMS.",
+            "lang": "en"
+        },
+        {
+            "text": "Eine Person, die nicht von der Firma angestellt ist, die dieses LIMS hostet.",
+            "lang": "de"
+        }
+    ],
+    "name": "ExternalPerson",
+    "type": [
+        "Category:Category"
+    ]
+}

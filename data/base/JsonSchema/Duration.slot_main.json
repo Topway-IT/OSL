@@ -1,0 +1,212 @@
+{
+    "type": "object",
+    "title": "Duration",
+    "title*": {
+        "de": "Dauer"
+    },
+    "description": "Fields accept only a certain range of values. If you would like to enter a value that exceeds the maximum, please split the value into the corresponding fields. For convenience, it is possible to enter, e.g., 1.5 hours instead of 1 hour and 30 minutes.",
+    "description*": {
+        "de": "Die Felder lassen nur einen bestimmten Wertebereich zu. Wenn Sie einen Wert eingeben möchten, der über das Maximum hinausgeht, teilen Sie den Wert bitte in die entsprechenden Felder auf. Der Einfachheit halber können Sie z. B. 1,5 Stunden anstelle von 1 Stunde und 30 Minuten eingeben."
+    },
+    "@context": {
+        "Property": "/id/Property-3A",
+        "year": {
+            "@id": "Property:HasYear",
+            "@type": "xs:decimal"
+        },
+        "month": {
+            "@id": "Property:HasMonth",
+            "@type": "xs:decimal"
+        },
+        "day": {
+            "@id": "Property:HasDay",
+            "@type": "xs:decimal"
+        },
+        "hour": {
+            "@id": "Property:HasHour",
+            "@type": "xs:decimal"
+        },
+        "minute": {
+            "@id": "Property:HasMinute",
+            "@type": "xs:decimal"
+        },
+        "second": {
+            "@id": "Property:HasSecond",
+            "@type": "xs:decimal"
+        },
+        "iso_8601_representation": {
+            "@id": "Property:HasIso8601Representation",
+            "@type": "xs:string"
+        },
+        "value_in_seconds": {
+            "@id": "Property:HasObject"
+        }
+    },
+    "eval_template": {
+        "type": "wikitext",
+        "mode": "render",
+        "value": "{{#if: {{{year|}}} | {{{year|}}} a, }}{{#if: {{{month|}}} | {{{month|}}} mo, }}{{#if: {{{day|}}} | {{{day|}}} d, }}{{#if: {{{hour|}}} | {{{hour|}}} h, }}{{#if: {{{minute|}}} | {{{minute|}}} min, }}{{#if: {{{second|}}} | {{{second|}}} s}}<br>{{{iso_8601_representation|}}} (ISO 8601)<br>≈ {{{numerical_value_in_seconds|}}} s"
+    },
+    "format": "grid-strict",
+    "id": "duration_root",
+    "required": [
+        "uuid",
+        "iso_8601_representation",
+        "numerical_value_in_seconds",
+        "value_in_seconds"
+    ],
+    "defaultProperties": [
+        "year",
+        "month",
+        "day",
+        "hour",
+        "minute",
+        "second",
+        "iso_8601_representation"
+    ],
+    "properties": {
+        "uuid": {
+            "type": "string",
+            "format": "uuid",
+            "options": {
+                "hidden": true
+            }
+        },
+        "year": {
+            "type": "number",
+            "title": "Year",
+            "title*": {
+                "de": "Jahr"
+            },
+            "minimum": 0,
+            "default": 0
+        },
+        "month": {
+            "type": "number",
+            "title": "Month",
+            "title*": {
+                "de": "Monat"
+            },
+            "description": "0 - 12",
+            "description*": {
+                "de": "0 - 12"
+            },
+            "minimum": 0,
+            "maximum": 12,
+            "default": 0
+        },
+        "day": {
+            "type": "number",
+            "title": "Day",
+            "title*": {
+                "de": "Tag"
+            },
+            "description": "0 - 31",
+            "description*": {
+                "de": "0 - 31"
+            },
+            "minimum": 0,
+            "maximum": 31,
+            "default": 0
+        },
+        "hour": {
+            "type": "number",
+            "title": "Hour",
+            "title*": {
+                "de": "Stunde"
+            },
+            "description": "0 - 24",
+            "description*": {
+                "de": "0 - 24"
+            },
+            "minimum": 0,
+            "maximum": 24,
+            "default": 0
+        },
+        "minute": {
+            "type": "number",
+            "title": "Minute",
+            "title*": {
+                "de": "Minute"
+            },
+            "description": "0 - 60",
+            "description*": {
+                "de": "0 - 60"
+            },
+            "minimum": 0,
+            "maximum": 60,
+            "default": 0
+        },
+        "second": {
+            "type": "number",
+            "title": "Second",
+            "title*": {
+                "de": "Sekunde"
+            },
+            "description": "0 - 60",
+            "description*": {
+                "de": "0 - 60"
+            },
+            "minimum": 0,
+            "maximum": 60,
+            "default": 0
+        },
+        "iso_8601_representation": {
+            "type": "string",
+            "title": "ISO 8601 representation",
+            "title*": {
+                "de": "ISO 8601 Darstellung"
+            },
+            "format": "duration",
+            "watch": {
+                "year": "duration_root.year",
+                "month": "duration_root.month",
+                "day": "duration_root.day",
+                "hour": "duration_root.hour",
+                "minute": "duration_root.minute",
+                "second": "duration_root.second"
+            },
+            "template": "P{{#if year}}{{{year}}}Y{{/if}}{{#if month}}{{{month}}}M{{/if}}{{#if day}}{{{day}}}D{{/if}}{{#if (calc year '+' (calc month '+' day))}}{{#unless (calc hour '+' (calc minute '+' second ))}}{{/unless}}{{else}}T{{/if}}{{#if hour}}{{{hour}}}H{{/if}}{{#if minute}}{{{minute}}}M{{/if}}{{#if second}}{{{second}}}S{{else}}{{#unless (calc year '+' (calc month '+' (calc day '+' (calc hour '+' (calc minute '+' second )))))}}0S{{/unless}}{{/if}}",
+            "options": {
+                "hidden": true
+            }
+        },
+        "numerical_value_in_seconds": {
+            "type": "number",
+            "title": "Duration in seconds",
+            "title*": {
+                "de": "Dauer in Sekunden"
+            },
+            "description": "This value is not accurate! The actual duration of a span of (calendar) years and months depends on the specific dates involved. Therefore, this value is only an approximation.",
+            "description*": {
+                "de": "Dieser Wert ist nicht genau! Die tatsächliche Dauer einer Spanne von (Kalender-)Jahren und Monaten hängt von den jeweiligen Daten ab. Daher ist dieser Wert nur ein Näherungswert."
+            },
+            "watch": {
+                "year": "duration_root.year",
+                "month": "duration_root.month",
+                "day": "duration_root.day",
+                "hour": "duration_root.hour",
+                "minute": "duration_root.minute",
+                "second": "duration_root.second"
+            },
+            "template": "{{calc (calc (calc year '*' 31557600) '+' (calc (calc month '*' 2629800) '+' (calc (calc day '*' 86400) '+' (calc (calc hour '*' 3600) '+' (calc minute '*' 60 ))))) '+' second }}",
+            "options": {
+                "hidden": true
+            }
+        },
+        "value_in_seconds": {
+            "type": "string",
+            "title": "Duration converted to seconds as string",
+            "title*": {
+                "de": "Dauer in Sekunden als String"
+            },
+            "watch": {
+                "numerical_value": "duration_root.numerical_value_in_seconds"
+            },
+            "template": "{{{numerical_value_in_seconds}}} s",
+            "options": {
+                "hidden": true
+            }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+{
+    "subclass_of": [
+        "Category:Item"
+    ],
+    "type": [
+        "Category:Category"
+    ],
+    "uuid": "28f71f2c-20ad-48c3-8c4e-4d190a95c0b8",
+    "label": [
+        {
+            "text": "Place",
+            "lang": "en"
+        },
+        {
+            "text": "Ort",
+            "lang": "de"
+        }
+    ],
+    "description": [
+        {
+            "text": "Entities that have a somewhat fixed, physical extension.",
+            "lang": "en"
+        },
+        {
+            "text": "Entitäten, die eine gewisse feste, physische Ausdehnung haben.",
+            "lang": "de"
+        }
+    ],
+    "instance_rdf_type": [
+        "schema:Places"
+    ],
+    "name": "Place"
+}

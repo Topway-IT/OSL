@@ -1,0 +1,32 @@
+{
+    "@context": [
+        "/wiki/Category:OSW137e7443b2b94692bd59a0e0a6778b70?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSW137e7443b2b94692bd59a0e0a6778b70?action=raw&slot=jsonschema"
+        }
+    ],
+    "type": "object",
+    "uuid": "0551abcd-6f73-4047-825e-3ded4c8a0ffe",
+    "title": "Country",
+    "title*": {
+        "en": "Country",
+        "de": "Land"
+    },
+    "description": "A distinct part of the world, such as a state, nation, or other political entity",
+    "description*": {
+        "en": "A distinct part of the world, such as a state, nation, or other political entity",
+        "de": "Ein bestimmter Teil der Welt, z. B. ein Staat, eine Nation oder eine andere politische Einheit"
+    },
+    "required": [
+        "type"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSW0551abcd6f734047825e3ded4c8a0ffe"
+            ]
+        }
+    }
+}

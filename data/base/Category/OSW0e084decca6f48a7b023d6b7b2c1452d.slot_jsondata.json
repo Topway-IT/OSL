@@ -1,0 +1,36 @@
+{
+    "subclass_of": [
+        "Category:OSWb97757b46edb430591758662c18d354d"
+    ],
+    "type": [
+        "Category:Category"
+    ],
+    "uuid": "0e084dec-ca6f-48a7-b023-d6b7b2c1452d",
+    "label": [
+        {
+            "text": "Event with People",
+            "lang": "en"
+        },
+        {
+            "text": "Veranstaltung",
+            "lang": "de"
+        }
+    ],
+    "description": [
+        {
+            "text": "An event, either local, remote or hybrid. E.g., a meeting or a conference. This element is intended to be used to document events. It is dedicated especially to notes, resolutions and tasks. For recurring events (series), the tasks should be managed there.",
+            "lang": "en"
+        },
+        {
+            "text": "Ein Ereignis, entweder lokal, remote oder hybrid. Z.B. eine Besprechung oder eine Konferenz. Dieses Element ist für die Dokumentation von Ereignissen gedacht. Es ist insbesondere für Notizen, Beschlüsse und Aufgaben vorgesehen. Bei wiederkehrenden Ereignissen (Serien) sollten die Aufgaben dort verwaltet werden.",
+            "lang": "de"
+        }
+    ],
+    "utf8_icon": [
+        "📆"
+    ],
+    "name": "EventWithPeople",
+    "instance_rdf_type": [
+        "schema:Event"
+    ]
+}

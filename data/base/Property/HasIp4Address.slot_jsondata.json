@@ -1,0 +1,14 @@
+{
+    "property_type": "Text",
+    "type": [
+        "Category:DataProperty"
+    ],
+    "name": "HasIp4Address",
+    "uuid": "94f25d80-a1b3-4a32-89f2-9f8d8300a982",
+    "label": [
+        {
+            "text": "IP4 Address",
+            "lang": "en"
+        }
+    ]
+}

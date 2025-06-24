@@ -1,0 +1,429 @@
+{
+    "@context": [
+        {
+            "competence": {
+                "@id": "schema:knowsAbout",
+                "@type": "@id"
+            },
+            "competence*": {
+                "@id": "Property:HasCompetence",
+                "@type": "@id"
+            },
+            "email": {
+                "@id": "schema:email",
+                "@type": "xsd:string"
+            },
+            "email*": {
+                "@id": "Property:HasEmail",
+                "@type": "xsd:string"
+            },
+            "fax_number": {
+                "@id": "schema:faxNumber",
+                "@type": "xsd:string"
+            },
+            "fax_number*": {
+                "@id": "Property:HasFaxNumber",
+                "@type": "xsd:string"
+            },
+            "first_name": {
+                "@id": "schema:givenName",
+                "@type": "xsd:string"
+            },
+            "first_name*": {
+                "@id": "Property:HasFirstName",
+                "@type": "xsd:string"
+            },
+            "located_in": {
+                "@id": "schema:workLocation",
+                "@type": "@id"
+            },
+            "located_in*": {
+                "@id": "Property:IsLocatedIn",
+                "@type": "@id"
+            },
+            "middle_name": {
+                "@id": "schema:additionalName",
+                "@type": "xsd:string"
+            },
+            "middle_name*": {
+                "@id": "Property:HasMiddleName",
+                "@type": "xsd:string"
+            },
+            "orcid": {
+                "@id": "schema:identifier",
+                "@type": "xsd:string"
+            },
+            "orcid*": {
+                "@id": "Property:HasOrcidId",
+                "@type": "xsd:string"
+            },
+            "organization": {
+                "@id": "schema:worksFor",
+                "@type": "@id"
+            },
+            "organization*": {
+                "@id": "Property:HasOrganization",
+                "@type": "@id"
+            },
+            "organizational_unit": {
+                "@id": "schema:memberOf",
+                "@type": "@id"
+            },
+            "organizational_unit*": {
+                "@id": "Property:HasOu",
+                "@type": "@id"
+            },
+            "phone_number": {
+                "@id": "schema:telephone",
+                "@type": "xsd:string"
+            },
+            "phone_number*": {
+                "@id": "Property:HasPhoneNumber",
+                "@type": "xsd:string"
+            },
+            "role": {
+                "@id": "schema:jobTitle",
+                "@type": "@id"
+            },
+            "role*": {
+                "@id": "Property:HasRole",
+                "@type": "@id"
+            },
+            "surname": {
+                "@id": "schema:familyName",
+                "@type": "xsd:string"
+            },
+            "surname*": {
+                "@id": "Property:HasSurname",
+                "@type": "xsd:string"
+            },
+            "topic": {
+                "@id": "schema:knowsAbout",
+                "@type": "@id"
+            },
+            "topic*": {
+                "@id": "Property:HasTopic",
+                "@type": "@id"
+            },
+            "website": {
+                "@id": "schema:subjectOf",
+                "@type": "xsd:string"
+            },
+            "website*": {
+                "@id": "Property:HasWebsite",
+                "@type": "xsd:string"
+            }
+        },
+        "/wiki/Category:Item?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:Item?action=raw&slot=jsonschema"
+        }
+    ],
+    "title": "Person",
+    "title*": {
+        "de": "Person",
+        "en": "Person"
+    },
+    "type": "object",
+    "uuid": "44deaa5b-806d-41a2-a885-94f562b110e9",
+    "description": "Category for a person in general. Subcategories are e.g. 'User', i.e. persons who have a user ID.",
+    "description*": {
+        "en": "Category for a person in general. Subcategories are e.g. 'User', i.e. persons who have a user ID.",
+        "de": "Kategorie für eine Person im Allgemeinen. Unterkategorien sind bsp. 'User', also Personen die über eine Nutzerkennung verfügen."
+    },
+    "defaultProperties": [
+        "first_name",
+        "surname",
+        "organization",
+        "email",
+        "phone_number"
+    ],
+    "required": [
+        "first_name",
+        "surname",
+        "type"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSW44deaa5b806d41a2a88594f562b110e9"
+            ]
+        },
+        "first_name": {
+            "title": "First name / Given name / Forename",
+            "title*": {
+                "de": "Vorname"
+            },
+            "type": "string",
+            "propertyOrder": -3
+        },
+        "middle_name": {
+            "title": "Middle name(s)",
+            "title*": {
+                "de": "Zweite(r) Vorname(n)"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "Name",
+                "type": "string"
+            },
+            "uniqueItems": true,
+            "propertyOrder": -2
+        },
+        "surname": {
+            "title": "Last name / Family name / Surname",
+            "title*": {
+                "de": "Nachname"
+            },
+            "type": "string",
+            "propertyOrder": -1
+        },
+        "label": {
+            "items": {
+                "title": "Display name",
+                "title*": {
+                    "de": "Anzeigenamen"
+                },
+                "properties": {
+                    "text": {
+                        "watch": {
+                            "first_name": "root.first_name",
+                            "middle_name": "root.middle_name",
+                            "surname": "root.surname"
+                        },
+                        "readonly": true,
+                        "dynamic_template": "{{first_name}}{{#each middle_name}} {{.}}{{/each}}{{#if surname}} {{{surname}}}{{/if}}"
+                    },
+                    "lang": {
+                        "type": "string",
+                        "default": "en"
+                    }
+                }
+            },
+            "options": {
+                "hidden": true
+            }
+        },
+        "organization": {
+            "title": "Organization",
+            "title*": {
+                "de": "Organisation"
+            },
+            "description": "Organization(s) the person is affiliated with. E.g., university, research institute, company, etc.",
+            "description*": {
+                "de": "Organisation(en), derer die Person Mitglied ist. Z.B. Universität, Forschungsinstitut, Unternehmen, etc."
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "type": "string",
+                "title": "Organization",
+                "title*": {
+                    "de": "Organisation"
+                },
+                "format": "autocomplete",
+                "range": "Category:OSW3cb8cef2225e403092f098f99bc4c472"
+            },
+            "uniqueItems": true
+        },
+        "organizational_unit": {
+            "title": "Organizational (sub)unit",
+            "title*": {
+                "de": "Organisations(unter)einheit"
+            },
+            "description": "Organizational (sub)unit(s) the person is member of. E.g., faculty, institute, department or research group, etc.",
+            "description*": {
+                "de": "Organisations(unter)einheit(en), derer die Person Mitglied ist. Z.B. Fakultät, Institut, Abteilung oder Forschungsgruppe, etc."
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "type": "string",
+                "title": "Organizational unit",
+                "title*": {
+                    "de": "Organisationseinheit"
+                },
+                "format": "autocomplete",
+                "range": "Category:OSWfe3e842b804445c7bb0dd8ee61da2d70"
+            },
+            "uniqueItems": true
+        },
+        "email": {
+            "title": "Email address",
+            "title*": {
+                "de": "E-Mail Adresse"
+            },
+            "eval_template": {
+                "type": "mustache-wikitext",
+                "mode": "render",
+                "value": "{{#email}}[mailto:{{.}} {{.}}] <br>{{/email}}"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "Email",
+                "title*": {
+                    "de": "E-Mail"
+                },
+                "type": "string",
+                "format": "email"
+            },
+            "uniqueItems": true
+        },
+        "website": {
+            "title": "Website",
+            "title*": {
+                "de": "Webseite"
+            },
+            "eval_template": {
+                "type": "mustache-wikitext",
+                "mode": "render",
+                "value": "{{#website}}{{{.}}} <br>{{/website}}"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "URL",
+                "type": "string",
+                "format": "uri"
+            },
+            "uniqueItems": true
+        },
+        "orcid": {
+            "title": "ORCID iD",
+            "title*": {
+                "de": "ORCID iD"
+            },
+            "description": "The ORCID iD is an https URI with a 16-digit number, e.g., https://orcid.org/0000-0001-2345-6789.",
+            "description*": {
+                "de": "Die ORCID iD ist eine https URI mit einer 16-stelligen Nummer, z. B. https://orcid.org/0000-0001-2345-6789."
+            },
+            "type": "string",
+            "format": "uri"
+        },
+        "phone_number": {
+            "title": "Phone number",
+            "title*": {
+                "de": "Telefonnummer"
+            },
+            "description": "Phone number formatted with country code and hyphens, e.g.. +49-931-4100-172. According to https://www.wikidata.org/wiki/Property:P1329",
+            "description*": {
+                "de": "Telefonnummer mit Landesvorwahl und Bindestrichen formatiert, z.B.. +49-931-4100-172. Entsprechend https://www.wikidata.org/wiki/Property:P1329"
+            },
+            "eval_template": {
+                "type": "mustache-wikitext",
+                "mode": "render",
+                "value": "{{#phone_number}}[tel:{{.}} {{.}}] <br>{{/phone_number}}"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "Phone",
+                "title*": {
+                    "de": "Telefon"
+                },
+                "type": "string",
+                "pattern": "(?:(?:(?:\\+|00|011)[\\.\\/\\-\\ \\t]*([17]|2(?:[07]|[1-689]\\d)|3(?:[0-4679]|[578]\\d)|4(?:[013-9]|2\\d)|5(?:[1-8]|[09]\\d)|6(?:[0-6]|[789]\\d)|8(?:[1246]|[035789]\\d)|9(?:[0-58]|[679]\\d))[\\.\\/\\-\\ \\t]*|([17])[\\.\\/\\-\\ ])?(?:\\((\\d{1,6})\\)[\\.\\/\\-\\ \\t]*)?(?:(\\d{1,6})[\\.\\/\\-\\ ])?(?:(\\d{1,6})[\\.\\/\\-\\ ])?(?:(\\d{1,6})[\\.\\/\\-\\ ])?(?:(\\d{1,6})[\\.\\/\\-\\ ])?(\\d{0,10}?)(\\d{1,})(?:[\\.\\/\\-;\\ \\t]*e?xt?[\\.\\/\\-=\\ \\t]*(\\d{1,14}))?)?"
+            },
+            "uniqueItems": true
+        },
+        "fax_number": {
+            "title": "Fax number",
+            "title*": {
+                "de": "Faxnummer"
+            },
+            "description": "Fax number formatted with country code and hyphens, e.g.. +49-931-4100-172. According to https://www.wikidata.org/wiki/Property:P1329",
+            "description*": {
+                "de": "Faxnummer mit Landesvorwahl und Bindestrichen formatiert, z.B.. +49-931-4100-172. Entsprechend https://www.wikidata.org/wiki/Property:P1329"
+            },
+            "eval_template": {
+                "type": "mustache-wikitext",
+                "mode": "render",
+                "value": "{{#fax_number}}[tel:{{.}} {{.}}] <br>{{/fax_number}}"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "Fax",
+                "type": "string",
+                "pattern": "(?:(?:(?:\\+|00|011)[\\.\\/\\-\\ \\t]*([17]|2(?:[07]|[1-689]\\d)|3(?:[0-4679]|[578]\\d)|4(?:[013-9]|2\\d)|5(?:[1-8]|[09]\\d)|6(?:[0-6]|[789]\\d)|8(?:[1246]|[035789]\\d)|9(?:[0-58]|[679]\\d))[\\.\\/\\-\\ \\t]*|([17])[\\.\\/\\-\\ ])?(?:\\((\\d{1,6})\\)[\\.\\/\\-\\ \\t]*)?(?:(\\d{1,6})[\\.\\/\\-\\ ])?(?:(\\d{1,6})[\\.\\/\\-\\ ])?(?:(\\d{1,6})[\\.\\/\\-\\ ])?(?:(\\d{1,6})[\\.\\/\\-\\ ])?(\\d{0,10}?)(\\d{1,})(?:[\\.\\/\\-;\\ \\t]*e?xt?[\\.\\/\\-=\\ \\t]*(\\d{1,14}))?)?"
+            },
+            "uniqueItems": true
+        },
+        "located_in": {
+            "title": "Located at ",
+            "title*": {
+                "de": "Tätig an (Standort)"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "type": "string",
+                "title": "Location",
+                "title*": {
+                    "de": "Standort"
+                },
+                "format": "autocomplete",
+                "range": "Category:OSW473d7a1ed48544d1be83b258b5810948"
+            },
+            "uniqueItems": true
+        },
+        "role": {
+            "title": "Roles",
+            "title*": {
+                "de": "Rollen"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "Role",
+                "title*": {
+                    "de": "Rolle"
+                },
+                "type": "string",
+                "format": "autocomplete",
+                "range": "Category:OSW5efde23b1d8c4e1c864ef039cb0616ed"
+            },
+            "uniqueItems": true
+        },
+        "competence": {
+            "title": "Competences",
+            "title*": {
+                "de": "Kompetenzen"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "Competence",
+                "title*": {
+                    "de": "Kompetenz"
+                },
+                "type": "string",
+                "format": "autocomplete",
+                "range": "Category:OSW5eb9c52b804544dc870dfd54ff434428"
+            },
+            "uniqueItems": true
+        },
+        "topic": {
+            "title": "Topics",
+            "title*": {
+                "de": "Themen"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "Topic",
+                "title*": {
+                    "de": "Thema"
+                },
+                "type": "string",
+                "format": "autocomplete",
+                "range": "Category:OSW5a13eeda5ed5405ea7ef62ea6feeceec"
+            },
+            "uniqueItems": true
+        }
+    }
+}

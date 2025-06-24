@@ -1,0 +1,56 @@
+<table class="info_box">
+<tr>
+<th class="heading" colspan="2">{{{_label_schema|Floor}}}</th>
+</tr>
+<tr><!--
+<th>{{{_label_located_in|Building}}}</th> -->
+<th>{{#switch:{{USERLANGUAGECODE}}
+        |en=Location
+        |de=Lage}}</th>
+<td>{{#ask:[[{{FULLPAGENAME}}]]|?IsLocatedIn=|format=plain|mainlabel=-}}</td> 
+</tr>
+<tr>
+<th>{{#switch:{{USERLANGUAGECODE}}|en=Rooms|de=Räume}}</th></th>
+<td>{{#ask: [[Category:OSWc5ed0ed1e33c4b31887c67af25a610c1]][[IsLocatedIn::{{FULLPAGENAME}}]]}}</td>
+</tr>
+</table>
+<!-- Overview of rooms -->
+{{#if: {{#ask: [[Category:OSWc5ed0ed1e33c4b31887c67af25a610c1]][[IsLocatedIn::{{FULLPAGENAME}}]]}} |
+    =={{#switch:{{USERLANGUAGECODE}}|en=Rooms |de=Räume|#default=Rooms}}==
+    {{#set: HasNumberOfRooms=
+        {{#ask: [[Category:OSWc5ed0ed1e33c4b31887c67af25a610c1]][[IsLocatedIn::{{FULLPAGENAME}}]]
+            |format=count
+            |limit=1000
+            }}
+    }}
+{{#switch:{{USERLANGUAGECODE}}
+        |en=Number of rooms
+        |de=Räume (Anzahl)
+        |#default=Number of rooms
+    }}: {{#show: {{FULLPAGENAME}} |?HasNumberOfRooms}}
+    {{#ask: [[Category:OSWc5ed0ed1e33c4b31887c67af25a610c1]][[IsLocatedIn::{{FULLPAGENAME}}]]
+        |?HasRoomNumber={{#switch: {{USERLANGUAGECODE}} |en=Room number |de=Raumnummer |#default=Room number}}
+        |?HasArea={{#switch: {{USERLANGUAGECODE}} |en=Area |de=Fläche |#default=Area}}
+        |?HasRoomUsage={{#switch: {{USERLANGUAGECODE}} |en=Room usage |de=Raumnutzung |#default=Room usage}}
+        |?HasRoomUsageType={{#switch: {{USERLANGUAGECODE}} |en=Room usage type |de=Raumnutzungstyp |#default=Room usage type}}
+        |?HasNumberOfOccupants={{#switch: {{USERLANGUAGECODE}} |en=Number of occupants |de=Belegung (Anzahl) |#default=Number of occupants}}
+        |format=table
+        |limit=1000
+        |sort=Display title of
+        |order=asc
+        }} 
+    | {{#set: HasNumberOfRooms=0}}  
+}}
+<!-- Occupancy -->
+=={{#switch:{{USERLANGUAGECODE}}|en=Occupancy|de=Belegung|#default=Occupancy}}==
+{{#set: HasNumberOfOccupants=
+    {{#ask: [[Category:OSWc5ed0ed1e33c4b31887c67af25a610c1]][[IsLocatedIn::{{FULLPAGENAME}}]]
+        |?HasNumberOfOccupants
+        |format=sum
+        }}
+}}
+{{#switch:{{USERLANGUAGECODE}}
+        |en=Number of occupants
+        |de=Belegung (Anzahl)
+        |#default=Number of occupants
+    }}: {{#show: {{FULLPAGENAME}} |?HasNumberOfOccupants}}

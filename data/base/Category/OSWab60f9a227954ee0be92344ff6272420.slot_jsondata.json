@@ -1,0 +1,33 @@
+{
+    "subclass_of": [
+        "Category:OSW137e7443b2b94692bd59a0e0a6778b70"
+    ],
+    "type": [
+        "Category:Category"
+    ],
+    "uuid": "ab60f9a2-2795-4ee0-be92-344ff6272420",
+    "label": [
+        {
+            "text": "State",
+            "lang": "en"
+        },
+        {
+            "text": "Staat",
+            "lang": "de"
+        }
+    ],
+    "description": [
+        {
+            "text": "A state or province of a country.",
+            "lang": "en"
+        },
+        {
+            "text": "Ein Staat oder eine Provinz eines Landes.",
+            "lang": "de"
+        }
+    ],
+    "instance_rdf_type": [
+        "schema:State"
+    ],
+    "name": "State"
+}

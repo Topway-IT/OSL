@@ -1,0 +1,20 @@
+{
+    "subclass_of": [
+        "Category:OSW3d238d05316e45a4ac95a11d7b24e36b"
+    ],
+    "uuid": "6c4212f1-a393-42be-963d-2b9efd19c5c2",
+    "label": [
+        {
+            "text": "Floor",
+            "lang": "en"
+        },
+        {
+            "text": "Stockwerk",
+            "lang": "de"
+        }
+    ],
+    "name": "Floor",
+    "type": [
+        "Category:Category"
+    ]
+}

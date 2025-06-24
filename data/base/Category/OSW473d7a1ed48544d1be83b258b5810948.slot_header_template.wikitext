@@ -1,0 +1,49 @@
+<table class="info_box">
+<tr>
+<th class="heading" colspan="2">{{{_label_schema|Site}}}</th>
+</tr>
+<!--
+<tr>
+<td class="subheading" colspan="2">Info</td>
+</tr>
+-->
+<tr>
+<th>{{#switch:{{USERLANGUAGECODE}}|en=Buildings|de=Gebäude}}</th>
+<td>{{#ask: [[Category:OSW4bcd4a99a73f482ea40ac4210dfab836]][[IsLocatedIn::{{FULLPAGENAME}}]]}}</td> <!-- Display {{SUBPAGENAME}} -->
+</tr>
+</table>
+<!-- Overview of buildings -->
+=={{#switch:{{USERLANGUAGECODE}}|en=Buildings |de=Gebäude|#default=Buildings}}==
+{{#set: HasNumberOfBuildings=
+    {{#ask: [[Category:OSW4bcd4a99a73f482ea40ac4210dfab836]][[IsLocatedIn::{{FULLPAGENAME}}]]
+        |format=count
+        |limit=1000
+        }}
+}}
+{{#switch:{{USERLANGUAGECODE}}
+        |en=Number of buildings
+        |de=Gebäude (Anzahl)
+        |#default=Number of buildings
+    }}: {{#show: {{FULLPAGENAME}} |?HasNumberOfBuildings}}
+{{#ask: [[Category:OSW4bcd4a99a73f482ea40ac4210dfab836]][[IsLocatedIn::{{FULLPAGENAME}}]]
+    |?HasNumberOfFloors={{#switch: {{USERLANGUAGECODE}} |en=Number of floors |de=Stockwerke (Anzahl) |#default=Number of floors}}
+    |?HasNumberOfRooms={{#switch: {{USERLANGUAGECODE}} |en=Number of rooms |de=Räume (Anzahl) |#default=Number of rooms}}
+    |?HasNumberOfOccupants={{#switch: {{USERLANGUAGECODE}} |en=Number of occupants |de=Belegung (Anzahl) |#default=Number of occupants}}
+    |format=table
+    |limit=1000
+    |sort=Display title of
+    |order=asc
+    }}
+<!-- Occupancy -->
+=={{#switch:{{USERLANGUAGECODE}}|en=Occupancy|de=Belegung|#default=Occupancy}}==
+{{#set: HasNumberOfOccupants=
+    {{#ask: [[Category:OSW4bcd4a99a73f482ea40ac4210dfab836]][[IsLocatedIn::{{FULLPAGENAME}}]]
+        |?HasNumberOfOccupants
+        |format=sum
+        }}
+}}
+{{#switch:{{USERLANGUAGECODE}}
+        |en=Number of occupants
+        |de=Belegung (Anzahl)
+        |#default=Number of occupants
+    }}: {{#show: {{FULLPAGENAME}} |?HasNumberOfOccupants}}

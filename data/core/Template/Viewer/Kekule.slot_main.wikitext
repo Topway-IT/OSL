@@ -1,0 +1,42 @@
+<includeonly>{{Template:Helper/UI/VE/Visible
+|icon=labFlask
+|content=ChemView ''CID#{{{cid}}}''
+}}{{Template:Helper/UI/VE/Hidden 
+|content=<div class="div_kekule_view div_kekule_view_{{#replace:{{{mode}}}|D|d}} div_kekule_format_sdf div_kekule_source_pubchem" id="chemViewer_{{{cid}}}_{{#replace:{{{mode}}}|D|d}}" style="width:300px;height:300px;border:1px solid black">{{{cid}}}</div>
+}}</includeonly>
+<noinclude>[[Category:OSL/Infrastructure/Template/User]]
+<templatedata>
+{
+	"params": {
+		"cid": {
+			"label": "PubChem Compound ID",
+			"description": "Muss eindeutig auf dieser Seite sein",
+			"type": "number",
+			"required": true
+		},
+		"mode": {
+			"label": "Anzeigemodus",
+			"description": "2D oder 3D",
+			"type": "string",
+			"suggested": true,
+			"autovalue": "2D"
+		},
+		"uuid": {
+			"label": {
+				"en": "Unique ID",
+				"de": "Eindeutige ID"
+			},
+			"description": {
+				"en": "Automatically generated and should not be changed",
+				"de": "Wird automatisch generiert und sollte nicht verändert werden"
+			},
+			"type": "string",
+			"required": true,
+			"autovalue": "{{subst:UUID}}"
+		}
+	},
+	"description": "Erstellt ein Kekule Viewer Widget zum Anzeigen des angegebenen Moleküls",
+	"format": "block"
+}
+</templatedata>
+</noinclude>

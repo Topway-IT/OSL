@@ -1,0 +1,20 @@
+{
+    "property_type": "Text",
+    "type": [
+        "Category:DataProperty"
+    ],
+    "name": "HasNetworkDomain",
+    "uuid": "f1991d52-dcb5-495c-82cd-c03fe9edca39",
+    "label": [
+        {
+            "text": "Network Domain",
+            "lang": "en"
+        }
+    ],
+    "description": [
+        {
+            "text": "Defines the network or internet domain of an host",
+            "lang": "en"
+        }
+    ]
+}

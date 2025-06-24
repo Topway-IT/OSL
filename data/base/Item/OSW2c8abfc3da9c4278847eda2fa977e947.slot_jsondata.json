@@ -1,0 +1,30 @@
+{
+    "type": [
+        "Category:OSW595b282aedf048788f3ee326454792ce"
+    ],
+    "rdf_type": [
+        "schema:Enumeration"
+    ],
+    "uuid": "2c8abfc3-da9c-4278-847e-da2fa977e947",
+    "label": [
+        {
+            "text": "Personnel",
+            "lang": "en"
+        },
+        {
+            "text": "Personal",
+            "lang": "de"
+        }
+    ],
+    "description": [
+        {
+            "text": "Budget to be used for working hours of personnel",
+            "lang": "en"
+        },
+        {
+            "text": "Für die Arbeitszeit des Personals zu verwendendes Budget",
+            "lang": "de"
+        }
+    ],
+    "name": "Personnel"
+}

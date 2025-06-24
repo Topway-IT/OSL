@@ -1,0 +1,9 @@
+<table class="info_box">
+<tr>
+<th class="heading" colspan="2">{{{_label_schema|External person}}}</th>
+</tr>
+<tr> 
+<th>{{{_label_contact_person|Contact person}}}</th> 
+<td>{{#ask:[[{{FULLPAGENAME}}]]|?HasContactPerson=|format=plain|mainlabel=-}}</td> 
+</tr>
+</table>

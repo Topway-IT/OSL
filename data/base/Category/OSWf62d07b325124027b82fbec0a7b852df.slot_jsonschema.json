@@ -1,0 +1,295 @@
+{
+    "@context": [
+        "/wiki/Category:OSW0e084decca6f48a7b023d6b7b2c1452d?action=raw&slot=jsonschema",
+        {
+            "by_day": {
+                "@id": "schema:byDay",
+                "@type": "@id"
+            },
+            "by_month_day": {
+                "@id": "schema:byMonthDay",
+                "@type": "@id"
+            },
+            "by_month": {
+                "@id": "schema:byMonth",
+                "@type": "@id"
+            },
+            "by_month_week": {
+                "@id": "schema:byMonthWeek",
+                "@type": "@id"
+            },
+            "except_dates": {
+                "@id": "schema:exceptDates",
+                "@type": "@id"
+            },
+            "repeat_count": {
+                "@id": "schema:repeatCount",
+                "@type": "id"
+            },
+            "schedule_timezone": {
+                "@id": "schema:scheduleTimezone",
+                "@type": "id"
+            },
+            "series_pattern": {
+                "@id": "schema:eventSchedule",
+                "@type": "@id"
+            }
+        }
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSW0e084decca6f48a7b023d6b7b2c1452d?action=raw&slot=jsonschema"
+        }
+    ],
+    "type": "object",
+    "rdf_type": {
+        "title": "RDF type",
+        "title*": {
+            "de": "RDF-Typ"
+        },
+        "type": "string",
+        "default": "schema:EventSeries",
+        "options": {
+            "hidden": true
+        }
+    },
+    "uuid": "f62d07b3-2512-4027-b82f-bec0a7b852df",
+    "title": "EventSeries",
+    "title*": {
+        "en": "Event series",
+        "de": "Eventserie"
+    },
+    "description": "A recurring event, e.g., a jour fixe, a conference series",
+    "description*": {
+        "en": "A recurring event, e.g., a jour fixe, a conference series",
+        "de": "Ein wiederkehrendes Ereignis, beispielsweise ein Jour Fixe oder eine Konferenz(serie)"
+    },
+    "required": [
+        "type",
+        "series_pattern"
+    ],
+    "defaultProperties": [
+        "series_pattern"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSWf62d07b325124027b82fbec0a7b852df"
+            ]
+        },
+        "series_pattern": {
+            "title": "Repeat pattern",
+            "title*": {
+                "de": "Wiederholungsmuster"
+            },
+            "description": "At least one of the following options is required. The repeat pattern is derived from the selected options.",
+            "description*": {
+                "de": "Mindestens eine der folgenden Optionen wird benötigt. Das Muster setzt sich aus der Kombination der gewählten Optionen zusammen."
+            },
+            "type": "object",
+            "defaultProperties": [
+                "by_day",
+                "by_month_day",
+                "by_month",
+                "by_month_week",
+                "except_dates",
+                "repeat_count",
+                "schedule_timezone"
+            ],
+            "properties": {
+                "by_month_day": {
+                    "title": "By day of the month",
+                    "title*": {
+                        "de": "Nach Tag im Monat"
+                    },
+                    "description": "The day of the month at which the event should be held, e.g., 1 for the first day of the month, 31 for the last day of the month.",
+                    "description*": {
+                        "de": "Tag des Monats, z.B. 1 für den ersten Tag des Monats, 31 für den letzten Tag des Monats."
+                    },
+                    "type": "array",
+                    "items": {
+                        "title": "Day",
+                        "title*": {
+                            "de": "Tag"
+                        },
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 31,
+                        "default": 1
+                    }
+                },
+                "by_month": {
+                    "title": "By month",
+                    "title*": {
+                        "de": "Nach Monat"
+                    },
+                    "description": "The month(s) in which the event should be held.",
+                    "description*": {
+                        "de": "Monat(e), in dem das Ereignis stattfinden soll."
+                    },
+                    "type": "array",
+                    "items": {
+                        "title": "Month",
+                        "title*": {
+                            "de": "Monat"
+                        },
+                        "type": "string",
+                        "enum": [
+                            "january",
+                            "february",
+                            "march",
+                            "april",
+                            "may",
+                            "june",
+                            "july",
+                            "august",
+                            "september",
+                            "october",
+                            "november",
+                            "december"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "January",
+                                "February",
+                                "March",
+                                "April",
+                                "May",
+                                "June",
+                                "July",
+                                "August",
+                                "September",
+                                "October",
+                                "November",
+                                "December"
+                            ],
+                            "enum_titles*": {
+                                "de": [
+                                    "Januar",
+                                    "Februar",
+                                    "März",
+                                    "April",
+                                    "Mai",
+                                    "Juni",
+                                    "Juli",
+                                    "August",
+                                    "September",
+                                    "Oktober",
+                                    "November",
+                                    "Dezember"
+                                ]
+                            }
+                        },
+                        "default": "monday"
+                    }
+                },
+                "by_day": {
+                    "title": "By day of the week",
+                    "title*": {
+                        "de": "Nach Wochentag"
+                    },
+                    "description": "The day(s) of the week at which the event should be held.",
+                    "description*": {
+                        "de": "Wochentage an denen das Ereignis stattfinden soll."
+                    },
+                    "type": "array",
+                    "items": {
+                        "title": "Day",
+                        "title*": {
+                            "de": "Tag"
+                        },
+                        "type": "string",
+                        "enum": [
+                            "monday",
+                            "tuesday",
+                            "wednesday",
+                            "thursday",
+                            "friday",
+                            "saturday",
+                            "sunday"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Monday",
+                                "Tuesday",
+                                "Wednesday",
+                                "Thursday",
+                                "Friday",
+                                "Saturday",
+                                "Sunday"
+                            ],
+                            "enum_titles*": {
+                                "de": [
+                                    "Montag",
+                                    "Dienstag",
+                                    "Mittwoch",
+                                    "Donnerstag",
+                                    "Freitag",
+                                    "Samstag",
+                                    "Sonntag"
+                                ]
+                            }
+                        },
+                        "default": "monday"
+                    }
+                },
+                "by_month_week": {
+                    "title": "By week of the month",
+                    "title*": {
+                        "de": "Nach Woche im Monat"
+                    },
+                    "description": "The week(s) of the month at which the event should be held, e.g., 1 for the first week of the month, 5 for the last week of the month.",
+                    "description*": {
+                        "de": "Woche(n) im Monat, in der das Ereignis stattfinden soll, z.B. 1 für die erste Woche des Monats, 5 für die letzte Woche des Monats."
+                    },
+                    "type": "array",
+                    "items": {
+                        "title": "Week",
+                        "title*": {
+                            "de": "Woche"
+                        },
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 5,
+                        "default": 1
+                    }
+                },
+                "except_dates": {
+                    "title": "Excepttions",
+                    "title*": {
+                        "de": "Ausnahmen"
+                    },
+                    "type": "array",
+                    "items": {
+                        "title": "Date",
+                        "title*": {
+                            "de": "Datum"
+                        },
+                        "type": "string",
+                        "format": "date",
+                        "options": {
+                            "flatpickr": {}
+                        }
+                    }
+                },
+                "repeat_count": {
+                    "title": "Repeat count",
+                    "title*": {
+                        "de": "Wiederholungen"
+                    },
+                    "type": "integer",
+                    "minimum": 1,
+                    "default": 1
+                },
+                "schedule_timezone": {
+                    "title": "Timezone",
+                    "title*": {
+                        "de": "Zeitzone"
+                    },
+                    "type": "string",
+                    "default": "Europe/Berlin (CET = UTC+1)"
+                }
+            }
+        }
+    }
+}

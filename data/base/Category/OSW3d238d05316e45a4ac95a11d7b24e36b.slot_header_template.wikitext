@@ -1,0 +1,20 @@
+<table class="info_box">
+<tr>
+<th class="heading" colspan="2">{{{_label_schema|Location}}}</th>
+</tr>
+{{#if: {{{postal_address|}}} | <!-- if postal_address is not empty, show -->
+    <tr>
+    <th>{{{_label_postal_address|Postal address}}}</th>
+    <td>{{{postal_address|}}}</td>
+    </tr>
+    |<!-- else show nothing -->}}
+{{#if: {{{gps_coordinates|}}} | <!-- if gps_coordinates is not empty, show -->
+    <tr>
+    <th>{{{_label_gps_coordinates|GPS coordinates}}}</th>
+    <td>{{{gps_coordinates|}}}</td>
+    </tr>
+    <tr>
+    <td class="picture" colspan="2">{{#display_map:{{{gps_coordinates|}}}}}</td>
+    </tr>
+    |<!-- else show nothing -->}}
+</table>

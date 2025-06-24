@@ -1,0 +1,86 @@
+{
+	"name": "OSLRef",
+	"author": "",
+	"version": "0.1",
+	"url": "https://www.mediawiki.org/wiki/Extension:OSLRef",
+	"descriptionmsg": "contactcmanager-extension-desc",
+	"license-name": "GPL-2.0-or-later",
+	"type": "parserhook",
+	"requires": {
+		"MediaWiki": ">= 1.35.3"
+	},
+	"MessagesDirs": {
+		"OSLRef": [
+			"i18n"
+		]
+	},
+	"callback": "OSLRefHooks::initExtension",
+	"ContentHandlers": {
+	},
+	"AutoloadClasses": {
+		"OSLRef": "includes/OSLRef.php",
+		"OSLRefHooks": "includes/OSLRefHooks.php"
+	},
+	"APIModules": {
+	},
+	"ExtensionMessagesFiles": {
+		"OSLRefAlias": "OSLRef.alias.php",
+		"OSLRefMagic": "OSLRefMagic.i18n.magic.php"
+	},
+	"Hooks": {
+		"LoadExtensionSchemaUpdates": "OSLRefHooks::onLoadExtensionSchemaUpdates",
+		"BeforeInitialize": "OSLRefHooks::onBeforeInitialize",
+		"ParserFirstCallInit": "OSLRefHooks::onParserFirstCallInit",
+		"BeforePageDisplay": "OSLRefHooks::onBeforePageDisplay",
+		"SkinBuildSidebar": "OSLRefHooks::onSkinBuildSidebar"
+	},
+	"SpecialPages": {
+	},
+	"AutoloadNamespaces": {
+		"MediaWiki\\Extension\\OSLRef\\Aliases\\": "includes/aliases/",
+		"MediaWiki\\Extension\\OSLRef\\": "includes/classes/",		
+		"MediaWiki\\Extension\\OSLRef\\Utils\\": "includes/utils/"
+	},
+	"GroupPermissions": {
+		"sysop": {
+		},
+		"bureaucrat": {
+		},
+		"oslref-admin": {
+		}
+	},
+	"AddGroups": {
+		"oslref-admin": [
+		]
+	},
+	"RemoveGroups": {
+		"oslref-admin": [
+		]
+	},
+	"AvailableRights": [
+	],
+	"namespaces": [
+	],
+	"JobClasses": {
+	},
+	"ResourceModules": {
+		"ext.OSLRef": {
+			"position": "top",
+			"localBasePath": "resources",
+			"remoteExtPath": "OSLRef/resources",
+			"scripts": [
+				"script.js"
+			],
+			"styles": [
+				"style.css"
+			],
+			"dependencies": [
+			],
+			"messages": [
+			]
+		}
+	},
+	"config": {
+	},
+	"manifest_version": 1
+}

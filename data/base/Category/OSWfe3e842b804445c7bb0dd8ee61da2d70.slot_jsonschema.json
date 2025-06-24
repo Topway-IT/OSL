@@ -1,0 +1,32 @@
+{
+    "@context": [
+        "/wiki/Category:OSW3cb8cef2225e403092f098f99bc4c472?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSW3cb8cef2225e403092f098f99bc4c472?action=raw&slot=jsonschema"
+        }
+    ],
+    "title": "OrganizationalSubUnit",
+    "title*": {
+        "de": "Organisationsuntereinheit"
+    },
+    "description": "An organizational unit that explicitly is part of a larger organizational unit.",
+    "description*": {
+        "de": "Eine Organisationseinheit, die ausdrücklich Teil einer größeren Organisationseinheit ist."
+    },
+    "type": "object",
+    "defaultProperties": [
+        "superordinate_ou"
+    ],
+    "required": [
+        "type"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSWfe3e842b804445c7bb0dd8ee61da2d70"
+            ]
+        }
+    }
+}

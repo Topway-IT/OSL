@@ -1,0 +1,24 @@
+{
+    "uuid": "07a0faef-5be9-4b78-8514-a2dd5dca20bf",
+    "label": [
+        {
+            "text": "Building function",
+            "lang": "en"
+        },
+        {
+            "text": "Building function",
+            "lang": "en"
+        },
+        {
+            "text": "Gebäudefunktion",
+            "lang": "de"
+        }
+    ],
+    "subclass_of": [
+        "Category:OSW51653bb12c534c0b92a255b0b5ca3984"
+    ],
+    "name": "BuildingFunction",
+    "type": [
+        "Category:Category"
+    ]
+}

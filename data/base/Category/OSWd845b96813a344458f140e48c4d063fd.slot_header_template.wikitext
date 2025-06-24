@@ -1,0 +1,25 @@
+
+<table class="info_box">
+{{#if: {{{manufacturer|}}}{{{manual|}}}|
+<tr>
+<th class="heading" colspan="2">{{{_label_schema|{{#switch:{{USERLANGUAGECODE}}|en=Manufacturer Information|de=Herstellerinformationen}}}}}</th>
+</tr>
+<tr>
+<th>{{#switch:{{USERLANGUAGECODE}}|en=Manufacturer|de=Hersteller}}</th></th>
+{{#if: {{{manufacturer|}}} |<td>[[{{{manufacturer|}}}]]</td> |}}
+</tr>
+
+<th>{{#switch:{{USERLANGUAGECODE}}|en=Manual|de=Bedienungsanleitung}}</th></th>
+{{#if: {{{manual|}}} | <td>[[{{{manual|}}}|100x100px]]</td> |}}
+</tr>
+|}}
+</table>
+
+=={{#switch: {{USERLANGUAGECODE}} |en=Instances|de=Instanzen|#default=Instances}}==
+{{#ask: [[{{FULLPAGENAME}}]]
+|?IsLocatedIn
+|?HasDepartment
+|?HasResponsiblePerson
+|format=datatable
+|pageLength=10
+}}

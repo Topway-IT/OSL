@@ -1,0 +1,15 @@
+{
+    "type": [
+        "Category:ObjectProperty"
+    ],
+    "name": "HasOrderer",
+    "property_type": "Page",
+    "uuid": "b4df7274-7023-42e2-96e6-d4170d3eec2b",
+    "label": [
+        {
+            "text": "HasOrderer",
+            "lang": "en"
+        }
+    ],
+    "description": []
+}

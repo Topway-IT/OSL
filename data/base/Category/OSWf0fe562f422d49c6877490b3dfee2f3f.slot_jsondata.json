@@ -1,0 +1,36 @@
+{
+    "metaclass": [
+        "Category:OSWd845b96813a344458f140e48c4d063fd"
+    ],
+    "type": [
+        "Category:Category"
+    ],
+    "subclass_of": [
+        "Category:OSWe427aafafbac4262955b9f690a83405d"
+    ],
+    "uuid": "f0fe562f-422d-49c6-8774-90b3dfee2f3f",
+    "name": "Device",
+    "label": [
+        {
+            "text": "Device",
+            "lang": "en"
+        },
+        {
+            "text": "Gerät",
+            "lang": "de"
+        }
+    ],
+    "description": [
+        {
+            "text": "A Tool that is a (phyiscal) piece of Hardware.",
+            "lang": "en"
+        },
+        {
+            "text": "Ein Werkzeug, das ein (physisches) Stück Ausrüstung ist.",
+            "lang": "de"
+        }
+    ],
+    "utf8_icon": [
+        "🔬"
+    ]
+}

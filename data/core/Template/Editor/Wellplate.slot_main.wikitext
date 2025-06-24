@@ -1,0 +1,62 @@
+<includeonly>{{Template:Helper/UI/VE/Visible
+|icon=die
+|content=Wellplate ''{{{file_name}}}''
+}}
+{{Template:Helper/UI/VE/Hidden 
+|content=<div class="WellplateEditor" style="display:hide;" data-config='{
+  "file_title": "{{#if:{{{uuid|}}}|OSW{{#replace:{{{uuid}}}|-|}}|{{#replace:{{#replace: {{{page_name}}}|/|-}}|:|-}}-{{{file_name}}}}}.wellplate.svg",
+  "file_label": "{{{file_name}}}"
+}'></div>
+}}</includeonly>
+<noinclude>[[Category:OSL/Infrastructure/Template/User]]
+<templatedata>
+{
+	"params": {
+		"file_name": {
+			"label": {
+				"en": "Name",
+				"de": "Name"
+			},
+			"description": {
+				"en": "Wellplate name",
+				"de": "Name der Wellplatte, muss eindeutig auf dieser Seite sein"
+			},
+			"type": "string",
+			"required": true,
+			"autovalue": "wellplate-01",
+			"suggested": true
+		},
+		"page_name": {
+			"label": {
+				"en": "Page name",
+				"de": "Seitename"
+			},
+			"description": {
+				"en": "is filled in automatically",
+				"de": "wird automatisch ausgefüllt"
+			},
+			"type": "wiki-page-name",
+			"autovalue": "{{subst:FULLPAGENAME}}"
+		},
+		"uuid": {
+			"label": {
+				"en": "Unique ID",
+				"de": "Eindeutige ID"
+			},
+			"description": {
+				"en": "Automatically generated and should not be changed",
+				"de": "Wird automatisch generiert und sollte nicht verändert werden"
+			},
+			"type": "string",
+			"required": true,
+			"autovalue": "{{subst:UUID}}"
+		}
+	},
+	"description": {
+		"en": "Adds a wellplate editor",
+		"de": "Fügt einen Wellplatten-Editor hinzu "
+	},
+	"format": "block"
+}
+</templatedata>
+</noinclude>

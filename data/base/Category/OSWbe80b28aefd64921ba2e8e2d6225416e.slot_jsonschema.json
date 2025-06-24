@@ -1,0 +1,29 @@
+{
+    "@context": [
+        "/wiki/Category:OSW25bc4daf97644737a76434b88e1d5b21?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSW25bc4daf97644737a76434b88e1d5b21?action=raw&slot=jsonschema"
+        }
+    ],
+    "type": "object",
+    "uuid": "be80b28a-efd6-4921-ba2e-8e2d6225416e",
+    "title": "MonetaryGrant",
+    "title*": {
+        "en": "Monetary Grant",
+        "de": "Finanzielle Unterstützung"
+    },
+    "description": "",
+    "description*": {},
+    "required": [
+        "type"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSWbe80b28aefd64921ba2e8e2d6225416e"
+            ]
+        }
+    }
+}

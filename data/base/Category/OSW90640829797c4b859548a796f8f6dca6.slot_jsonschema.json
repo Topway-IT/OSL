@@ -1,0 +1,62 @@
+{
+    "@context": [
+        {
+            "contact_person": {
+                "@id": "knows",
+                "@type": "@id"
+            },
+            "contact_person*": {
+                "@id": "Property:HasContactPerson",
+                "@type": "@id"
+            }
+        },
+        "/wiki/Category:OSW44deaa5b806d41a2a88594f562b110e9?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSW44deaa5b806d41a2a88594f562b110e9?action=raw&slot=jsonschema"
+        }
+    ],
+    "title": "Externalperson",
+    "title*": {
+        "de": "Externe Person"
+    },
+    "type": "object",
+    "required": [
+        "contact_person",
+        "type"
+    ],
+    "defaultProperties": [
+        "contact_person"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSW90640829797c4b859548a796f8f6dca6"
+            ]
+        },
+        "contact_person": {
+            "title": "Contact person",
+            "title*": {
+                "de": "Kontaktperson"
+            },
+            "description": "A person in contact with the external person, who has already an entry in the system.",
+            "description*": {
+                "de": "Eine Person, die im Kontakt mit der externen Person steht und für die bereits ein Eintrag im System besteht."
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "",
+                "type": "string",
+                "format": "autocomplete",
+                "category": "Category:OSW44deaa5b806d41a2a88594f562b110e9"
+            },
+            "uniqueItems": true,
+            "minItems": 1,
+            "default": [
+                ""
+            ]
+        }
+    }
+}

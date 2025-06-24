@@ -1,0 +1,58 @@
+{
+    "@context": [
+        "/wiki/Category:OSWcbb09a36336740c6a2cd62db9bf647ec?action=raw&slot=jsonschema",
+        {
+            "submission_deadline": "Property:HasEndDate"
+        }
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSWcbb09a36336740c6a2cd62db9bf647ec?action=raw&slot=jsonschema"
+        }
+    ],
+    "type": "object",
+    "uuid": "d22af0aa-3b00-462a-9da9-b509538e8926",
+    "title": "FundingCall",
+    "title*": {
+        "en": "Funding Call",
+        "de": "Förderaufruf"
+    },
+    "description": "Announcement of a funding opportunity with details of the funding conditions",
+    "description*": {
+        "en": "Announcement of a funding opportunity with details of the funding conditions",
+        "de": "Bekanntgabe einer Fördermöglichkeit unter Angabe der Förderbedingungen"
+    },
+    "required": [
+        "type"
+    ],
+    "defaultProperties": [
+        "submission_deadline",
+        "urls"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSWd22af0aa3b00462a9da9b509538e8926"
+            ]
+        },
+        "submission_deadline": {
+            "title": "Submission deadline",
+            "type": "string",
+            "format": "date",
+            "title*": {
+                "de": "Einreichungsfrist"
+            },
+            "options": {
+                "flatpicker": {}
+            }
+        },
+        "urls": {
+            "title": "Call text (url)",
+            "type": "string",
+            "format": "url",
+            "title*": {
+                "de": "Ausschreibungstext (Link)"
+            }
+        }
+    }
+}

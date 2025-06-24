@@ -1,0 +1,44 @@
+{
+    "type": "object",
+    "@context": [
+        "/wiki/Category:OSWe427aafafbac4262955b9f690a83405d?action=raw&slot=jsonschema",
+        {
+            "repository": "Property:HasRepository"
+        }
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSWe427aafafbac4262955b9f690a83405d?action=raw&slot=jsonschema"
+        }
+    ],
+    "title": "Software",
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSW77e749fc598341ac8b6d2fff21574058"
+            ]
+        },
+        "repository": {
+            "type": "array",
+            "title": "Repositories",
+            "eval_template": {
+                "type": "mustache",
+                "mode": "render",
+                "value": "{{#repository}}{{{.}}} {{/repository}}"
+            },
+            "items": {
+                "type": "string",
+                "title": "Repository",
+                "format": "url"
+            }
+        },
+        "readme": {
+            "type": "string",
+            "title": "ReadMe",
+            "format": "url"
+        }
+    },
+    "required": [
+        "type"
+    ]
+}

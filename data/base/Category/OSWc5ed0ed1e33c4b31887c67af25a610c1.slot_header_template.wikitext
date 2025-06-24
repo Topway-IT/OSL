@@ -1,0 +1,94 @@
+<table class="info_box">
+<tr>
+<th class="heading" colspan="2">{{{_label_schema|Room}}}</th>
+</tr>
+<!--
+<tr>
+<td class="subheading" colspan="2">Info</td>
+</tr>
+-->
+<tr>
+<th>{{{_label_number|Number}}}</th>
+<td>{{{number|}}}</td>
+</tr>
+<tr>
+<th>{{{_label_usage|Usage}}}</th>
+<td>{{#ask:[[{{FULLPAGENAME}}]]|?HasRoomUsage=|format=plain|mainlabel=-}}</td>
+</tr>
+<tr>
+<th>{{{_label_usage_type|Usage type}}}</th>
+<td>{{#ask:[[{{FULLPAGENAME}}]]|?HasRoomUsageType=|format=plain|mainlabel=-}}</td>
+</tr>
+<tr><!--
+<th>{{{_label_located_in|Floor}}}</th> -->
+<th>{{#switch:{{USERLANGUAGECODE}}
+        |en=Location
+        |de=Lage}}</th>
+<td>{{#ask:[[{{FULLPAGENAME}}]]|?IsLocatedIn=|format=plain|mainlabel=-}}</td>
+</tr>
+<tr>
+<td class="subheading" colspan="2">{{#switch:{{USERLANGUAGECODE}}
+    |en=Dimensions
+    |de=Abmessungen}}</td>
+</tr>
+<tr>
+<th>{{{_label_length|Length}}}</th>
+<td>{{{length|}}}</td>
+</tr>
+<tr>
+<th>{{{_label_width|Width}}}</th>
+<td>{{{width|}}}</td>
+</tr>
+<tr>
+<th>{{{_label_height|Height}}}</th>
+<td>{{{height|}}}</td>
+</tr>
+<tr>
+<th>{{{_label_area|Area}}}</th>
+<td>{{{area|}}}</td>
+</tr>
+<tr>
+<td class="subheading" colspan="2">{{#switch:{{USERLANGUAGECODE}}
+    |en=Door dimensions
+    |de=Türabmessungen}}</td>
+</tr>
+<tr>
+<th>{{{_label_door_width|Width}}}</th>
+<td>{{{door_width|}}}</td>
+</tr>
+<tr>
+<th>{{{_label_door_height|Height}}}</th>
+<td>{{{door_height|}}}</td>
+</tr>
+<tr>
+<td class="subheading" colspan="2">{{{_label_responsibility|Responsibility}}}</td>
+</tr>
+<tr>
+<th>{{{_label_responsible_person|Responsible person}}}</th>
+<td>{{#ask:[[{{FULLPAGENAME}}]]|?HasResponsiblePerson=|format=plain|mainlabel=-}}</td>
+</tr>
+</table>
+<!-- Occupancy -->
+{{#if: {{#ask: [[Category:OSWd9aa0bca9b0040d8af6f5c091bf9eec7]][[HasRoom::{{FULLPAGENAME}}]][[HasEmploymentContractStatus::Item:OSW62770459451644f3841c502df8a5cb1d]]}} |
+    =={{#switch:{{USERLANGUAGECODE}}|en=Occupancy|de=Belegung|#default=Occupancy}}==
+    {{#set: HasNumberOfOccupants=
+        {{#ask: [[Category:OSWd9aa0bca9b0040d8af6f5c091bf9eec7]][[HasRoom::{{FULLPAGENAME}}]][[HasEmploymentContractStatus::Item:OSW62770459451644f3841c502df8a5cb1d]]
+            |format=count
+            |limit=1000
+            }}
+    }}
+{{#switch:{{USERLANGUAGECODE}}
+        |en=Number of occupants
+        |de=Belegung (Anzahl)
+        |#default=Number of occupants
+    }}: {{#show: {{FULLPAGENAME}} |?HasNumberOfOccupants}}
+    {{#ask: [[Category:OSWd9aa0bca9b0040d8af6f5c091bf9eec7]][[HasRoom::{{FULLPAGENAME}}]][[HasEmploymentContractStatus::Item:OSW62770459451644f3841c502df8a5cb1d]]
+        |?HasOu={{#switch: {{USERLANGUAGECODE}} |en=OU |de=OE |#default=OU}}
+        |?HasPhoneNumber={{#switch: {{USERLANGUAGECODE}} |en=Phone |de=Telefon |#default=Phone}}
+        |format=table
+        |limit=1000
+        |sort=Display title of
+        |order=asc
+        }} 
+    | {{#set: HasNumberOfOccupants=0}}  
+}}

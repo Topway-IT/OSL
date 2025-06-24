@@ -1,0 +1,34 @@
+{
+    "type": [
+        "Category:OSW490e38f9764f4408a244869a0ea98e7c"
+    ],
+    "rdf_type": [
+        "StatusEnumeration"
+    ],
+    "uuid": "ebf0f1e6-3ed7-4546-b9b1-0caaeef2538d",
+    "label": [
+        {
+            "text": "Prolonged",
+            "lang": "en"
+        },
+        {
+            "text": "Verlängert",
+            "lang": "de"
+        },
+        {
+            "text": "Extended",
+            "lang": "en"
+        }
+    ],
+    "description": [
+        {
+            "text": "Status for a prolonged project",
+            "lang": "en"
+        },
+        {
+            "text": "Status für ein verlängertes Projekt",
+            "lang": "de"
+        }
+    ],
+    "name": "Prolonged"
+}

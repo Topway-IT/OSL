@@ -1,0 +1,38 @@
+{
+    "subproperty_of": [
+        "Property:HasDimensionlessRatio"
+    ],
+    "base_property": "Property:HasDimensionlessRatio",
+    "type": [
+        "Category:OSW69f251a900944602a08d1cca830249b5"
+    ],
+    "name": "HasProbabilityOfSuccessfulFunding",
+    "property_type": "Quantity",
+    "uuid": "41c371f0-aeb3-4a14-8661-a5a5dd7fe84d",
+    "label": [
+        {
+            "text": "Probability of successful funding",
+            "lang": "en"
+        },
+        {
+            "text": "Förderwahrscheinlichkeit",
+            "lang": "de"
+        }
+    ],
+    "description": [
+        {
+            "text": "Indicates the likelihood that the funding will be approved",
+            "lang": "en"
+        },
+        {
+            "text": "Gibt die Wahrscheinlichkeit an, dass die Förderung genehmigt wird",
+            "lang": "de"
+        }
+    ],
+    "display_units": [
+        "Property:HasDimensionlessRatio#OSW8b3dc9b793074afc8ab8b03041f97f16"
+    ],
+    "input_units": [
+        "Property:HasDimensionlessRatio#OSW8b3dc9b793074afc8ab8b03041f97f16"
+    ]
+}

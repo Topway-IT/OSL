@@ -1,0 +1,30 @@
+{
+    "type": [
+        "Category:Category"
+    ],
+    "subclass_of": [
+        "Category:Item"
+    ],
+    "uuid": "973a5cd0-8ea1-4524-a570-89f0b3c9c6ff",
+    "label": [
+        {
+            "text": "Requirement",
+            "lang": "en"
+        },
+        {
+            "text": "Anforderung",
+            "lang": "de"
+        }
+    ],
+    "description": [
+        {
+            "text": "A functional or non-functional requirement",
+            "lang": "en"
+        },
+        {
+            "text": "Ein funktionales oder nicht-funktionales requirement",
+            "lang": "de"
+        }
+    ],
+    "name": "Requirement"
+}

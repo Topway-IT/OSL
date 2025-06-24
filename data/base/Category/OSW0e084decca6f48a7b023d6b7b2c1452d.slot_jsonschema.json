@@ -1,0 +1,468 @@
+{
+    "@context": [
+        {
+            "associated_ou": {
+                "@id": "Property:HasAssociatedOu",
+                "@type": "@id"
+            },
+            "end_date_min": {
+                "@id": "Property:HasEndDateAndTime",
+                "@type": "@id"
+            },
+            "end_date_max": {
+                "@id": "Property:HasEndDateAndTime",
+                "@type": "@id"
+            },
+            "event_series": {
+                "@id": "Property:IsPartOf",
+                "@type": "@id"
+            },
+            "funding": {
+                "@id": "schema:funding",
+                "@type": "@id"
+            },
+            "funding*": {
+                "@id": "Property:HasFunding",
+                "@type": "@id"
+            },
+            "funding_name": {
+                "@id": "schema:funding",
+                "@type": "@id"
+            },
+            "funding_name*": {
+                "@id": "Property:HasFunding",
+                "@type": "@id"
+            },
+            "location_name": {
+                "@id": "schema:location",
+                "@type": "@id"
+            },
+            "location_name*": {
+                "@id": "Property:HasLocation",
+                "@type": "@id"
+            },
+            "minutes_taker": {
+                "@id": "Property:HasMinutesTaker",
+                "@type": "@id"
+            },
+            "organizer": {
+                "@id": "schema:organizer",
+                "@type": "@id"
+            },
+            "organizer*": {
+                "@id": "Property:HasOrganizer",
+                "@type": "@id"
+            },
+            "participants": {
+                "@id": "Property:HasParticipant",
+                "@type": "@id"
+            },
+            "project": {
+                "@id": "Property:HasProject",
+                "@type": "@id"
+            },
+            "start_date_min": {
+                "@id": "Property:HasStartDateAndTime",
+                "@type": "@id"
+            },
+            "start_date_max": {
+                "@id": "Property:HasStartDateAndTime",
+                "@type": "@id"
+            },
+            "url": {
+                "@id": "schema:url",
+                "@type": "@id"
+            },
+            "url*": {
+                "@id": "Property:HasUrl",
+                "@type": "@id"
+            }
+        },
+        "/wiki/Category:OSWb97757b46edb430591758662c18d354d?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSWb97757b46edb430591758662c18d354d?action=raw&slot=jsonschema"
+        }
+    ],
+    "uuid": "0e084dec-ca6f-48a7-b023-d6b7b2c1452d",
+    "type": "object",
+    "title": "Event with People",
+    "title*": {
+        "de": "Veranstaltung",
+        "en": "Event with People"
+    },
+    "description": "An event, either local, remote or hybrid. E.g., a meeting or a conference. This element is intended to be used to document events. It is dedicated especially to notes, resolutions and tasks. For recurring events (series), the tasks should be managed there.",
+    "description*": {
+        "de": "Ein Ereignis, entweder lokal, remote oder hybrid. Z.B. eine Besprechung oder eine Konferenz. Dieses Element ist für die Dokumentation von Ereignissen gedacht. Es ist insbesondere für Notizen, Beschlüsse und Aufgaben vorgesehen. Bei wiederkehrenden Ereignissen (Serien) sollten die Aufgaben dort verwaltet werden.",
+        "en": "An event, either local, remote or hybrid. E.g., a meeting or a conference. This element is intended to be used to document events. It is dedicated especially to notes, resolutions and tasks. For recurring events (series), the tasks should be managed there."
+    },
+    "required": [
+        "allday",
+        "start_date",
+        "type"
+    ],
+    "defaultProperties": [
+        "allday",
+        "start_date",
+        "end_date",
+        "event_series",
+        "location_name",
+        "participants",
+        "minutes_taker",
+        "organizer",
+        "project",
+        "event_classifier",
+        "associated_ou"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSW0e084decca6f48a7b023d6b7b2c1452d"
+            ]
+        },
+        "allday": {
+            "type": "boolean",
+            "title": "All day",
+            "title*": {
+                "de": "Ganztägig"
+            },
+            "default": false
+        },
+        "start_date": {
+            "type": "string",
+            "title": "Start",
+            "title*": {
+                "de": "Beginn"
+            },
+            "oneOf": [
+                {
+                    "format": "datetime-local",
+                    "title": "Date and time",
+                    "title*": {
+                        "de": "Datum und Uhrzeit"
+                    }
+                },
+                {
+                    "format": "date",
+                    "title": "Date",
+                    "title*": {
+                        "de": "Datum"
+                    }
+                }
+            ]
+        },
+        "start_date_min": {
+            "type": "string",
+            "title": "Starts after",
+            "title*": {
+                "de": "Beginnt nach"
+            },
+            "format": "datetime-local",
+            "options": {
+                "conditional_visible": {
+                    "modes": "query"
+                },
+                "role": {
+                    "query": {
+                        "filter": "min"
+                    }
+                }
+            }
+        },
+        "start_date_max": {
+            "type": "string",
+            "title": "Starts before",
+            "title*": {
+                "de": "Beginnt vor"
+            },
+            "format": "datetime-local",
+            "options": {
+                "conditional_visible": {
+                    "modes": "query"
+                },
+                "role": {
+                    "query": {
+                        "filter": "max"
+                    }
+                }
+            }
+        },
+        "duration": {
+            "type": "string",
+            "title": "Duration",
+            "title*": {
+                "de": "Dauer"
+            },
+            "format": "time",
+            "options": {
+                "flatpickr": {
+                    "enableTime": true,
+                    "noCalendar": true,
+                    "dateFormat": "H:i",
+                    "time_24hr": true
+                }
+            }
+        },
+        "end_date": {
+            "type": "string",
+            "title": "End",
+            "title*": {
+                "de": "Ende"
+            },
+            "oneOf": [
+                {
+                    "format": "datetime-local",
+                    "title": "Date and time",
+                    "title*": {
+                        "de": "Datum und Uhrzeit"
+                    }
+                },
+                {
+                    "format": "date",
+                    "title": "Date",
+                    "title*": {
+                        "de": "Datum"
+                    }
+                }
+            ]
+        },
+        "event_series": {
+            "title": "Part of (event series)",
+            "title*": {
+                "de": "Teil von (Ereignisserie)"
+            },
+            "description": "The event series this event is part of.",
+            "description*": {
+                "de": "Die Ereignisserie, zu der dieses Ereignis gehört."
+            },
+            "type": "string",
+            "format": "autocomplete",
+            "options": {
+                "autocomplete": {
+                    "query": "[[Category:OSWf62d07b325124027b82fbec0a7b852df]] |?Display_title_of=label"
+                }
+            },
+            "default": ""
+        },
+        "funding": {
+            "title": "Funding",
+            "title*": {
+                "de": "Förderung"
+            },
+            "description": "Funding (Grant) for the event.",
+            "description*": {
+                "de": "Förderung für das Ereignis."
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "Funding",
+                "title*": {
+                    "de": "Förderung"
+                },
+                "type": "string",
+                "format": "autocomplete",
+                "category": "Category:OSW25bc4daf97644737a76434b88e1d5b21",
+                "default": ""
+            }
+        },
+        "funding_name": {
+            "title": "Funding (grant no. or name)",
+            "title*": {
+                "de": "Förderung (Förderkennzeichen oder Bezeichnung)"
+            },
+            "description": "Name of the funding (Grant) for the event.",
+            "description*": {
+                "de": "Name oder Kennzeichen der Förderung für das Ereignis."
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "Funding",
+                "title*": {
+                    "de": "Förderung"
+                },
+                "type": "string",
+                "default": ""
+            }
+        },
+        "location_name": {
+            "type": "string",
+            "title": "Location (name)",
+            "title*": {
+                "de": "Ort (Bezeichnung)"
+            }
+        },
+        "url": {
+            "title": "URL",
+            "description": "Link to the event homepage",
+            "description*": {
+                "de": "Link zur Event Homepage"
+            },
+            "type": "string",
+            "format": "url"
+        },
+        "event_classifier": {
+            "title": "Internal or external",
+            "title*": {
+                "de": "Intern oder extern"
+            },
+            "type": "string",
+            "enum": [
+                "internal",
+                "external"
+            ],
+            "default": "",
+            "options": {
+                "enum_titles": [
+                    "Internal",
+                    "External"
+                ],
+                "enum_titles*": {
+                    "de": [
+                        "Intern",
+                        "Extern"
+                    ]
+                }
+            }
+        },
+        "participants": {
+            "title": "Participants",
+            "title*": {
+                "de": "Teilnehmer*innen"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "Participant",
+                "title*": {
+                    "de": "Teilnehmer*in"
+                },
+                "type": "string",
+                "format": "autocomplete",
+                "options": {
+                    "autocomplete": {
+                        "category": "Category:OSW44deaa5b806d41a2a88594f562b110e9"
+                    }
+                }
+            },
+            "uniqueItems": true,
+            "default": [
+                ""
+            ]
+        },
+        "minutes_taker": {
+            "title": "Minutes taker",
+            "title*": {
+                "de": "Protokollant*innen"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "Minutes taker",
+                "title*": {
+                    "de": "Protokollant*in"
+                },
+                "type": "string",
+                "format": "autocomplete",
+                "options": {
+                    "autocomplete": {
+                        "category": "Category:OSW44deaa5b806d41a2a88594f562b110e9"
+                    }
+                }
+            },
+            "uniqueItems": true,
+            "default": [
+                ""
+            ]
+        },
+        "organizer": {
+            "title": "Organizer(s)",
+            "title*": {
+                "de": "Organisator*innen"
+            },
+            "description": "Organizer(s) of the event, person or organizational unit.",
+            "description*": {
+                "de": "Organisator*in des Ereignisses, Person oder Organisationseinheit"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "Organizer",
+                "title*": {
+                    "de": "Organisator*in"
+                },
+                "type": "string",
+                "format": "autocomplete",
+                "options": {
+                    "autocomplete": {
+                        "query": "[[Category:OSW44deaa5b806d41a2a88594f562b110e9]] OR [[Category:OSW3cb8cef2225e403092f098f99bc4c472]] |?Display_title_of=label"
+                    }
+                }
+            },
+            "uniqueItems": true,
+            "default": [
+                ""
+            ]
+        },
+        "associated_ou": {
+            "title": "Associated organizational unit(s)",
+            "title*": {
+                "de": "Assoziierte Organisationseinheit(en)"
+            },
+            "description": "E.g., the organizational unit for which this event is most relevant or whos members are most likely to participate.",
+            "description*": {
+                "de": "Z.B. die Organisationseinheit, für die dieses Ereignis am relevantesten ist oder deren Mitglieder am ehesten teilnehmen."
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "Associated organizational unit",
+                "title*": {
+                    "de": "Assoziierte Organisationseinheit"
+                },
+                "type": "string",
+                "format": "autocomplete",
+                "options": {
+                    "autocomplete": {
+                        "category": "Category:OSW3cb8cef2225e403092f098f99bc4c472"
+                    }
+                }
+            },
+            "uniqueItems": true,
+            "default": [
+                ""
+            ]
+        },
+        "project": {
+            "title": "Project(s)",
+            "title*": {
+                "de": "Projekt(e)"
+            },
+            "description": "Project(s) this event is associated with. E,g., the project for which this meeting is held.",
+            "description*": {
+                "de": "Projekt(e), mit dem/denen dieses Ereignis assoziiert ist. Z.B. das Projekt im Rahmen dessen ein Meeting stattfindet."
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "Project",
+                "title*": {
+                    "de": "Projekt"
+                },
+                "type": "string",
+                "format": "autocomplete",
+                "options": {
+                    "autocomplete": {
+                        "category": "Category:OSWb2d7e6a2eff94c82b7f1f2699d5b0ee3"
+                    }
+                }
+            },
+            "uniqueItems": true,
+            "default": [
+                ""
+            ]
+        }
+    }
+}

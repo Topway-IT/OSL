@@ -1,0 +1,23 @@
+{
+    "type": [
+        "Category:OSWa5812d3b5119416c8da1606cbe7054eb"
+    ],
+    "uuid": "bb07a729-4055-4b1b-978c-44e5db4bd314",
+    "label": [
+        {
+            "text": "Non-functional requirement",
+            "lang": "en"
+        },
+        {
+            "text": "Nicht-funktionale Anforderung",
+            "lang": "de"
+        }
+    ],
+    "name": "NonFunctionalRequirement",
+    "description": [
+        {
+            "text": "More technical and implementation aspects, but also e. g. response time",
+            "lang": "en"
+        }
+    ]
+}

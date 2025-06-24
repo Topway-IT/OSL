@@ -1,0 +1,16 @@
+== Namespaces ==
+for UUID generation via uuid5
+
+* General (same as UUID of the category page): 4bcd4a99-a73f-482e-a40a-c4210dfab836
+* FhG: 31022247-3be6-529b-bc19-7890b9cf2f98
+
+{{#ask: [[{{FULLPAGENAME}}]]
+|?IsLocatedIn={{#switch: {{USERLANGUAGECODE}} |en=Site |de=Standort |#default=Site }}
+|?HasNumberOfFloors={{#switch: {{USERLANGUAGECODE}} |en=Number of floors |de=Stockwerke (Anzahl) |#default=Number of floors }}
+|?HasNumberOfRooms={{#switch: {{USERLANGUAGECODE}} |en=Number of rooms |de=Räume (Anzahl) |#default=Number of rooms }}
+|?HasNumberOfOccupants={{#switch: {{USERLANGUAGECODE}} |en=Number of Occupants |de=Belegung (Anzahl) |#default=Number of Occupants }}
+|format=datatable
+|limit=5000
+|sort=Display title of
+|order=asc
+}}

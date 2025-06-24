@@ -1,0 +1,29 @@
+{
+    "@context": [
+        "/wiki/Category:OSWd02741381aaa4709ae0753a0edc341ce?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSWd02741381aaa4709ae0753a0edc341ce?action=raw&slot=jsonschema"
+        }
+    ],
+    "type": "object",
+    "uuid": "8cb19350-5446-4c99-836d-3bc0573a11cc",
+    "title": "IssueLabel",
+    "title*": {
+        "en": "Issue Label",
+        "de": "Issue-Label"
+    },
+    "description": "",
+    "description*": {},
+    "required": [
+        "type"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSW8cb1935054464c99836d3bc0573a11cc"
+            ]
+        }
+    }
+}

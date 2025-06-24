@@ -1,0 +1,20 @@
+=={{#switch:{{USERLANGUAGECODE}}|en=Role owners|de=Rolleninhaber/innen|#default=Role owners}}==
+{{#set: HasNumberOfRoleOwners=
+    {{#ask: [[Category:OSW44deaa5b806d41a2a88594f562b110e9]][[HasRole::{{FULLPAGENAME}}]]
+        |format=count
+        |limit=1000
+        }}
+    }}
+{{#switch:{{USERLANGUAGECODE}}
+        |en=Number of role owners
+        |de=Rolleninhaber/innen (Anzahl)
+        |#default=Number of role owners
+    }}: {{#show: {{FULLPAGENAME}} |?HasNumberOfRoleOwners}}
+{{#ask: [[Category:OSW44deaa5b806d41a2a88594f562b110e9]][[HasRole::{{FULLPAGENAME}}]]
+    |?HasOu={{#switch: {{USERLANGUAGECODE}} |en=OU |de=OE |#default=OU}}
+    |?HasPhoneNumber={{#switch: {{USERLANGUAGECODE}} |en=Phone |de=Telefon |#default=Phone}}
+    |format=datatable
+    |limit=1000
+    |sort=Display title of
+    |order=asc
+    }}

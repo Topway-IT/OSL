@@ -1,0 +1,100 @@
+{
+    "@context": [
+        {
+            "network_port": "Property:HasPort",
+            "host": {
+                "@id": "Property:HasHost",
+                "@type": "@id"
+            },
+            "hosted_software": {
+                "@id": "Property:Hosts",
+                "@type": "@id"
+            },
+            "schema": "Property:HasUrlSchema",
+            "version": "Property:HasVersion",
+            "domain": "Property:HasNetworkDomain",
+            "url_path": "Property:HasUrlPath",
+            "url": "Property:HasUrl"
+        }
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSW77e749fc598341ac8b6d2fff21574058?action=raw&slot=jsonschema"
+        }
+    ],
+    "type": "object",
+    "title": "WebService",
+    "required": [
+        "type"
+    ],
+    "defaultProperties": [
+        "hosted_software",
+        "host",
+        "schema",
+        "domain",
+        "network_port",
+        "url_path"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSW8c56fd1e858f499da801691c5f2b7309"
+            ]
+        },
+        "hosted_software": {
+            "title": "Hosted Software",
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "Software",
+                "type": "string",
+                "format": "autocomplete",
+                "range": "Category:OSW77e749fc598341ac8b6d2fff21574058"
+            },
+            "minItems": 1
+        },
+        "host": {
+            "title": "Hosts",
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "Host",
+                "type": "string",
+                "format": "autocomplete",
+                "range": "Category:OSW02590972aeba46d7864ed492c0c11384"
+            },
+            "minItems": 1
+        },
+        "schema": {
+            "title": "Schema",
+            "description": "e.g. http, https",
+            "type": "string"
+        },
+        "domain": {
+            "title": "Domain",
+            "type": "string"
+        },
+        "network_port": {
+            "items": {
+                "title": "Port",
+                "type": "integer"
+            },
+            "title": "Ports",
+            "type": "array"
+        },
+        "url_path": {
+            "title": "URL Path",
+            "type": "string"
+        },
+        "url": {
+            "title": "URL",
+            "type": "string",
+            "format": "url"
+        },
+        "version": {
+            "title": "Version",
+            "description": "Version of the hosted software",
+            "type": "string"
+        }
+    }
+}

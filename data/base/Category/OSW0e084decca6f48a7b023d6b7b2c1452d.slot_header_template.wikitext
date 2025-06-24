@@ -1,0 +1,45 @@
+<table class="info_box">
+<tr>
+<th class="heading" colspan="2">{{{_label_schema|Event}}}</th>
+</tr>
+<tr> 
+<th>{{{_label_event_series|Event series}}}</th> 
+<td>{{#ask:[[{{FULLPAGENAME}}]]|?IsPartOf=|format=plain|mainlabel=-}}</td> 
+</tr>
+<tr> 
+<th>{{{_label_start_date|Start date}}}</th> 
+<td>{{{start_date|}}}</td> 
+</tr>
+<tr> 
+<th>{{{_label_end_date|End date}}}</th> 
+<td>{{{end_date|}}}</td> 
+</tr>
+<tr> 
+<th>{{{_label_duration|Duration}}}</th> 
+<td>{{{duration|}}}</td> 
+</tr>
+<tr> 
+<th>{{{_label_location_name|Location}}}</th> 
+<td>{{{location_name|}}}</td> 
+</tr>
+<tr> 
+<th>{{{_label_url|URL}}}</th> 
+<td>{{{url|}}}</td> 
+</tr>
+<tr> 
+<th>{{{_label_organizer|Organizer}}}</th> 
+<td>{{#ask:[[{{FULLPAGENAME}}]]|?HasOrganizer=|format=plain|mainlabel=-}}</td> 
+</tr> 
+<tr> 
+<th>{{{_label_minutes_taker|Minutes taker}}}</th> 
+<td>{{#ask:[[{{FULLPAGENAME}}]]|?HasMinutesTaker=|format=plain|mainlabel=-}}</td> 
+</tr>
+<tr> 
+<th>{{{_label_project|Project(s)}}}</th> 
+<td>{{#ask:[[{{FULLPAGENAME}}]]|?HasProject=|format=plain|mainlabel=-}}</td> 
+</tr> 
+<tr> 
+<th>{{{_labelassociated_ou|Associated OU(s)}}}</th> 
+<td>{{#ask:[[{{FULLPAGENAME}}]]|?HasAssociatedOu=|format=plain|mainlabel=-}}</td> 
+</tr> 
+</table>

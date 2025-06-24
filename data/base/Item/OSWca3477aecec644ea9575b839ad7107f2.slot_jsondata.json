@@ -1,0 +1,21 @@
+{
+    "type": [
+        "Category:OSW67f2ef61ba284c919fefa00d0e95a7a0"
+    ],
+    "rdf_type": [
+        "schema:Enumeration"
+    ],
+    "uuid": "ca3477ae-cec6-44ea-9575-b839ad7107f2",
+    "label": [
+        {
+            "text": "House Project",
+            "lang": "en"
+        },
+        {
+            "text": "Hausprojekt",
+            "lang": "de"
+        }
+    ],
+    "description": [],
+    "name": "HouseProject"
+}

@@ -1,0 +1,22 @@
+{
+    "type": [
+        "Category:Category"
+    ],
+    "subclass_of": [
+        "Category:OSW8c56fd1e858f499da801691c5f2b7309"
+    ],
+    "uuid": "72eae3c8-f41f-4a22-a94d-bc01974ed404",
+    "label": [
+        {
+            "text": "PrefectFlow",
+            "lang": "en"
+        }
+    ],
+    "description": [
+        {
+            "text": "Part of a Prefect Workflow Environment",
+            "lang": "en"
+        }
+    ],
+    "name": "PrefectFlow"
+}

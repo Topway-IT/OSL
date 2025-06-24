@@ -1,0 +1,29 @@
+{
+    "@context": [
+        "/wiki/Category:OSW1969007d5acf40539642877659a02c23?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSW1969007d5acf40539642877659a02c23?action=raw&slot=jsonschema"
+        }
+    ],
+    "type": "object",
+    "uuid": "cffdc902-47c1-42ec-a7f2-3ab6c69e49a1",
+    "title": "NonGovernmentalOrganization",
+    "title*": {
+        "en": "NGO",
+        "de": "Nichtstaatliche Organisation"
+    },
+    "description": "",
+    "description*": {},
+    "required": [
+        "type"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSWcffdc90247c142eca7f23ab6c69e49a1"
+            ]
+        }
+    }
+}

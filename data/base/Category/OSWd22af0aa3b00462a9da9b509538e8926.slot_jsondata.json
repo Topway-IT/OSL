@@ -1,0 +1,34 @@
+{
+    "subclass_of": [
+        "Category:OSWcbb09a36336740c6a2cd62db9bf647ec"
+    ],
+    "type": [
+        "Category:Category"
+    ],
+    "uuid": "d22af0aa-3b00-462a-9da9-b509538e8926",
+    "label": [
+        {
+            "text": "Funding Call",
+            "lang": "en"
+        },
+        {
+            "text": "Förderaufruf",
+            "lang": "de"
+        }
+    ],
+    "utf8_icon": [
+        "💸",
+        "📃"
+    ],
+    "name": "FundingCall",
+    "description": [
+        {
+            "text": "Announcement of a funding opportunity with details of the funding conditions",
+            "lang": "en"
+        },
+        {
+            "text": "Bekanntgabe einer Fördermöglichkeit unter Angabe der Förderbedingungen",
+            "lang": "de"
+        }
+    ]
+}

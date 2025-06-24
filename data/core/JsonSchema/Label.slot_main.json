@@ -1,0 +1,58 @@
+{
+    "@context": {
+        "rdf": "http://www.w3.org/2000/01/rdf-schema#",
+        "text": {
+            "@id": "@value"
+        },
+        "lang": {
+            "@id": "@language"
+        }
+    },
+    "title": "Label",
+    "id": "label",
+    "type": "object",
+    "required": [
+        "text",
+        "lang"
+    ],
+    "properties": {
+        "text": {
+            "title": "Text",
+            "title*": {
+                "de": "Text"
+            },
+            "type": "string",
+            "minLength": 1,
+            "options": {
+                "input_width": "800px",
+                "inputAttributes": {
+                    "placeholder": "Title of the entry"
+                },
+                "inputAttributes*": {
+                    "de": {
+                        "placeholder": "Titel dieses Eintrags"
+                    }
+                }
+            }
+        },
+        "lang": {
+            "title": "Lang code",
+            "title*": {
+                "de": "Sprache"
+            },
+            "type": "string",
+            "enum": [
+                "en",
+                "de"
+            ],
+            "default": "en",
+            "default*": {
+                "en": "en",
+                "de": "de"
+            },
+            "options": {
+                "input_width": "100px"
+            }
+        }
+    }
+}

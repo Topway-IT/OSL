@@ -1,0 +1,40 @@
+{
+    "uuid": "d9aa0bca-9b00-40d8-af6f-5c091bf9eec7",
+    "subclass_of": [
+        "Category:OSW44deaa5b806d41a2a88594f562b110e9"
+    ],
+    "label": [
+        {
+            "text": "User",
+            "lang": "en"
+        },
+        {
+            "text": "Nutzer",
+            "lang": "de"
+        }
+    ],
+    "short_name": [
+        {
+            "text": "User",
+            "lang": "en"
+        },
+        {
+            "text": "Nutzer",
+            "lang": "de"
+        }
+    ],
+    "description": [
+        {
+            "text": "A person who has a user ID.",
+            "lang": "en"
+        },
+        {
+            "text": "Eine Person mit Nutzerkennung",
+            "lang": "de"
+        }
+    ],
+    "name": "User",
+    "type": [
+        "Category:Category"
+    ]
+}

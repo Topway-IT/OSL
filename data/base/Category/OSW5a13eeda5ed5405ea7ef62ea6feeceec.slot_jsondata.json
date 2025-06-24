@@ -1,0 +1,40 @@
+{
+    "subclass_of": [
+        "Category:OSWa5812d3b5119416c8da1606cbe7054eb"
+    ],
+    "uuid": "5a13eeda-5ed5-405e-a7ef-62ea6feeceec",
+    "label": [
+        {
+            "text": "Topic",
+            "lang": "en"
+        },
+        {
+            "text": "Thema",
+            "lang": "de"
+        }
+    ],
+    "short_name": [
+        {
+            "text": "Topic",
+            "lang": "en"
+        },
+        {
+            "text": "Thema",
+            "lang": "de"
+        }
+    ],
+    "description": [
+        {
+            "text": "Topic that a person or a group of persons works on",
+            "lang": "en"
+        },
+        {
+            "text": "Thema auf dem eine Person oder eine Gruppe von Personen arbeitet",
+            "lang": "de"
+        }
+    ],
+    "name": "Topic",
+    "type": [
+        "Category:Category"
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "subclass_of": [
+        "Category:OSWd02741381aaa4709ae0753a0edc341ce"
+    ],
+    "type": [
+        "Category:Category"
+    ],
+    "uuid": "595b282a-edf0-4878-8f3e-e326454792ce",
+    "label": [
+        {
+            "text": "Budget Type",
+            "lang": "en"
+        },
+        {
+            "text": "Budget-Typ",
+            "lang": "de"
+        }
+    ],
+    "description": [
+        {
+            "text": "Type of usage of a certain budget",
+            "lang": "en"
+        },
+        {
+            "text": "Art der Verwendung eines bestimmten Budgets",
+            "lang": "de"
+        }
+    ],
+    "name": "BudgetType"
+}

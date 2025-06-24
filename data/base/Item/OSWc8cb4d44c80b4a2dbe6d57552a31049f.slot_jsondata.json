@@ -1,0 +1,21 @@
+{
+    "type": [
+        "Category:OSW67f2ef61ba284c919fefa00d0e95a7a0"
+    ],
+    "rdf_type": [
+        "schema:Enumeration"
+    ],
+    "uuid": "c8cb4d44-c80b-4a2d-be6d-57552a31049f",
+    "label": [
+        {
+            "text": "Internal Project",
+            "lang": "en"
+        },
+        {
+            "text": "Internes Projekt",
+            "lang": "de"
+        }
+    ],
+    "description": [],
+    "name": "InternalProject"
+}

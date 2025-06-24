@@ -1,0 +1,33 @@
+=={{#switch:{{USERLANGUAGECODE}}|en=Elements of the series|de=Elemte der Serie}}==
+{{#ask: [[Category:OSW0e084decca6f48a7b023d6b7b2c1452d]][[IsPartOf::{{FULLPAGENAME}}]]
+|?HasStartDate={{#switch: {{USERLANGUAGECODE}} |en=Date & time|de=Datum & Uhrzeit |#default=Date & time}}
+|?HasParticipant={{#switch: {{USERLANGUAGECODE}} |en=Participants |de=Teilnehmende |#default=Participants}}
+|?HasMinutesTaker={{#switch: {{USERLANGUAGECODE}} |en=Minutes taker |de=Protokollant*in |#default=Minutes taker}}
+|sort=HasStartDate
+|order=desc
+|format=datatable
+|limit=1000
+}}
+<div class="pagebot-button" 
+     data-config='{
+         "params":{
+             "categories": [
+                 "{{#switch: {{#ask:[[{{FULLPAGENAME}}]]|?HasType#=|mainlabel=-|limit=1}}
+                     |Category:OSWf62d07b325124027b82fbec0a7b852df=Category:OSW0e084decca6f48a7b023d6b7b2c1452d
+                     |Category:OSW9ed6b89cc3c7492896570951a5b094d6=Category:OSW5c7c84f0bfbe4347ba7fbe7b346fd106
+                 }}"
+             ],
+             "jsondata": {
+                 "event_series": "{{FULLPAGENAME}}"
+             }
+         }, 
+         "label": " {{#switch: {{USERLANGUAGECODE}} 
+             |en=➕ Add element to the series
+             |de=➕ Serienelement hinzufügen
+             |#default=➕ Add element to the series
+         }}"
+     }'>
+</div>
+<!-- 
+This button uses a switch to see what's the type of the page it is placed on (EventSeries or MeetingSeries) and delivers a parameter for the creation of an element of the series (either Event or Meeting)
+-->

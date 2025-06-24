@@ -1,0 +1,29 @@
+{
+    "@context": [
+        "/wiki/Category:OSW137e7443b2b94692bd59a0e0a6778b70?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSW137e7443b2b94692bd59a0e0a6778b70?action=raw&slot=jsonschema"
+        }
+    ],
+    "type": "object",
+    "uuid": "95efaf34-e2c7-439e-8e79-67233910e44b",
+    "title": "Region",
+    "title*": {
+        "en": "Region",
+        "de": "Region"
+    },
+    "description": "",
+    "description*": {},
+    "required": [
+        "type"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSW95efaf34e2c7439e8e7967233910e44b"
+            ]
+        }
+    }
+}

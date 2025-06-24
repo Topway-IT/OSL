@@ -1,0 +1,33 @@
+{
+    "subclass_of": [
+        "Category:Item"
+    ],
+    "type": [
+        "Category:Category"
+    ],
+    "uuid": "712583f2-4799-44de-b254-6b77cf860dda",
+    "label": [
+        {
+            "text": "Creative Work",
+            "lang": "en"
+        },
+        {
+            "text": "Produkt kreativer Arbeit",
+            "lang": "de"
+        }
+    ],
+    "instance_rdf_type": [
+        "schema:CreativeWork"
+    ],
+    "description": [
+        {
+            "text": "The most generic kind of (product of) creative work, including books, movies, photographs, software programs, etc.",
+            "lang": "en"
+        },
+        {
+            "text": "Die allgemeinste Art eines Produktes kreativer Arbeit, einschließlich Bücher, Filme, Fotos, Softwareprogramme usw.",
+            "lang": "de"
+        }
+    ],
+    "name": "CreativeWork"
+}

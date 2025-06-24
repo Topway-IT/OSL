@@ -1,0 +1,17 @@
+<table class="info_box">
+<tr>
+<th class="heading" colspan="2">{{{_label_schema|Software}}}</th>
+</tr>
+<tr>
+<th>{{#switch:{{USERLANGUAGECODE}}|en=Repository|de=Repository}}</th>
+<td>{{#arraymap:{{{repository|}}}|<nowiki> </nowiki>|__REPO__|* [__REPO__ {{#explode: {{#explode: __REPO__ |//|1}} |/|0}}]|\n}}<!-- create a link list with domains as labels --></td>
+</tr>
+</table>
+
+
+{{#if: {{{readme|}}}|
+= Readme =
+{{Template:Viewer/Github/Code|url={{{readme|}}} }}<!-- display the Readme -->|
+{{#ifeq: {{#explode: {{#explode: {{#explode:{{{repository|}}}| |0}} |//|1}} |/|0}}|github.com|
+= Readme =
+{{Template:Viewer/Github/Code|url={{#explode:{{{repository|}}}| |0}}/blob/main/README.md }}<!-- display the Readme of the first repo if it's a github repo -->|}} }}

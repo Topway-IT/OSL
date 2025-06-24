@@ -1,0 +1,39 @@
+{
+    "subproperty_of": [
+        "Property:HasBudget"
+    ],
+    "base_property": "Property:HasMonetaryValue",
+    "type": [
+        "Category:OSW69f251a900944602a08d1cca830249b5"
+    ],
+    "name": "HasWeightedBudget",
+    "property_type": "Quantity",
+    "uuid": "8db167c6-44b0-4cd8-b21b-62b85d612955",
+    "label": [
+        {
+            "text": "Weighted Budget",
+            "lang": "en"
+        },
+        {
+            "text": "Gewichtetes Budget",
+            "lang": "de"
+        }
+    ],
+    "description": [
+        {
+            "text": "Budget weighted with probability of successful funding",
+            "lang": "en"
+        },
+        {
+            "text": "Budget gewichtet mit Erfolgswahrscheinlichkeit",
+            "lang": "de"
+        }
+    ],
+    "display_units": [
+        "Property:HasMonetaryValue#OSW583190e955a245a0a88cdc4b60d1de92",
+        "Property:HasMonetaryValue#OSWa58c8789101f4772877df5f7d858d14c"
+    ],
+    "based_on": [
+        "Property:HasBudget"
+    ]
+}

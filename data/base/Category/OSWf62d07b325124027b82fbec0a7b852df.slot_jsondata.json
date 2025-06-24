@@ -1,0 +1,33 @@
+{
+    "type": [
+        "Category:Category"
+    ],
+    "subclass_of": [
+        "Category:OSW0e084decca6f48a7b023d6b7b2c1452d"
+    ],
+    "utf8_icon": [
+        "📆"
+    ],
+    "uuid": "f62d07b3-2512-4027-b82f-bec0a7b852df",
+    "label": [
+        {
+            "text": "Event Series",
+            "lang": "en"
+        },
+        {
+            "text": "Eventserie",
+            "lang": "de"
+        }
+    ],
+    "description": [
+        {
+            "text": "A recurring event, e.g., a jour fixe, a conference series",
+            "lang": "en"
+        },
+        {
+            "text": "Ein wiederkehrendes Ereignis, beispielsweise ein Jour Fixe oder eine Konferenz(serie)",
+            "lang": "de"
+        }
+    ],
+    "name": "EventSeries"
+}

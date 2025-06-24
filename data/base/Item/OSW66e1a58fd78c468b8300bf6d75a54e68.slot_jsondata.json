@@ -1,0 +1,30 @@
+{
+    "type": [
+        "Category:OSW595b282aedf048788f3ee326454792ce"
+    ],
+    "rdf_type": [
+        "schema:Enumeration"
+    ],
+    "uuid": "66e1a58f-d78c-468b-8300-bf6d75a54e68",
+    "label": [
+        {
+            "text": "Travel",
+            "lang": "en"
+        },
+        {
+            "text": "Reise",
+            "lang": "de"
+        }
+    ],
+    "description": [
+        {
+            "text": "Budget to be used for travel expenses",
+            "lang": "en"
+        },
+        {
+            "text": "Für Reisekosten zu verwendendes Budget",
+            "lang": "de"
+        }
+    ],
+    "name": "Travel"
+}

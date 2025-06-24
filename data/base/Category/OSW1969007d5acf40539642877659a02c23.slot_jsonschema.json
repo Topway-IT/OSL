@@ -1,0 +1,33 @@
+{
+    "@context": [
+        "/wiki/Category:OSW3cb8cef2225e403092f098f99bc4c472?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSW3cb8cef2225e403092f098f99bc4c472?action=raw&slot=jsonschema"
+        }
+    ],
+    "defaultProperties": [
+        "image",
+        "website",
+        "postal_address",
+        "member_of"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSW1969007d5acf40539642877659a02c23"
+            ]
+        }
+    },
+    "type": "object",
+    "title": "Organization",
+    "title*": {
+        "de": "Organisation"
+    },
+    "uuid": "1969007d-5acf-4053-9642-877659a02c23",
+    "id": "OSW1969007d5acf40539642877659a02c23",
+    "required": [
+        "type"
+    ]
+}

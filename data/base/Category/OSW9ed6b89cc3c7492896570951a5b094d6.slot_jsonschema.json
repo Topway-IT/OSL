@@ -1,0 +1,57 @@
+{
+    "@context": [
+        "/wiki/Category:OSWf62d07b325124027b82fbec0a7b852df?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSWf62d07b325124027b82fbec0a7b852df?action=raw&slot=jsonschema"
+        }
+    ],
+    "type": "object",
+    "uuid": "9ed6b89c-c3c7-4928-9657-0951a5b094d6",
+    "title": "MeetingSeries",
+    "title*": {
+        "en": "Meeting Series",
+        "de": "Meetingserie"
+    },
+    "description": "A recurring meeting, e.g., a jour fixe",
+    "description*": {
+        "en": "A recurring meeting, e.g., a jour fixe",
+        "de": "Ein wiederkehrendes Treffen, z. B. ein Jour Fixe"
+    },
+    "required": [
+        "type"
+    ],
+    "defaultProperties": [
+        "series_pattern",
+        "allday",
+        "start_date",
+        "end_date",
+        "event_series",
+        "location_name",
+        "participants",
+        "minutes_taker",
+        "organizer",
+        "project",
+        "event_classifier",
+        "associated_ou"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSW9ed6b89cc3c7492896570951a5b094d6"
+            ]
+        },
+        "series_pattern": {
+            "defaultProperties": [
+                "by_day",
+                "by_month_day",
+                "by_month",
+                "by_month_week",
+                "except_dates",
+                "repeat_count",
+                "schedule_timezone"
+            ]
+        }
+    }
+}

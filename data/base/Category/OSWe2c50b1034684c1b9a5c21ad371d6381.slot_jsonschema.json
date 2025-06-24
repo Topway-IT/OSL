@@ -1,0 +1,45 @@
+{
+    "@context": [
+        "/wiki/Category:OSW712583f2479944deb2546b77cf860dda?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSW712583f2479944deb2546b77cf860dda?action=raw&slot=jsonschema"
+        }
+    ],
+    "type": "object",
+    "uuid": "e2c50b10-3468-4c1b-9a5c-21ad371d6381",
+    "title": "HowTo",
+    "title*": {
+        "en": "How To",
+        "de": "Anleitung"
+    },
+    "description": "Instructions that explain how to achieve a result by performing a sequence of steps.",
+    "description*": {
+        "en": "Instructions that explain how to achieve a result by performing a sequence of steps.",
+        "de": "Anweisungen, die erklären, wie man ein Ergebnis durch eine Abfolge von Schritten erreicht."
+    },
+    "required": [
+        "type",
+        "rdf_type"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSWe2c50b1034684c1b9a5c21ad371d6381"
+            ]
+        },
+        "rdf_type": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "default": [
+                "schema:HowTo"
+            ],
+            "options": {
+                "hidden": true
+            }
+        }
+    }
+}

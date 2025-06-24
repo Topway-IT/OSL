@@ -1,0 +1,27 @@
+{
+    "uuid": "ce353767-c628-45bd-9d88-d6eb3009aec0",
+    "label": [
+        {
+            "text": "Entity",
+            "lang": "en"
+        },
+        {
+            "text": "Entität",
+            "lang": "de"
+        }
+    ],
+    "name": "Entity",
+    "description": [
+        {
+            "text": "This is meant to be the most basic category.",
+            "lang": "en"
+        },
+        {
+            "text": "Dies soll die aller grundlegendste Kategorie sein.",
+            "lang": "de"
+        }
+    ],
+    "type": [
+        "Category:Category"
+    ]
+}

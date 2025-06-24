@@ -1,0 +1,15 @@
+{
+    "type": [
+        "Category:ObjectProperty"
+    ],
+    "name": "HasApprover",
+    "property_type": "Page",
+    "uuid": "6a261d91-bbec-46ef-9910-99f44220b948",
+    "label": [
+        {
+            "text": "HasApprover",
+            "lang": "en"
+        }
+    ],
+    "description": []
+}

@@ -1,0 +1,36 @@
+{
+    "subclass_of": [
+        "Category:OSWe2c50b1034684c1b9a5c21ad371d6381"
+    ],
+    "type": [
+        "Category:Category"
+    ],
+    "uuid": "81e9e22e-7d93-4382-a6a5-6df7d3736957",
+    "label": [
+        {
+            "text": "Recipe",
+            "lang": "en"
+        },
+        {
+            "text": "Rezept",
+            "lang": "de"
+        }
+    ],
+    "description": [
+        {
+            "text": "Preparation instructions, e.g. for a dish",
+            "lang": "en"
+        },
+        {
+            "text": "Eine Zubereitungsanleitung, z. B. für ein Gericht",
+            "lang": "de"
+        }
+    ],
+    "utf8_icon": [
+        "📝"
+    ],
+    "name": "Recipe",
+    "instance_rdf_type": [
+        "schema:Recipe"
+    ]
+}

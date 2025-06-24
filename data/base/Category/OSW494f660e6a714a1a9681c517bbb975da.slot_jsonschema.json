@@ -1,0 +1,121 @@
+{
+    "@context": [
+        "/wiki/Category:OSW92cc6b1a2e6b4bb7bad470dfdcfdaf26?action=raw&slot=jsonschema",
+        {
+            "required_predecessor": {
+                "@id": "Property:HasRequiredPredecessor",
+                "@type": "@id"
+            },
+            "optional_predecessor": {
+                "@id": "Property:HasOptionalPredecessor",
+                "@type": "@id"
+            },
+            "recommended_successor": {
+                "@id": "Property:HasRecommendedSuccessor",
+                "@type": "@id"
+            }
+        }
+    ],
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSW92cc6b1a2e6b4bb7bad470dfdcfdaf26?action=raw&slot=jsonschema"
+        }
+    ],
+    "title": "Tutorial",
+    "title*": {
+        "de": "Tutorium",
+        "en": "Tutorial"
+    },
+    "description*": {
+        "de": "Schriftliche oder filmische Gebrauchsanleitung",
+        "en": "Instruction in written or cinematic form"
+    },
+    "description": "Instruction in written or cinematic form",
+    "properties": {
+        "required_predecessor": {
+            "type": "array",
+            "title": "Prerequisites (required)",
+            "title*": {
+                "de": "Voraussetzungen (notwendig)"
+            },
+            "eval_template": {
+                "type": "mustache",
+                "mode": "render",
+                "value": "{{#required_predecessor}}[[{{{.}}}]]<br>{{/required_predecessor}}"
+            },
+            "items": {
+                "type": "string",
+                "title": "Prerequisite",
+                "title*": {
+                    "de": "Voraussetzung"
+                },
+                "format": "autocomplete",
+                "options": {
+                    "autocomplete": {
+                        "category": "Category:OSW494f660e6a714a1a9681c517bbb975da"
+                    }
+                }
+            }
+        },
+        "optional_predecessor": {
+            "type": "array",
+            "title": "Prerequisites (optional)",
+            "title*": {
+                "de": "Voraussetzungen (optional)"
+            },
+            "eval_template": {
+                "type": "mustache",
+                "mode": "render",
+                "value": "{{#optional_predecessor}}[[{{{.}}}]]<br>{{/optional_predecessor}}"
+            },
+            "items": {
+                "type": "string",
+                "title": "Prerequisite",
+                "title*": {
+                    "de": "Voraussetzung"
+                },
+                "format": "autocomplete",
+                "options": {
+                    "autocomplete": {
+                        "category": "Category:OSW494f660e6a714a1a9681c517bbb975da"
+                    }
+                }
+            }
+        },
+        "recommended_successor": {
+            "type": "array",
+            "title": "Follow-up (recommended)",
+            "title*": {
+                "de": "Nachfolge-Lerneinheit (empfohlen)"
+            },
+            "eval_template": {
+                "type": "mustache",
+                "mode": "render",
+                "value": "{{#recommended_successor}}[[{{{.}}}]]<br>{{/recommended_successor}}"
+            },
+            "items": {
+                "type": "string",
+                "title": "Follow-up",
+                "title*": {
+                    "de": "Nachfolge-Lerneinheit"
+                },
+                "format": "autocomplete",
+                "options": {
+                    "autocomplete": {
+                        "category": "Category:OSW494f660e6a714a1a9681c517bbb975da"
+                    }
+                }
+            }
+        },
+        "type": {
+            "default": [
+                "Category:OSW494f660e6a714a1a9681c517bbb975da"
+            ]
+        }
+    },
+    "uuid": "494f660e-6a71-4a1a-9681-c517bbb975da",
+    "required": [
+        "type"
+    ]
+}

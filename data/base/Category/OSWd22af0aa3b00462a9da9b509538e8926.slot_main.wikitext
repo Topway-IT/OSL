@@ -1,0 +1,24 @@
+=={{#switch:{{USERLANGUAGECODE}}|en=Deadlines|de=Fristen|#default=Deadlines}}==
+<!-- Does not support display title {{#ask: [[{{FULLPAGENAME}}]]
+ |?HasEndDate
+ |format=moderntimeline
+ |start at end=yes
+ |image property=HasImage
+ |limit=500
+}} -->
+{{#ask: [[{{FULLPAGENAME}}]]
+ |?Display title of=
+ |?HasDescription=
+ |?HasEndDate={{#switch:{{USERLANGUAGECODE}}|en=Deadline|de=Frist|#default=Deadline}}
+ |format=timeline
+ |timelinebands=MONTH
+ |timelineposition=last
+}}
+
+=={{#switch:{{USERLANGUAGECODE}}|en=Overview Table|de=Übersichtstabelle|#default=Overview Table}}==
+{{#ask: [[{{FULLPAGENAME}}]]
+|?HasDescription={{#switch:{{USERLANGUAGECODE}}|en=Description|de=Beschreibung|#default=Description}} |+lang={{USERLANGUAGECODE}}
+|?HasEndDate={{#switch:{{USERLANGUAGECODE}}|en=Deadline|de=Frist|#default=Deadline}}
+|format=datatable
+|limit=1000
+}}

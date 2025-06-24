@@ -1,0 +1,45 @@
+{
+    "@context": [
+        "/wiki/Category:OSW0e084decca6f48a7b023d6b7b2c1452d?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSW0e084decca6f48a7b023d6b7b2c1452d?action=raw&slot=jsonschema"
+        }
+    ],
+    "type": "object",
+    "uuid": "5c7c84f0-bfbe-4347-ba7f-be7b346fd106",
+    "title": "Meeting",
+    "title*": {
+        "en": "Meeting",
+        "de": "Meeting"
+    },
+    "description": "A meeting, either local, remote or hybrid. This element is intended to be used to document meetings. It is dedicated especially to notes, resolutions and tasks. For recurring meetings (series), the tasks should be managed there",
+    "description*": {
+        "en": "A meeting, either local, remote or hybrid. This element is intended to be used to document meetings. It is dedicated especially to notes, resolutions and tasks. For recurring meetings (series), the tasks should be managed there",
+        "de": "Eine Besprechung, entweder lokal, ferngesteuert oder gemischt. Dieses Element ist für die Dokumentation von Besprechungen gedacht. Es ist insbesondere für Notizen, Beschlüsse und Aufgaben vorgesehen. Bei wiederkehrenden Besprechungen (Serien) sollten die Aufgaben dort verwaltet werden"
+    },
+    "required": [
+        "type"
+    ],
+    "defaultProperties": [
+        "allday",
+        "start_date",
+        "end_date",
+        "event_series",
+        "location_name",
+        "participants",
+        "minutes_taker",
+        "organizer",
+        "project",
+        "event_classifier",
+        "associated_ou"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSW5c7c84f0bfbe4347ba7fbe7b346fd106"
+            ]
+        }
+    }
+}

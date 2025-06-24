@@ -1,0 +1,38 @@
+{
+    "subclass_of": [
+        "Category:OSWfe3e842b804445c7bb0dd8ee61da2d70"
+    ],
+    "uuid": "b8b62787-63d5-4b07-84ee-a9d3b3d183a4",
+    "label": [
+        {
+            "text": "Group",
+            "lang": "en"
+        },
+        {
+            "text": "Gruppe",
+            "lang": "de"
+        },
+        {
+            "text": "Working group",
+            "lang": "en"
+        },
+        {
+            "text": "Arbeitsgruppe",
+            "lang": "de"
+        }
+    ],
+    "description": [
+        {
+            "text": "Sub-unit of a department.",
+            "lang": "en"
+        },
+        {
+            "text": "Untereinheit einer Abteilung",
+            "lang": "de"
+        }
+    ],
+    "name": "Group",
+    "type": [
+        "Category:Category"
+    ]
+}

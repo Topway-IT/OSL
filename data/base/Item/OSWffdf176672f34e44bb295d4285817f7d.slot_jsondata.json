@@ -1,0 +1,34 @@
+{
+    "type": [
+        "Category:OSW490e38f9764f4408a244869a0ea98e7c"
+    ],
+    "rdf_type": [
+        "StatusEnumeration"
+    ],
+    "uuid": "ffdf1766-72f3-4e44-bb29-5d4285817f7d",
+    "label": [
+        {
+            "text": "Draft Proposal",
+            "lang": "en"
+        },
+        {
+            "text": "Antragsskizze",
+            "lang": "de"
+        },
+        {
+            "text": "Draft Application",
+            "lang": "en"
+        }
+    ],
+    "description": [
+        {
+            "text": "A two-stage procedure is common for many funding calls. This project status describes a not yet submitted sketch (first stage).",
+            "lang": "en"
+        },
+        {
+            "text": "Bei vielen Förderaufrufen ist ein zweistufiges Verfahren üblich. Dieser Projektstand beschreibt eine noch nicht eingereichte Skizze (erste Stufe).",
+            "lang": "de"
+        }
+    ],
+    "name": "DraftProposal"
+}

@@ -1,0 +1,30 @@
+{
+    "type": [
+        "Category:OSW490e38f9764f4408a244869a0ea98e7c"
+    ],
+    "rdf_type": [
+        "StatusEnumeration"
+    ],
+    "uuid": "09d66492-2ada-4e5e-a2e2-282b926f6a3a",
+    "label": [
+        {
+            "text": "Submitted Draft Application",
+            "lang": "en"
+        },
+        {
+            "text": "Eingereichte Antragsskizze",
+            "lang": "de"
+        }
+    ],
+    "description": [
+        {
+            "text": "A two-stage procedure is common for many funding calls. This project status describes a submitted sketch (first stage).",
+            "lang": "en"
+        },
+        {
+            "text": "Für viele Ausschreibungen ist es ein zweistufiges Verfahren üblich. Dieser Projekstatus beschreibt eine eingereichte Skizze (erste Stufe).",
+            "lang": "de"
+        }
+    ],
+    "name": "SubmittedDraftApplication"
+}

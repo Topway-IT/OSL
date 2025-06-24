@@ -1,0 +1,100 @@
+<includeonly>{{Template:Helper/UI/VE/Visible
+|icon=labFlask
+|content=ChemEditor ''{{{file_name}}}''
+}}
+{{Template:Helper/UI/VE/Hidden 
+|content=<div class="div_kekule_view_edit" id="chemViewEdit_{{#if:{{{uuid|}}}|{{{uuid}}}|{{{file_name}}}}}" style="width:{{{width|600px}}};height:{{{height|500px}}};border:1px solid black;" data-config='{
+  "file_title": "{{#if:{{{uuid|}}}|OSW{{#replace:{{{uuid}}}|-|}}|{{#replace:{{#replace: {{{page_name}}}|/|-}}|:|-}}-{{{file_name}}}}}.kekule.{{{format|json}}}",
+  "file_label": "{{{file_name}}}"
+}'></div>
+}}</includeonly>
+<noinclude>[[Category:OSL/Infrastructure/Template/User]]
+<templatedata>
+{
+	"params": {
+		"file_name": {
+			"label": {
+				"en": "Name",
+				"de": "Name"
+			},
+			"description": {
+				"en": "ChemDoc name",
+				"de": "Name des Dokuments, muss eindeutig auf dieser Seite sein"
+			},
+			"type": "string",
+			"required": true,
+			"autovalue": "chemdoc-01",
+			"suggested": true
+		},
+		"format": {
+			"label": {
+				"en": "File format",
+				"de": "Dateiformat"
+			},
+			"description": {
+				"en": "Storage format for the document (currently only json available)",
+				"de": "Format in dem das Dokument gespeichert wird (aktuell nur json möglich)"
+			},
+			"type": "string",
+			"required": false,
+			"autovalue": "json",
+			"suggested": false
+		},
+		"width": {
+			"label": {
+				"en": "Width ",
+				"de": "Breite"
+			},
+			"description": {
+				"en": "Display width of the document in pixels or percent",
+				"de": "Anzeigebreite des Dokuments in Pixeln oder Prozent"
+			},
+			"type": "string",
+			"autovalue": "600px"
+		},
+		"height": {
+			"label": {
+				"en": "Height",
+				"de": "Höhe"
+			},
+			"description": {
+				"en": "Display height of the document in pixels",
+				"de": "Anzeigehöhe des Dokuments in Pixeln"
+			},
+			"type": "string",
+			"autovalue": "500px"
+		},
+		"page_name": {
+			"label": {
+				"en": "Page name",
+				"de": "Seitename"
+			},
+			"description": {
+				"en": "is filled in automatically",
+				"de": "wird automatisch ausgefüllt"
+			},
+			"type": "wiki-page-name",
+			"autovalue": "{{subst:FULLPAGENAME}}"
+		},
+		"uuid": {
+			"label": {
+				"en": "Unique ID",
+				"de": "Eindeutige ID"
+			},
+			"description": {
+				"en": "Automatically generated and should not be changed",
+				"de": "Wird automatisch generiert und sollte nicht verändert werden"
+			},
+			"type": "string",
+			"required": true,
+			"autovalue": "{{subst:UUID}}"
+		}
+	},
+	"description": {
+		"en": "Adds a ChemEditor",
+		"de": "Erstellt ein Chemie-Editor (Kekule Composer Widget) zum bearbeiten der angegebenen Unterseite"
+	},
+	"format": "block"
+}
+</templatedata>
+</noinclude>

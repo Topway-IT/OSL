@@ -1,0 +1,48 @@
+{
+    "@context": [
+        {
+            "located_in": {
+                "@id": "schema:containedInPlace",
+                "@type": "@id"
+            },
+            "located_in*": {
+                "@id": "Property:IsLocatedIn",
+                "@type": "@id"
+            }
+        },
+        "/wiki/Category:OSW3d238d05316e45a4ac95a11d7b24e36b?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSW3d238d05316e45a4ac95a11d7b24e36b?action=raw&slot=jsonschema"
+        }
+    ],
+    "title": "Floor",
+    "type": "object",
+    "required": [
+        "type"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSW6c4212f1a39342be963d2b9efd19c5c2"
+            ]
+        },
+        "located_in": {
+            "title": "Building",
+            "title*": {
+                "en": "Building",
+                "de": "Gebäude"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "",
+                "type": "string",
+                "format": "autocomplete",
+                "range": "Category:OSW4bcd4a99a73f482ea40ac4210dfab836"
+            },
+            "uniqueItems": true
+        }
+    }
+}

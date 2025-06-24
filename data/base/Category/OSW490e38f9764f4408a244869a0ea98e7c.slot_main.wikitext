@@ -1,0 +1,19 @@
+==Status Sequence==
+{{#mermaid:flowchart TD
+    A[Draft Proposal]
+    --> B(Submitted Draft Application)
+    --> C(Admitted for the full application)
+    A & C --> D(Full Application)
+    --> E(Submitted Full Proposal)
+    --> F(Accepted)
+
+    --> H((Ongoing))
+    --> I(Prolonged)
+    H & I --> J[Complete]
+
+    B & E --> G[Rejected]
+    H --> K[Aborted]
+    A & D & F --> L[Discontinued]
+|
+config.theme = neutral
+}}

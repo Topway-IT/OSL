@@ -1,0 +1,90 @@
+{
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:Item?action=raw&slot=jsonschema"
+        }
+    ],
+    "title": "Person role",
+    "required": [
+        "type"
+    ],
+    "@context": [
+        {
+            "ad_label": "Property:HasAdLabel",
+            "miri_label": "Property:HasMiriLabel",
+            "miri_id": "Property:HasMiriId"
+        }
+    ],
+    "properties": {
+        "ad_label": {
+            "title": "AD label",
+            "title*": {
+                "de": "AD-Label"
+            },
+            "description": "Label of the role in the Active Directory",
+            "description*": {
+                "de": "Label des Rolle im Active Directory"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "",
+                "type": "string"
+            }
+        },
+        "miri_label": {
+            "title": "MIRI label",
+            "title*": {
+                "de": "MIRI-Label"
+            },
+            "description": "Label of the role in MIRI and eDirectory",
+            "description*": {
+                "de": "Label der Rolle in MIRI und eDirectory"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "",
+                "type": "string"
+            }
+        },
+        "miri_id": {
+            "title": "MIRI id",
+            "title*": {
+                "de": "MIRI-ID"
+            },
+            "description": "ID of the role in MIRI",
+            "description*": {
+                "de": "ID der Rolle in MIRI"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "",
+                "type": "string"
+            }
+        },
+        "miri_label_orig": {
+            "title": "Original MIRI label",
+            "title*": {
+                "de": "Ursprüngliches MIRI-Label"
+            },
+            "description": "Original label of the role in MIRI",
+            "description*": {
+                "de": "Ursprüngliches Label der Rolle in MIRI"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "",
+                "type": "string"
+            }
+        },
+        "type": {
+            "default": [
+                "Category:OSW5efde23b1d8c4e1c864ef039cb0616ed"
+            ]
+        }
+    }
+}

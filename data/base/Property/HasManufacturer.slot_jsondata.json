@@ -1,0 +1,14 @@
+{
+    "name": "HasManufacturer",
+    "property_type": "Page",
+    "type": [
+        "Category:Property"
+    ],
+    "uuid": "9af0a3d0-3668-48eb-89ec-02a3a55d7610",
+    "label": [
+        {
+            "text": "",
+            "lang": "en"
+        }
+    ]
+}

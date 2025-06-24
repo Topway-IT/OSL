@@ -1,0 +1,36 @@
+{
+    "subclass_of": [
+        "Category:Item"
+    ],
+    "type": [
+        "Category:Category"
+    ],
+    "uuid": "3cb8cef2-225e-4030-92f0-98f99bc4c472",
+    "label": [
+        {
+            "text": "Organizational unit",
+            "lang": "en"
+        },
+        {
+            "text": "Organisationseinheit",
+            "lang": "de"
+        }
+    ],
+    "description": [
+        {
+            "text": "The most general kind of organizational unit - an organization but also parts of an organization",
+            "lang": "en"
+        },
+        {
+            "text": "Die allgemeinste Art von Organisationseinheit - eine Organisation, aber auch Teile einer Organisation",
+            "lang": "de"
+        }
+    ],
+    "name": "OrganizationalUnit",
+    "instance_rdf_type": [
+        "schema:Organization"
+    ],
+    "utf8_icon": [
+        "🏢"
+    ]
+}

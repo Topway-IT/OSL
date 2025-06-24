@@ -1,0 +1,26 @@
+{
+    "@context": [
+        "/wiki/Category:OSWa5812d3b5119416c8da1606cbe7054eb?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSWa5812d3b5119416c8da1606cbe7054eb?action=raw&slot=jsonschema"
+        }
+    ],
+    "type": "object",
+    "uuid": "5eb9c52b-8045-44dc-870d-fd54ff434428",
+    "title": "Competence",
+    "title*": {
+        "de": "Kompetenz"
+    },
+    "required": [
+        "type"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSW5eb9c52b804544dc870dfd54ff434428"
+            ]
+        }
+    }
+}

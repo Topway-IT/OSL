@@ -1,0 +1,60 @@
+<!--
+==[[:Category:OSW20691106529a419d829f3d057b99f3e1|Categories]] (Process / Idea Level)==
+<div class="pagebot-button" data-config='{  "params": {"categories": ["Category:OSW20691106529a419d829f3d057b99f3e1"]},    "label": "➕ Create Device Category" }'></div>
+<br>
+{{#ask: [[Category:OSW20691106529a419d829f3d057b99f3e1]]
+|?HasTypicalProcess = Typical Process
+|format=datatable
+}}
+==[[:Category:OSWbeec89bdcbc64d8f90a459ba19c46dcc|Types]] (Manufacturer Level) ==
+<div class="pagebot-button" data-config='{    "params": {"categories": ["Category:OSWbeec89bdcbc64d8f90a459ba19c46dcc"]},    "label": "➕ Create Device Type" }'></div>
+<br>
+{{#ask: [[Category:OSWbeec89bdcbc64d8f90a459ba19c46dcc]]
+|?HasDeviceCategory=Device Category
+|format=datatable
+}}
+
+-->
+
+==[[:Category:OSWf0fe562f422d49c6877490b3dfee2f3f|{{#switch:{{USERLANGUAGECODE}}|en=Instances|de=Instanzen/Exemplare|#default=Instances}}]]==  
+
+{{#ask: [[Category:OSWf0fe562f422d49c6877490b3dfee2f3f]]
+|?IsLocatedIn={{#switch:{{USERLANGUAGECODE}}|en=Location|de=Standort|#default=Location}}
+|?HasDepartment={{#switch:{{USERLANGUAGECODE}}|en=Department|de=Abteilung|#default=Department}}
+|?HasResponsiblePerson={{#switch:{{USERLANGUAGECODE}}|en=Responsible Person|de=Verantwortlich|#default=Responsible Person}}
+|format=datatable
+|limit = 2000
+}}
+
+=={{#switch:{{USERLANGUAGECODE}}|en=Device Types (Manufacturer Related Categories)|de=Gerätetypen (Kategorien mit Herstellerbezug)|#default=Device Types (Manufacturer Related Categories)}}==
+{{#ask:
+ [[SubClassOf::Category:OSWf0fe562f422d49c6877490b3dfee2f3f]][[HasManufacturer::+]] OR
+ [[SubClassOf.SubClassOf::Category:OSWf0fe562f422d49c6877490b3dfee2f3f]][[HasManufacturer::+]] OR
+ [[SubClassOf.SubClassOf.SubClassOf::Category:OSWf0fe562f422d49c6877490b3dfee2f3f]][[HasManufacturer::+]] OR
+ [[SubClassOf.SubClassOf.SubClassOf.SubClassOf::Category:OSWf0fe562f422d49c6877490b3dfee2f3f]][[HasManufacturer::+]] OR
+ [[SubClassOf.SubClassOf.SubClassOf.SubClassOf.SubClassOf::Category:OSWf0fe562f422d49c6877490b3dfee2f3f]][[HasManufacturer::+]] 
+ |?HasManufacturer={{#switch:{{USERLANGUAGECODE}}|en=Manufacturer|de=Hersteller|#default=Manufacturer}}
+ |format=datatable
+ |limit = 2000
+}}
+=={{#switch:{{USERLANGUAGECODE}}|en=All Device Categories|de=Alle Gerätekategorien|#default=All Device Categories}} ==
+{{#ask:
+ [[SubClassOf::Category:OSWf0fe562f422d49c6877490b3dfee2f3f]] OR
+ [[SubClassOf.SubClassOf::Category:OSWf0fe562f422d49c6877490b3dfee2f3f]] OR
+ [[SubClassOf.SubClassOf.SubClassOf::Category:OSWf0fe562f422d49c6877490b3dfee2f3f]] OR
+ [[SubClassOf.SubClassOf.SubClassOf.SubClassOf::Category:OSWf0fe562f422d49c6877490b3dfee2f3f]]OR
+ [[SubClassOf.SubClassOf.SubClassOf.SubClassOf.SubClassOf::Category:OSWf0fe562f422d49c6877490b3dfee2f3f]]
+ |?HasManufacturer={{#switch:{{USERLANGUAGECODE}}|en=Manufacturer|de=Hersteller|#default=Manufacturer}}
+ |?HasTypicalProcess={{#switch:{{USERLANGUAGECODE}}|en=Typical Process|de=Typischer Prozess|#default=Typical Process}}
+ |format=datatable
+}}
+
+
+<!--
+{{Template:Editor/DrawIO
+| file_name = On device instances, types, classes and metaclasses
+| page_name = Category:OSWf0fe562f422d49c6877490b3dfee2f3f
+| uuid = d33c9f1b-89bf-4b51-b6fd-9c3bcae0bc6b
+| full_width = 0
+}}
+-->

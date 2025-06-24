@@ -1,0 +1,219 @@
+{
+    "@context": [
+        {
+            "area": {
+                "@id": "schema:floorSize",
+                "@type": "xsd:float"
+            },
+            "area*": {
+                "@id": "Property:HasArea",
+                "@type": "xsd:float"
+            },
+            "construction_year": {
+                "@id": "schema:yearBuilt",
+                "@type": "xsd:integer"
+            },
+            "construction_year*": {
+                "@id": "Property:HasConstructionYear",
+                "@type": "xsd:integer"
+            },
+            "door_height": {
+                "@id": "Property:HasDoorHeight",
+                "@type": "xsd:float"
+            },
+            "door_width": {
+                "@id": "Property:HasDoorWidth",
+                "@type": "xsd:float"
+            },
+            "height": {
+                "@id": "schema:height",
+                "@type": "xsd:float"
+            },
+            "height*": {
+                "@id": "Property:HasHeight",
+                "@type": "xsd:float"
+            },
+            "length": {
+                "@id": "Property:HasLength",
+                "@type": "xsd:float"
+            },
+            "located_in": {
+                "@id": "schema:containedInPlace",
+                "@type": "@id"
+            },
+            "located_in*": {
+                "@id": "Property:IsLocatedIn",
+                "@type": "@id"
+            },
+            "number": {
+                "@id": "Property:HasRoomNumber",
+                "@type": "xsd:string"
+            },
+            "responsible_person": {
+                "@id": "Property:HasResponsiblePerson",
+                "@type": "@id"
+            },
+            "usage": {
+                "@id": "Property:HasRoomUsage",
+                "@type": "@id"
+            },
+            "usage_type": {
+                "@id": "Property:HasRoomUsageType",
+                "@type": "@id"
+            },
+            "width": {
+                "@id": "schema:width",
+                "@type": "xsd:float"
+            },
+            "width*": {
+                "@id": "Property:HasWidth",
+                "@type": "xsd:float"
+            }
+        },
+        "/wiki/Category:OSW3d238d05316e45a4ac95a11d7b24e36b?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSW3d238d05316e45a4ac95a11d7b24e36b?action=raw&slot=jsonschema"
+        }
+    ],
+    "title": "Room",
+    "type": "object",
+    "required": [
+        "type"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSWc5ed0ed1e33c4b31887c67af25a610c1"
+            ]
+        },
+        "located_in": {
+            "title": "Floor",
+            "title*": {
+                "de": "Stockwerk",
+                "en": "Floor"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "",
+                "type": "string",
+                "format": "autocomplete",
+                "range": "Category:OSW6c4212f1a39342be963d2b9efd19c5c2"
+            },
+            "uniqueItems": true
+        },
+        "usage_type": {
+            "title": "Room usage type",
+            "title*": {
+                "en": "Room usage type",
+                "de": "Raumnutzungsart"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "",
+                "type": "string",
+                "format": "autocomplete",
+                "range": "Category:OSLae92be81cdb34d22844d4791ef790d93"
+            },
+            "uniqueItems": true
+        },
+        "length": {
+            "title": "Length",
+            "title*": {
+                "de": "Länge",
+                "en": "Length"
+            },
+            "type": "number"
+        },
+        "width": {
+            "title": "Width",
+            "title*": {
+                "de": "Breite",
+                "en": "Width"
+            },
+            "type": "number"
+        },
+        "height": {
+            "title": "Height",
+            "title*": {
+                "de": "Höhe",
+                "en": "Height"
+            },
+            "type": "number"
+        },
+        "area": {
+            "title": "Area",
+            "title*": {
+                "de": "Fläche",
+                "en": "Area"
+            },
+            "type": "number"
+        },
+        "door_width": {
+            "title": "Door width",
+            "title*": {
+                "de": "Türbreite",
+                "en": "Door width"
+            },
+            "type": "number"
+        },
+        "door_height": {
+            "title": "Door height",
+            "title*": {
+                "de": "Türhöhe",
+                "en": "Door height"
+            },
+            "type": "number"
+        },
+        "number": {
+            "title": "Number",
+            "title*": {
+                "en": "Number",
+                "de": "Nummer"
+            },
+            "type": "string"
+        },
+        "usage": {
+            "title": "Room usage",
+            "title*": {
+                "en": "Room usage",
+                "de": "Raumnutzung"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "",
+                "type": "string",
+                "format": "autocomplete",
+                "range": "Category:OSWac9f0e49d8024804bd7d77058322a3fe"
+            },
+            "uniqueItems": true
+        },
+        "responsible_person": {
+            "title": "Responsible person",
+            "title*": {
+                "de": "Verantwortliche Person",
+                "en": "Responsible person"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "",
+                "type": "string",
+                "format": "autocomplete",
+                "range": "Category:OSWd9aa0bca9b0040d8af6f5c091bf9eec7"
+            },
+            "uniqueItems": true
+        }
+    },
+    "uuid": "c5ed0ed1-e33c-4b31-887c-67af25a610c1",
+    "title*": {
+        "en": "Room",
+        "de": "Raum"
+    },
+    "description": "",
+    "description*": {}
+}

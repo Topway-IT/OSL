@@ -1,0 +1,33 @@
+{
+    "subclass_of": [
+        "Category:OSW137e7443b2b94692bd59a0e0a6778b70"
+    ],
+    "type": [
+        "Category:Category"
+    ],
+    "uuid": "807f1da5-b42e-42f2-96b2-13ab06ca873b",
+    "label": [
+        {
+            "text": "City",
+            "lang": "en"
+        },
+        {
+            "text": "Stadt",
+            "lang": "en"
+        }
+    ],
+    "description": [
+        {
+            "text": "A city or town.",
+            "lang": "en"
+        },
+        {
+            "text": "Eine Stadt oder ein Ort, im Sinne einer Gemeinde",
+            "lang": "de"
+        }
+    ],
+    "instance_rdf_type": [
+        "schema:City"
+    ],
+    "name": "City"
+}

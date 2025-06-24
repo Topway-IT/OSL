@@ -1,0 +1,60 @@
+<table class="info_box">
+<tr>
+<th class="heading" colspan="2">{{{_label_schema|Device}}}</th>
+</tr>
+<tr>
+    
+<th>{{#switch:{{USERLANGUAGECODE}}|en=Measurement Channels|de=Messkanäle}}</th></th>
+<td>{{#ask:[[{{FULLPAGENAME}}]]|?HasMeasurementChannels=|format=plain|mainlabel=-}}</td> 
+</tr>
+    
+<th>{{#switch:{{USERLANGUAGECODE}}
+        |en=Responsible Person
+        |de=Verantwortliche Person}}</th>
+<td>{{#ask:[[{{FULLPAGENAME}}]]|?HasResponsiblePerson=|format=plain|mainlabel=-}}</td> 
+</tr>
+
+<tr>
+<th>{{#switch:{{USERLANGUAGECODE}}|en=Location|de=Ort}}</th></th>
+<td>{{#ask:[[{{FULLPAGENAME}}]]|?IsLocatedIn=|format=plain|mainlabel=-}}</td> 
+</tr>
+
+<tr>
+<th>{{#switch:{{USERLANGUAGECODE}}|en=Workgroup|de=Arbeitsgruppe}}</th></th>
+<td>{{#ask:[[{{FULLPAGENAME}}]]|?HasDepartment=|format=plain|mainlabel=-}}</td> 
+</tr>
+
+<tr>
+<th>{{#switch:{{USERLANGUAGECODE}}|en=Inventory Number|de=Inventarnummer}}</th></th>
+<td>{{#ask:[[{{FULLPAGENAME}}]]|?HasInventoryNumber=|format=plain|mainlabel=-}}</td> 
+</tr>
+
+<tr>
+<th>{{#switch:{{USERLANGUAGECODE}}|en=Serial Number|de=Seriennummer}}</th></th>
+<td>{{#ask:[[{{FULLPAGENAME}}]]|?HasSerialNumber=|format=plain|mainlabel=-}}</td> 
+</tr>
+
+<tr>
+<th>{{#switch:{{USERLANGUAGECODE}}|en=Risk Assessment|de=Risikobeurteilung}}</th></th>
+<td>{{#ask:[[{{FULLPAGENAME}}]]|?HasRiskAssessment=|format=plain|mainlabel=-}}</td> 
+</tr>
+
+<th class="heading" colspan="2">{{{_label_schema|Type Information}}}</th>
+
+
+<tr>
+<th>{{#switch:{{USERLANGUAGECODE}}|en=Type Name|de=Typenname}}</th></th>
+<td>{{#ask:[[-HasType::{{FULLPAGENAME}}]][[HasManufacturer::+]]|?HasName=|format=plain|mainlabel=-}}</td> 
+</tr>
+    
+<tr>
+<th>{{#switch:{{USERLANGUAGECODE}}|en=Manufacturer|de=Hersteller}}</th></th>
+<td>{{#ask:[[-HasType::{{FULLPAGENAME}}]][[HasManufacturer::+]]|?HasManufacturer=|format=plain|mainlabel=-}}</td> 
+</tr>
+
+<tr>
+<th>{{#switch:{{USERLANGUAGECODE}}|en=Manual|de=Bedienungsanleitung}}</th></th>
+<td>{{#ask:[[-HasType::{{FULLPAGENAME}}]]|?HasManual=|format=plain|mainlabel=-}}</td> 
+</tr>
+
+</table>

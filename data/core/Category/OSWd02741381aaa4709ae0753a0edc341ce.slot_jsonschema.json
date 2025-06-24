@@ -1,0 +1,32 @@
+{
+    "@context": [
+        "/wiki/Category:OSWcbb09a36336740c6a2cd62db9bf647ec?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSWcbb09a36336740c6a2cd62db9bf647ec?action=raw&slot=jsonschema"
+        }
+    ],
+    "type": "object",
+    "uuid": "d0274138-1aaa-4709-ae07-53a0edc341ce",
+    "title": "Enumeration",
+    "title*": {
+        "en": "Enumeration",
+        "de": "Aufzählung"
+    },
+    "description": "Lists or enumerations—for example, a list of cuisines or music genres, etc.",
+    "description*": {
+        "en": "Lists or enumerations—for example, a list of cuisines or music genres, etc.",
+        "de": "Listen oder Aufzählungen - zum Beispiel eine Liste von Küchen oder Musikrichtungen usw."
+    },
+    "required": [
+        "type"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSWd02741381aaa4709ae0753a0edc341ce"
+            ]
+        }
+    }
+}

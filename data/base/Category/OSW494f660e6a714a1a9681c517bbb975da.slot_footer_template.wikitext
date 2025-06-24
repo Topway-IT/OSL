@@ -1,0 +1,12 @@
+
+== Tutorial Graph ==
+{{Template:Editor/Graph
+| file_name = graph-01
+| page_name = {{FULLPAGENAME}}
+| root = {{FULLPAGENAME}}
+| properties = HasPart; HasRequiredPredecessor; HasOptionalPredecessor; HasRecommendedSuccessor; -HasRequiredPredecessor; -HasOptionalPredecessor; -HasRecommendedSuccessor; HasImage
+| depth = 5
+| full_width = 1
+| edit = 0
+| edge_labels = 0
+}}

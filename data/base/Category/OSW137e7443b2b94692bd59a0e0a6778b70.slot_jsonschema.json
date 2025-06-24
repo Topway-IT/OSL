@@ -1,0 +1,32 @@
+{
+    "@context": [
+        "/wiki/Category:OSW28f71f2c20ad48c38c4e4d190a95c0b8?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSW28f71f2c20ad48c38c4e4d190a95c0b8?action=raw&slot=jsonschema"
+        }
+    ],
+    "type": "object",
+    "uuid": "137e7443-b2b9-4692-bd59-a0e0a6778b70",
+    "title": "AdministrativeArea",
+    "title*": {
+        "en": "Administrative Area",
+        "de": "Verwaltungsbereich"
+    },
+    "description": "A geographical region, typically under the jurisdiction of a particular government.",
+    "description*": {
+        "en": "A geographical region, typically under the jurisdiction of a particular government.",
+        "de": "Eine geografische Region, die in der Regel unter die Zuständigkeit einer bestimmten Regierung fällt."
+    },
+    "required": [
+        "type"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSW137e7443b2b94692bd59a0e0a6778b70"
+            ]
+        }
+    }
+}

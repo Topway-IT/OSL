@@ -1,0 +1,39 @@
+{
+    "subclass_of": [
+        "Category:OSWfe3e842b804445c7bb0dd8ee61da2d70"
+    ],
+    "uuid": "94aa0742-5537-4580-b703-37340c5ccc1b",
+    "label": [
+        {
+            "text": "Department",
+            "lang": "en"
+        },
+        {
+            "text": "Abteilung",
+            "lang": "de"
+        },
+        {
+            "text": "Fachbereich",
+            "lang": "de"
+        },
+        {
+            "text": "Ressort ",
+            "lang": "de"
+        },
+        {
+            "text": "Division",
+            "lang": "en"
+        }
+    ],
+    "description": [
+        {
+            "text": "Sub-unit of an university institute or a corporation.",
+            "lang": "en"
+        },
+        {
+            "text": "Untereinheit eines Instituts der Universität oder eines Unternehmens.",
+            "lang": "de"
+        }
+    ],
+    "name": "Department"
+}

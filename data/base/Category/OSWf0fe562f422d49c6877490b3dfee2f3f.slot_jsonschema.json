@@ -1,0 +1,140 @@
+{
+    "@context": [
+        {
+            "responsible_person": "Property:HasResponsiblePerson",
+            "location": "Property:IsLocatedIn",
+            "organizational_unit": "Property:HasDepartment",
+            "inventory_number": "Property:HasInventoryNumber",
+            "risk_assessment": "Property:HasRiskAssessment",
+            "owner": "Property:HasOwner",
+            "serial_number": "Property:HasSerialNumber"
+        },
+        "/wiki/Category:OSWe427aafafbac4262955b9f690a83405d?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSWe427aafafbac4262955b9f690a83405d?action=raw&slot=jsonschema"
+        }
+    ],
+    "title": "Device",
+    "type": "object",
+    "properties": {
+        "responsible_person": {
+            "type": "array",
+            "title": "Responsible Person",
+            "title*": {
+                "de": "Verantwortliche Person(en)"
+            },
+            "items": {
+                "title": "Responsible Person",
+                "title*": {
+                    "de": "Verantwortliche Person"
+                },
+                "type": "string",
+                "format": "autocomplete",
+                "range": "Category:OSW44deaa5b806d41a2a88594f562b110e9"
+            }
+        },
+        "location": {
+            "title": "Location",
+            "title*": {
+                "de": "Ort",
+                "en": "Location"
+            },
+            "type": "array",
+            "items": {
+                "title": "Location",
+                "title*": {
+                    "de": "Ort"
+                },
+                "type": "string",
+                "format": "autocomplete",
+                "range": "Category:OSW3d238d05316e45a4ac95a11d7b24e36b"
+            }
+        },
+        "location_name": {
+            "title": "Location Name",
+            "description": "Only use if Location Object cannot be found and created",
+            "title*": {
+                "de": "Ort (Name)"
+            },
+            "type": "array",
+            "items": {
+                "title": "",
+                "type": "string"
+            }
+        },
+        "organizational_unit": {
+            "type": "array",
+            "title": "Organizational Unit",
+            "title*": {
+                "de": "Organisationseinheit(en)"
+            },
+            "items": {
+                "title": "Organizational Unit",
+                "title*": {
+                    "de": "Organisationseinheit"
+                },
+                "type": "string",
+                "format": "autocomplete",
+                "range": "Category:OSWb8b6278763d54b0784eea9d3b3d183a4"
+            }
+        },
+        "inventory_number": {
+            "title": "Inventory Number",
+            "title*": {
+                "de": "Inventarnummer"
+            },
+            "type": "string"
+        },
+        "risk_assessment": {
+            "title": "Risk Assessment",
+            "title*": {
+                "de": "Gefährdungsbeurteilung"
+            },
+            "type": "string",
+            "format": "autocomplete",
+            "range": "Category:OSW3886740859ae459588fee73d3bb3c83e"
+        },
+        "serial_number": {
+            "title": "Serial Number",
+            "title*": {
+                "de": "Seriennummer"
+            },
+            "type": "string",
+            "description": "The Serial Number written on the device"
+        },
+        "owner": {
+            "title": "Owner",
+            "title*": {
+                "de": "Eigentümer"
+            },
+            "type": "string"
+        },
+        "type": {
+            "default": [
+                "Category:OSWf0fe562f422d49c6877490b3dfee2f3f"
+            ]
+        }
+    },
+    "defaultProperties": [
+        "image",
+        "responsible_person",
+        "location",
+        "inventory_number",
+        "risk_assessment"
+    ],
+    "uuid": "f0fe562f-422d-49c6-8774-90b3dfee2f3f",
+    "title*": {
+        "en": "Device",
+        "de": "Gerät"
+    },
+    "description": "A Tool that is a (phyiscal) piece of Hardware.",
+    "description*": {
+        "en": "A Tool that is a (phyiscal) piece of Hardware.",
+        "de": "Ein Werkzeug, das ein (physisches) Stück Ausrüstung ist."
+    },
+    "required": [
+        "type"
+    ]
+}

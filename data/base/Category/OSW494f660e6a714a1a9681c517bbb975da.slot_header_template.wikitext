@@ -1,0 +1,24 @@
+<table class="info_box">
+<tr>
+<th class="heading" colspan="2">{{{_label_schema|Tutorial}}}</th>
+</tr>
+<!--
+<tr>
+<td class="subheading" colspan="2">Info</td>
+</tr>
+-->
+
+<tr>
+<th>{{{_label_required_predecessor|Prerequisites (required)}}}</th>
+<td>{{{required_predecessor|}}}</td>
+</tr>
+<tr>
+<th>{{{_label_optional_predecessor|Prerequisites (optional)}}}</th>
+<td>{{{optional_predecessor|}}}</td>
+</tr>
+<tr>
+<th>{{{_label_recommended_successor|Follow-up (recommended)}}}</th>
+<td>{{{recommended_successor|}}}</td>
+</tr>
+</table>
+[{{fullurl:{{FULLPAGENAME}}|reveal=true}} {{#switch: {{USERLANGUAGECODE}} |en=View as slide show |de=Als Präsentation anzeigen |#default=View as slide show}}]

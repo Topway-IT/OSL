@@ -1,0 +1,26 @@
+=={{#switch:{{USERLANGUAGECODE}}|en=Active users |de=Angestellte Nutzer*innen|#default=Active users}}==
+
+{{#ask: [[{{FULLPAGENAME}}]][[HasEmploymentContractStatus::Item:OSW62770459451644f3841c502df8a5cb1d]]
+|?HasOrganization={{#switch: {{USERLANGUAGECODE}} |en=Organization|de=Organisation|#default=Organization}}
+|?IsLocatedIn={{#switch: {{USERLANGUAGECODE}} |en=Located at|de=Standort|#default=Located at}}
+|?HasEmail={{#switch: {{USERLANGUAGECODE}} |en=Email|de=E-Mail|#default=Email}}
+|?HasPhoneNumber={{#switch: {{USERLANGUAGECODE}} |en=Phone |de=Telefon |#default=Phone}}
+|format=datatable
+|limit=1000
+}}
+
+=={{#switch:{{USERLANGUAGECODE}}|en=Inactive users |de=Ausgeschiedene Nutzer*innen|#default=Inactive users}}==
+{{#ask: [[{{FULLPAGENAME}}]][[HasEmploymentContractStatus::Item:OSWacf5f4db53264d29ae8744d03796be0b]]
+|?HasOrganization={{#switch: {{USERLANGUAGECODE}} |en=Organization|de=Organisation|#default=Organization}}
+|?IsLocatedIn={{#switch: {{USERLANGUAGECODE}} |en=Located at|de=Standort|#default=Located at}}
+|?HasEmail={{#switch: {{USERLANGUAGECODE}} |en=Email|de=E-Mail|#default=Email}}
+|?HasPhoneNumber={{#switch: {{USERLANGUAGECODE}} |en=Phone |de=Telefon |#default=Phone}}
+|format=datatable
+|limit=1000
+}}
+
+== Namespaces ==
+for UUID generation via uuid5
+
+* General (same as UUID of the category page): d9aa0bca-9b00-40d8-af6f-5c091bf9eec7 
+* FhG: c3bd285c-1545-59a6-9183-32bee5aeed41

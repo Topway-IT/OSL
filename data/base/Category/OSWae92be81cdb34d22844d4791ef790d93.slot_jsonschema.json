@@ -1,0 +1,40 @@
+{
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:Item?action=raw&slot=jsonschema"
+        }
+    ],
+    "title": "AreaUsageType",
+    "required": [
+        "type"
+    ],
+    "@context": [
+        {
+            "din277_label": "Property:HasDin277Label"
+        }
+    ],
+    "properties": {
+        "din277_label": {
+            "title": "DIN 277 label",
+            "title*": {
+                "de": "DIN 277 Bezeichnung"
+            },
+            "desciption": "Label according to DIN 277",
+            "description*": {
+                "de": "Bezeichnung nach DIN 277"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "",
+                "type": "string"
+            }
+        },
+        "type": {
+            "default": [
+                "Category:OSWae92be81cdb34d22844d4791ef790d93"
+            ]
+        }
+    }
+}

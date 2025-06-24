@@ -1,0 +1,31 @@
+{
+    "type": [
+        "Category:ObjectProperty"
+    ],
+    "range": [
+        "Category:OSW78e0bffd49c540c18b7fcf4b1210f6c4"
+    ],
+    "name": "HasPostalAddress",
+    "property_type": "Page",
+    "uuid": "75fd2ff3-8e3a-4208-aaee-0bf1dfe8bf7c",
+    "label": [
+        {
+            "text": "Postal Address",
+            "lang": "en"
+        },
+        {
+            "text": "Postanschrift",
+            "lang": "de"
+        }
+    ],
+    "description": [
+        {
+            "text": "Assigns a postal address",
+            "lang": "de"
+        },
+        {
+            "text": "Weist eine Postanschrift zu",
+            "lang": "de"
+        }
+    ]
+}

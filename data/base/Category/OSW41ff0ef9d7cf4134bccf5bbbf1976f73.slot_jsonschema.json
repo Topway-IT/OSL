@@ -1,0 +1,32 @@
+{
+    "@context": [
+        "/wiki/Category:OSW1969007d5acf40539642877659a02c23?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSW1969007d5acf40539642877659a02c23?action=raw&slot=jsonschema"
+        }
+    ],
+    "type": "object",
+    "uuid": "41ff0ef9-d7cf-4134-bccf-5bbbf1976f73",
+    "title": "GovermentOrganization",
+    "title*": {
+        "en": "Goverment Organization",
+        "de": "Staatliche Organisation"
+    },
+    "description": "A governmental organization or agency.",
+    "description*": {
+        "en": "A governmental organization or agency.",
+        "de": "Eine staatliche Organisation oder Behörde."
+    },
+    "required": [
+        "type"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSW41ff0ef9d7cf4134bccf5bbbf1976f73"
+            ]
+        }
+    }
+}

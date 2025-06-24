@@ -1,0 +1,59 @@
+{
+    "@context": [
+        "/wiki/Category:OSWfe3e842b804445c7bb0dd8ee61da2d70?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSWfe3e842b804445c7bb0dd8ee61da2d70?action=raw&slot=jsonschema"
+        }
+    ],
+    "type": "object",
+    "title": "Group",
+    "required": [
+        "type"
+    ],
+    "defaultProperties": [],
+    "properties": {
+        "manager": {
+            "title": "Head",
+            "title*": {
+                "en": "Head",
+                "de": "Leitung"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "",
+                "type": "string",
+                "format": "autocomplete",
+                "query": "[[Category:OSW44deaa5b806d41a2a88594f562b110e9]] |?Display_title_of=label",
+                "previewWikiTextTemplate": "[[:{{result.fulltext}}]]",
+                "labelTemplate": "{{result.printouts.label.[0]}}"
+            },
+            "uniqueItems": true
+        },
+        "superordinate_ou": {
+            "description": "Faculty, institute, department or organization, the group belongs to.",
+            "description*": {
+                "en": "Faculty, institute, department or organization, the group belongs to.",
+                "de": "Fakultät, Institut, Abteilung oder Organisation, der die Gruppe angehört."
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "",
+                "type": "string",
+                "format": "autocomplete",
+                "query": "[[HasType::Category:OSW1969007d5acf40539642877659a02c23]] OR [[HasType::Category:OSW5427361692374c8eaa6bd3733b92d343]] OR [[HasType::Category:OSWa01126bc9e9048988cb0f49e359015bc]] OR [[HasType::Category:OSW94aa074255374580b70337340c5ccc1b]] |?Display_title_of=label",
+                "previewWikiTextTemplate": "[[:{{result.fulltext}}]]",
+                "labelTemplate": "{{result.printouts.label.[0]}}"
+            },
+            "uniqueItems": true
+        },
+        "type": {
+            "default": [
+                "Category:OSWb8b6278763d54b0784eea9d3b3d183a4"
+            ]
+        }
+    }
+}

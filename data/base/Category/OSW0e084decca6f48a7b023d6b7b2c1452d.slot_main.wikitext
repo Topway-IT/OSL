@@ -1,0 +1,7 @@
+=={{#switch: {{USERLANGUAGECODE}} |en=Instances|de=Instanzen|#default=Instances}}==
+{{#ask: [[{{FULLPAGENAME}}]]
+|?HasStartDateAndTime={{#switch: {{USERLANGUAGECODE}} |en=Start date|de=Startdatum|#default=Start date}}
+|?HasEndDateAndTime={{#switch: {{USERLANGUAGECODE}} |en=End date|de=Enddatum|#default=End date}}
+|format=datatable
+|limit=1000
+}}

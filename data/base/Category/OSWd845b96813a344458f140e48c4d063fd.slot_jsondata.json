@@ -1,0 +1,22 @@
+{
+    "subclass_of": [
+        "Category:OSWca99a9bb9ad24386b222d18a73c2af5e"
+    ],
+    "type": [
+        "Category:Category"
+    ],
+    "uuid": "d845b968-13a3-4445-8f14-0e48c4d063fd",
+    "label": [
+        {
+            "text": "Device Type",
+            "lang": "en"
+        }
+    ],
+    "description": [
+        {
+            "text": "Helps Creating DeviceCategories",
+            "lang": "en"
+        }
+    ],
+    "name": "MetaDeviceCategory"
+}

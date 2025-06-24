@@ -1,0 +1,33 @@
+{
+    "@context": [
+        "/wiki/Category:OSW137e7443b2b94692bd59a0e0a6778b70?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSW137e7443b2b94692bd59a0e0a6778b70?action=raw&slot=jsonschema"
+        }
+    ],
+    "type": "object",
+    "uuid": "ab60f9a2-2795-4ee0-be92-344ff6272420",
+    "title": "State",
+    "title*": {
+        "en": "State",
+        "de": "Staat"
+    },
+    "description": "A state or province of a country.",
+    "description*": {
+        "en": "A state or province of a country.",
+        "de": "Ein Staat oder eine Provinz eines Landes."
+    },
+    "required": [
+        "type",
+        "rdf_type"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSWab60f9a227954ee0be92344ff6272420"
+            ]
+        }
+    }
+}

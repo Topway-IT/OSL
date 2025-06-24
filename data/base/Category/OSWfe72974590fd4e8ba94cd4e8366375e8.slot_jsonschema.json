@@ -1,0 +1,133 @@
+{
+    "@context": [
+        "/wiki/Category:OSW2ac4493f8635481eaf1db961b63c8325?action=raw&slot=jsonschema",
+        {
+            "url": "dcat:landingPage",
+            "url*": "Property:HasUrl",
+            "themes": {
+                "@type": "@id",
+                "@id": "dcat:theme"
+            },
+            "themes*": {
+                "@type": "@id",
+                "@id": "Property:IsRelatedTo"
+            },
+            "distributions": {
+                "@type": "@id",
+                "@id": "dcat:distribution"
+            },
+            "distributions*": {
+                "@type": "@id",
+                "@id": "Property:HasDistribution"
+            },
+            "download_url": "dcat:downloadURL",
+            "download_url*": "Property:HasUrl",
+            "data_format": "Property:HasDataFormat",
+            "dataset_schema": "Property:HasDatasetSchema"
+        }
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSW2ac4493f8635481eaf1db961b63c8325?action=raw&slot=jsonschema"
+        }
+    ],
+    "type": "object",
+    "title": "Dataset",
+    "required": [
+        "type"
+    ],
+    "defaultProperties": [
+        "url",
+        "themes"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSWfe72974590fd4e8ba94cd4e8366375e8"
+            ]
+        },
+        "url": {
+            "title": "URL / Websites",
+            "description": "Landing page(s) that documents the dataset",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "format": "url",
+                "title": "URL"
+            }
+        },
+        "themes": {
+            "title": "Themes / Topics",
+            "description": "Terms to categorizes this dataset",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Topic",
+                "format": "autocomplete",
+                "range": "Category:Entity",
+                "options": {
+                    "autocomplete": {
+                        "$comment": "Any Item or Category",
+                        "query": "[[Item:%2B]]OR[[:Category:%2B]]"
+                    }
+                }
+            }
+        },
+        "distributions": {
+            "title": "Distributions / Downloads",
+            "description": "Actual download options for this dataset",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "title": "Distribution",
+                "required": [
+                    "download_url"
+                ],
+                "properties": {
+                    "download_url": {
+                        "title": "Download URL",
+                        "type": "string",
+                        "format": "url"
+                    }
+                }
+            }
+        },
+        "data_format": {
+            "title": "Data format",
+            "description": "Gives a structure to define specific formats of data.",
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "Type",
+                "title*": {
+                    "de": "Type"
+                },
+                "type": "string",
+                "format": "autocomplete",
+                "range": "Category:OSWccac243b31f94574847861e5d9685b82"
+            },
+            "minItems": 1
+        },
+        "dataset_schema": {
+            "title": "Dataset schema",
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "Type",
+                "title*": {
+                    "de": "Type"
+                },
+                "type": "string",
+                "format": "autocomplete",
+                "range": "Category:OSW0d6584b3e2b64e9595733c4c3963c486"
+            },
+            "minItems": 1
+        }
+    },
+    "uuid": "fe729745-90fd-4e8b-a94c-d4e8366375e8",
+    "title*": {
+        "en": "Dataset"
+    },
+    "description": "",
+    "description*": {}
+}

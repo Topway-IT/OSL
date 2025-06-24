@@ -1,0 +1,21 @@
+{
+    "type": [
+        "Category:OSW595b282aedf048788f3ee326454792ce"
+    ],
+    "rdf_type": [
+        "schema:Enumeration"
+    ],
+    "uuid": "e3a3b911-9028-433d-8839-10abd9189e01",
+    "label": [
+        {
+            "text": "Other",
+            "lang": "en"
+        },
+        {
+            "text": "Sonstiges",
+            "lang": "de"
+        }
+    ],
+    "description": [],
+    "name": "Other"
+}

@@ -1,0 +1,20 @@
+{
+    "uuid": "ae92be81-cdb3-4d22-844d-4791ef790d93",
+    "label": [
+        {
+            "text": "Area usage type according to DIN 277",
+            "lang": "en"
+        },
+        {
+            "text": "Flächennutzungsart nach DIN 277",
+            "lang": "de"
+        }
+    ],
+    "subclass_of": [
+        "Category:OSW51653bb12c534c0b92a255b0b5ca3984"
+    ],
+    "name": "AreaUsageType",
+    "type": [
+        "Category:Category"
+    ]
+}

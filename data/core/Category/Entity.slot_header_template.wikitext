@@ -1,0 +1,83 @@
+<table class="info_box">
+<tr>
+<th class="heading" colspan="2">{{#if: {{{label|}}}|{{{label|}}} | {{{id|{{PAGENAME}}}}} }} 
+</th>
+</tr>
+<tr class="osw-table-details">
+<th>ID</th>
+<td>{{{id|{{PAGENAMEE}}}}}</td>
+</tr>
+<tr class="osw-table-details">
+<th>UUID</th>
+<td>{{{uuid|}}}</td>
+</tr>
+{{#if: {{{label|}}} | <!-- if label is not empty, show -->
+    <tr>
+    <th>{{{_label_label|Label}}}</th>
+    <td>{{{label|}}}</td>
+    </tr>
+    |<!-- else show nothing -->}}
+{{#if: {{{short_name|}}} | <!-- if short_name is not empty, show -->
+    <tr>
+    <th>{{{_label_short_name|Short name}}}</th>
+    <td>{{{short_name|}}}</td>
+    </tr>
+    |<!-- else show nothing -->}}
+{{#if: {{{name|}}} | <!-- if name is not empty, show -->
+    <tr>
+    <th>{{{_label_name|Machine compatible name}}}</th>
+    <td>{{{name|}}}</td>
+    </tr>
+    |<!-- else show nothing -->}}
+{{#if: {{{image|}}}|<!-- show a row if an image exists -->
+    <tr>
+    <td class="picture" colspan="2">[[{{{image|}}}|200x800px]]</td>
+    </tr>
+    |<!-- don't show a row, if there is no image -->}}
+<tr>
+<td class="subheading" colspan="2">{{#switch:{{USERLANGUAGECODE}}
+    |en=Statements (outgoing)
+    |de=Aussagen (ausgehend)
+    }}</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align:center">{{{statements|}}}</td>
+</tr>
+<tr>
+<td class="subheading" colspan="2">{{#switch:{{USERLANGUAGECODE}}
+    |en=Statements (incoming)
+    |de=Aussagen (eingehend)
+    }}</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align:center">
+    {{#ask: [[HasObject::{{FULLPAGENAME}}]] 
+    |?HasSubject=subject
+    |?-Has_subobject=default_subject
+    |?HasProperty=property
+    |mainlabel=statement
+    |format=plainlist
+    |template=Template:Helper/UI/Query/ReverseListFormat
+    |named args=yes
+    |@deferred
+    }}</td>
+</tr>
+<tr>
+{{#if: {{{ordering_categories|}}}|<!-- show a row if an ordering_categories exists -->
+    <th>{{{_label_ordering_categories|Classification categories}}}</th>
+    <td>{{{ordering_categories|}}}</td>
+    </tr>
+    <tr>
+|}}
+{{#if: {{{keywords|}}}|<!-- show a row if an keywords exists -->
+    <tr>
+    <th>{{{_keywords_name|Keywords}}}</th>
+    <td>{{{keywords|}}}</td>
+    </tr>
+|}}
+</table>
+
+=={{{_label_description| {{#switch:{{USERLANGUAGECODE}}|en=Description|de=Beschreibung}} }}}==
+{{{description| {{#switch:{{USERLANGUAGECODE}}|en=No description found |de=Keine Beschreibung vorhanden}}}}}
+
+{{{extensions|}}}

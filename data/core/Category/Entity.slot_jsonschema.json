@@ -1,0 +1,372 @@
+{
+    "@context": {
+        "schema": "https://schema.org/",
+        "skos": "https://www.w3.org/TR/skos-reference/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "wiki": "https://wiki-dev.open-semantic-lab.org/id/",
+        "Category": {
+            "@id": "wiki:Category-3A",
+            "@prefix": true
+        },
+        "File": {
+            "@id": "https://wiki-dev.open-semantic-lab.org/wiki/Special:Redirect/file/",
+            "@prefix": true
+        },
+        "Property": {
+            "@id": "wiki:Property-3A",
+            "@prefix": true
+        },
+        "Item": {
+            "@id": "wiki:Item-3A",
+            "@prefix": true
+        },
+        "attachments*": {
+            "@id": "Property:HasFileAttachment",
+            "@type": "@id"
+        },
+        "based_on": {
+            "@id": "skos:isBasedOn",
+            "@type": "@id"
+        },
+        "based_on*": {
+            "@id": "Property:IsBasedOn",
+            "@type": "@id"
+        },
+        "description": {
+            "@id": "skos:definition"
+        },
+        "description*": {
+            "@id": "Property:HasDescription"
+        },
+        "image": {
+            "@id": "schema:image",
+            "@type": "@id"
+        },
+        "image*": {
+            "@id": "Property:HasImage",
+            "@type": "@id"
+        },
+        "label": {
+            "@id": "skos:prefLabel"
+        },
+        "label*": {
+            "@id": "Property:HasLabel"
+        },
+        "lang": {
+            "@id": "@language"
+        },
+        "text": {
+            "@id": "@value"
+        },
+        "uuid*": {
+            "@id": "Property:HasUuid"
+        },
+        "meta": {
+            "@id": "Property:HasMeta",
+            "@type": "@id",
+            "@context": {
+                "change_id": {
+                    "@id": "Property:HasChangeId",
+                    "@type": "xsd:string"
+                }
+            }
+        },
+        "name*": {
+            "@id": "Property:HasName"
+        },
+        "query_label": {
+            "@id": "Property:HasLabel"
+        },
+        "short_name": {
+            "@id": "Property:HasShortName"
+        },
+        "keywords": {
+            "@id": "schema:keywords",
+            "@type": "@id"
+        },
+        "keywords*": {
+            "@id": "Property:HasKeyword",
+            "@type": "@id"
+        },
+        "statements": {
+            "@id": "Property:HasStatement",
+            "@type": "@id"
+        }
+    },
+    "uuid": "ce353767-c628-45bd-9d88-d6eb3009aec0",
+    "title": "Entity",
+    "type": "object",
+    "id": "entity",
+    "required": [
+        "uuid",
+        "label"
+    ],
+    "defaultProperties": [
+        "description"
+    ],
+    "properties": {
+        "uuid": {
+            "title": "UUID",
+            "type": "string",
+            "format": "uuid",
+            "options": {
+                "hidden": true
+            }
+        },
+        "iri": {
+            "title": "IRI",
+            "description": "The Internationalized Resource Identifier (IRI) of this entity",
+            "description*": {
+                "de": "Der internationalisierte Ressourcenbezeichner (IRI) dieser Entität"
+            },
+            "type": "string",
+            "format": "url",
+            "options": {
+                "hidden": true
+            }
+        },
+        "name": {
+            "title": "Technical name",
+            "title*": {
+                "de": "Technischer Name"
+            },
+            "description": "Technical / Machine compatible name",
+            "description*": {
+                "de": "Technischer / Maschinenkompatibler Name"
+            },
+            "type": "string",
+            "options": {
+                "hidden": true
+            }
+        },
+        "label": {
+            "type": "array",
+            "title": "Label(s)",
+            "title*": {
+                "de": "Bezeichnung(en)"
+            },
+            "description": "At least one label is required.",
+            "description*": {
+                "de": "Mindestens eine Bezeichnung ist erforderlich."
+            },
+            "format": "table",
+            "eval_template": [
+                {
+                    "type": "mustache-wikitext",
+                    "mode": "render",
+                    "$comment": "Displays value according to user language with eng as fallback option. Note: {{=<% %>=}} changes mustache expression from {{..}} to <% %> for mixing with wikitext templates",
+                    "value": "{{=<% %>=}} {{#switch:{{USERLANGUAGECODE}} <%#label%> | {{#ifeq: <%lang%>|en|#default|<%lang%>}} = <%text%> <%/label%> }}"
+                }
+            ],
+            "items": {
+                "title": "Label",
+                "title*": {
+                    "de": "Bezeichnung"
+                },
+                "eval_template": [
+                    {
+                        "type": "wikitext",
+                        "mode": "store",
+                        "value": "{{{text}}}@{{{lang}}}"
+                    }
+                ],
+                "$ref": "/wiki/JsonSchema:Label?action=raw"
+            },
+            "minItems": 1
+        },
+        "short_name": {
+            "type": "array",
+            "title": "Short name(s)",
+            "title*": {
+                "de": "Kurzname(n)"
+            },
+            "description": "Abbreviation, Acronym, etc.",
+            "description*": {
+                "de": "Abkürzung, Akronym, etc."
+            },
+            "format": "table",
+            "eval_template": {
+                "type": "mustache-wikitext",
+                "mode": "render",
+                "$comment": "Displays value according to user language with eng as fallback option. Note: {{=<% %>=}} changes mustache expression from {{..}} to <% %> for mixing with wikitext templates",
+                "value": "{{=<% %>=}} {{#switch:{{USERLANGUAGECODE}} <%#short_name%> | {{#ifeq: <%lang%>|en|#default|<%lang%>}} = <%text%> <%/short_name%> }}"
+            },
+            "items": {
+                "title": "Short name",
+                "title*": {
+                    "de": "Kurzname"
+                },
+                "eval_template": [
+                    {
+                        "type": "wikitext",
+                        "mode": "store",
+                        "value": "{{{text}}}@{{{lang}}}"
+                    }
+                ],
+                "$ref": "/wiki/JsonSchema:Label?action=raw"
+            }
+        },
+        "query_label": {
+            "title": "Query label",
+            "title*": {
+                "de": "Abfrage-Bezeichnung"
+            },
+            "type": "string",
+            "options": {
+                "hidden": true,
+                "conditional_visible": {
+                    "modes": [
+                        "query"
+                    ]
+                }
+            }
+        },
+        "description": {
+            "title": "Description",
+            "title*": {
+                "de": "Beschreibung"
+            },
+            "type": "array",
+            "format": "table",
+            "eval_template": {
+                "type": "mustache-wikitext",
+                "mode": "render",
+                "$comment": "Displays value according to user language with eng as fallback option. Note: {{=<% %>=}} changes mustache expression from {{..}} to <% %> for mixing with wikitext templates",
+                "value": "{{=<% %>=}} {{#switch:{{USERLANGUAGECODE}} <%#description%> | {{#ifeq: <%lang%>|en|#default|<%lang%>}} = <%text%> <%/description%> }}"
+            },
+            "items": {
+                "eval_template": [
+                    {
+                        "type": "wikitext",
+                        "mode": "store",
+                        "value": "{{{text}}}@{{{lang}}}"
+                    }
+                ],
+                "$ref": "/wiki/JsonSchema:Description?action=raw"
+            }
+        },
+        "image": {
+            "title": "Image",
+            "title*": {
+                "de": "Bild"
+            },
+            "propertyOrder": 1020,
+            "type": "string",
+            "format": "url",
+            "options": {
+                "upload": {}
+            },
+            "links": [
+                {
+                    "href": "{{#if self}}/w/index.php?title=Special:Redirect/file/{{self}}&width=200&height=200{{/if}}",
+                    "mediaType": "image"
+                },
+                {
+                    "href": "{{#if self}}/w/index.php?title=Special:Redirect/file/{{self}}{{/if}}",
+                    "rel": "{{#if self}}download{{/if}}",
+                    "download": true
+                }
+            ]
+        },
+        "keywords": {
+            "type": "array",
+            "format": "table",
+            "title": "Keywords / Tags",
+            "title*": {
+                "de": "Schlagworte / Tags"
+            },
+            "description": "Designated to the user defined categorization of this element",
+            "description*": {
+                "de": "Dient der nutzerdefinierten Kategorisierung des Elements"
+            },
+            "eval_template": {
+                "type": "mustache-wikitext",
+                "mode": "render",
+                "value": "{{#keywords}}[[{{{.}}}]] <br> {{/keywords}}"
+            },
+            "items": {
+                "title": "Keyword",
+                "title*": {
+                    "de": "Schlagwort"
+                },
+                "type": "string",
+                "format": "autocomplete",
+                "range": "Category:OSW09f6cdd54bc54de786eafced5f675cbe"
+            }
+        },
+        "based_on": {
+            "type": "array",
+            "title": "Based on",
+            "title*": {
+                "de": "Basierend auf"
+            },
+            "description": "Other entities on which this one is based, e.g. when it is created by copying",
+            "description*": {
+                "de": "Andere Entitäten auf die diese basiert, z. B. wenn sie durch Kopieren entstanden ist"
+            },
+            "items": {
+                "type": "string"
+            },
+            "options": {
+                "hidden": "true"
+            }
+        },
+        "statements": {
+            "type": "array",
+            "title": "Statements",
+            "title*": {
+                "de": "Aussagen"
+            },
+            "format": "tabs",
+            "propertyOrder": 1010,
+            "eval_template": {
+                "type": "mustache-wikitext",
+                "mode": "render",
+                "value": "{{#statements}}.. {{#predicate}}[[{{predicate}}]]{{/predicate}}{{#property}}[[{{property}}]]{{/property}}{{#quantity}}[[{{quantity}}]]{{/quantity}} {{#object}}[[{{object}}]]{{/object}}{{#value}}{{value}}{{/value}}<br>{{/statements}}"
+            },
+            "items": {
+                "$ref": "/wiki/JsonSchema:Statement?action=raw"
+            }
+        },
+        "attachments": {
+            "type": "array",
+            "title": "File attachments",
+            "title*": {
+                "de": "Dateianhänge"
+            },
+            "eval_template": {
+                "type": "mustache-wikitext",
+                "mode": "render",
+                "value": "{{=<% %>=}} <%={{ }}=%>  {{#attachments}}{{{.}}};{{/attachments}} {{=<% %>=}} <%={{ }}=%>"
+            },
+            "options": {
+                "collapsed": true
+            },
+            "propertyOrder": 1030,
+            "items": {
+                "title": "Attachment",
+                "title*": {
+                    "de": "Anhang"
+                },
+                "type": "string",
+                "format": "url",
+                "options": {
+                    "upload": {}
+                },
+                "links": [
+                    {
+                        "href": "{{#if self}}/w/index.php?title=Special:Redirect/file/{{self}}{{/if}}",
+                        "rel": "{{#if self}}download{{/if}}",
+                        "download": true
+                    }
+                ]
+            }
+        },
+        "meta": {
+            "$ref": "/wiki/JsonSchema:Meta?action=raw",
+            "options": {
+                "hidden": true
+            }
+        }
+    }
+}

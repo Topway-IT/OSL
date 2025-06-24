@@ -1,0 +1,37 @@
+{
+    "subclass_of": [
+        "Category:OSW712583f2479944deb2546b77cf860dda"
+    ],
+    "utf8_icon": [
+        "📰",
+        "📖"
+    ],
+    "uuid": "92cc6b1a-2e6b-4bb7-bad4-70dfdcfdaf26",
+    "name": "Article",
+    "label": [
+        {
+            "text": "Article",
+            "lang": "en"
+        },
+        {
+            "text": "Artikel",
+            "lang": "de"
+        }
+    ],
+    "description": [
+        {
+            "text": "A generic entry that can contain both text and media content",
+            "lang": "en"
+        },
+        {
+            "text": "Ein allgemeiner Eintrag der sowohl Text als auch Medieninhalte enthalten kann",
+            "lang": "de"
+        }
+    ],
+    "type": [
+        "Category:Category"
+    ],
+    "instance_rdf_type": [
+        "schema:Article"
+    ]
+}

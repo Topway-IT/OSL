@@ -1,0 +1,27 @@
+{
+    "subclass_of": [
+        "Category:OSW25bc4daf97644737a76434b88e1d5b21"
+    ],
+    "type": [
+        "Category:Category"
+    ],
+    "uuid": "be80b28a-efd6-4921-ba2e-8e2d6225416e",
+    "label": [
+        {
+            "text": "Monetary Grant",
+            "lang": "en"
+        },
+        {
+            "text": "Finanzielle Förderung",
+            "lang": "de"
+        },
+        {
+            "text": "Finanzielle Unterstützung",
+            "lang": "de"
+        }
+    ],
+    "instance_rdf_type": [
+        "schema:MonetaryGrant"
+    ],
+    "name": "MonetaryGrant"
+}

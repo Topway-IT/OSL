@@ -1,0 +1,27 @@
+{
+    "type": [
+        "Category:OSW490e38f9764f4408a244869a0ea98e7c"
+    ],
+    "uuid": "55a9a9bd-a7b2-4875-9e48-ae2e3ed6df1d",
+    "label": [
+        {
+            "text": "Ongoing",
+            "lang": "en"
+        },
+        {
+            "text": "Läuft",
+            "lang": "de"
+        }
+    ],
+    "description": [
+        {
+            "text": "Status for a project that has already started",
+            "lang": "en"
+        },
+        {
+            "text": "Status für ein bereits begonnenes Projekt",
+            "lang": "de"
+        }
+    ],
+    "name": "Ongoing"
+}

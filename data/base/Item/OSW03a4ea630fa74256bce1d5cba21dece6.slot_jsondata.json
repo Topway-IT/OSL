@@ -1,0 +1,34 @@
+{
+    "type": [
+        "Category:OSW490e38f9764f4408a244869a0ea98e7c"
+    ],
+    "rdf_type": [
+        "StatusEnumeration"
+    ],
+    "uuid": "03a4ea63-0fa7-4256-bce1-d5cba21dece6",
+    "label": [
+        {
+            "text": "Complete",
+            "lang": "en"
+        },
+        {
+            "text": "Abgeschlossen",
+            "lang": "de"
+        },
+        {
+            "text": "Finished",
+            "lang": "en"
+        }
+    ],
+    "description": [
+        {
+            "text": "Status for a completed project",
+            "lang": "en"
+        },
+        {
+            "text": "Status für ein abgeschlossenes Projekt",
+            "lang": "de"
+        }
+    ],
+    "name": "Complete"
+}

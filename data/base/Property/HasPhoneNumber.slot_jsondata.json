@@ -1,0 +1,15 @@
+{
+    "type": [
+        "Category:DataProperty"
+    ],
+    "name": "HasPhoneNumber",
+    "property_type": "Telephone number",
+    "uuid": "d66fe047-e34d-4458-8156-af4f8fa15e58",
+    "label": [
+        {
+            "text": "HasPhoneNumber",
+            "lang": "de"
+        }
+    ],
+    "description": []
+}

@@ -1,0 +1,30 @@
+{
+    "subclass_of": [
+        "Category:OSW2c32802be59040248c85eda3479d484c"
+    ],
+    "type": [
+        "Category:Category"
+    ],
+    "uuid": "781ad17c-7eef-4161-ade5-a7b690aca6b5",
+    "label": [
+        {
+            "text": "Employment status",
+            "lang": "en"
+        },
+        {
+            "text": "Status des Beschäftigungsverhältnisses",
+            "lang": "de"
+        }
+    ],
+    "description": [
+        {
+            "text": "Describes the status of an employment (contract)",
+            "lang": "en"
+        },
+        {
+            "text": "Beschreibt den Status eines Arbeitsverhältnisses(vertrages)",
+            "lang": "de"
+        }
+    ],
+    "name": "EmploymentStatus"
+}

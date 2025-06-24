@@ -1,0 +1,36 @@
+{
+    "main_unit": {
+        "uuid": "1f9732be-96c2-40e6-92d0-444f0f960677",
+        "name": "[1]",
+        "main_symbol": "[1]",
+        "use_as_input_unit": false,
+        "use_as_display_unit": false,
+        "ontology_iri": [
+            "http://qudt.org/vocab/quantitykind/DimensionlessRatio"
+        ]
+    },
+    "additional_units": [
+        {
+            "conversion_factor_to_main_unit": "100",
+            "uuid": "8b3dc9b7-9307-4afc-8ab8-b03041f97f16",
+            "name": "%",
+            "main_symbol": "%",
+            "alternative_symbols": [],
+            "use_as_input_unit": true,
+            "use_as_display_unit": true,
+            "ontology_iri": []
+        }
+    ],
+    "type": [
+        "Category:OSW1b15ddcf042c4599bd9d431cbfdf3430"
+    ],
+    "property_type": "Quantity",
+    "name": "DimensionlessRatio",
+    "uuid": "f6ff23ba-6dbe-41e5-b9d2-be433265ab90",
+    "label": [
+        {
+            "text": "Dimensionless Ratio",
+            "lang": "en"
+        }
+    ]
+}

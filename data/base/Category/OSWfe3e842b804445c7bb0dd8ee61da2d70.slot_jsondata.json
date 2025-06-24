@@ -1,0 +1,30 @@
+{
+    "subclass_of": [
+        "Category:OSW3cb8cef2225e403092f098f99bc4c472"
+    ],
+    "uuid": "fe3e842b-8044-45c7-bb0d-d8ee61da2d70",
+    "name": "OrganizationalSubUnit",
+    "label": [
+        {
+            "text": "Organizational sub-unit",
+            "lang": "en"
+        },
+        {
+            "text": "Organisationsuntereinheit",
+            "lang": "de"
+        }
+    ],
+    "description": [
+        {
+            "text": "An organizational unit that explicitly is part of a larger organizational unit.",
+            "lang": "en"
+        },
+        {
+            "text": "Eine Organisationseinheit, die ausdrücklich Teil einer größeren Organisationseinheit ist.",
+            "lang": "de"
+        }
+    ],
+    "type": [
+        "Category:Category"
+    ]
+}

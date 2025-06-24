@@ -1,0 +1,32 @@
+{
+    "@context": [
+        "/wiki/Category:OSW1969007d5acf40539642877659a02c23?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSW1969007d5acf40539642877659a02c23?action=raw&slot=jsonschema"
+        }
+    ],
+    "type": "object",
+    "uuid": "789dcd08-4860-478d-bc60-361a2da7c823",
+    "title": "ResearchOrganization",
+    "title*": {
+        "en": "Research Organization",
+        "de": "Forschungsorganisation"
+    },
+    "description": "A Research Organization (e.g. scientific institute, research company).",
+    "description*": {
+        "en": "A Research Organization (e.g. scientific institute, research company).",
+        "de": "Eine Forschungsorganisation (z. B. ein wissenschaftliches Institut, ein Forschungsunternehmen)."
+    },
+    "required": [
+        "type"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSW789dcd084860478dbc60361a2da7c823"
+            ]
+        }
+    }
+}

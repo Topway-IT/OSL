@@ -1,0 +1,20 @@
+{
+    "subclass_of": [
+        "Category:OSWd02741381aaa4709ae0753a0edc341ce"
+    ],
+    "type": [
+        "Category:Category"
+    ],
+    "uuid": "8cb19350-5446-4c99-836d-3bc0573a11cc",
+    "label": [
+        {
+            "text": "Issue Label",
+            "lang": "en"
+        },
+        {
+            "text": "Issue-Label",
+            "lang": "de"
+        }
+    ],
+    "name": "IssueLabel"
+}

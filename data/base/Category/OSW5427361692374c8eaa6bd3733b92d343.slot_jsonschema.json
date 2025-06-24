@@ -1,0 +1,220 @@
+{
+    "@context": [
+        {
+            "manager": {
+                "@id": "Property:HasManager",
+                "@type": "@id"
+            },
+            "superordinate_ou": {
+                "@id": "Property:HasSuperordinateOu",
+                "@type": "@id"
+            }
+        },
+        "/wiki/Category:OSWfe3e842b804445c7bb0dd8ee61da2d70?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSWfe3e842b804445c7bb0dd8ee61da2d70?action=raw&slot=jsonschema"
+        }
+    ],
+    "type": "object",
+    "title": "Institute",
+    "required": [
+        "type"
+    ],
+    "defaultProperties": [
+        "uuid",
+        "label"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSW5427361692374c8eaa6bd3733b92d343"
+            ]
+        },
+        "image": {
+            "title": "Logo",
+            "title*": {
+                "de": "Logo"
+            }
+        },
+        "manager": {
+            "title": "Head",
+            "title*": {
+                "en": "Head",
+                "de": "Leitung"
+            }
+        },
+        "member_of": {
+            "title": "Member of",
+            "title*": {
+                "en": "Member of",
+                "de": "Mitglied in"
+            },
+            "description": "The organization this organization is a member of.",
+            "description*": {
+                "en": "The organization this organization is a member of.",
+                "de": "Die Organisation, der diese Organisation angehört."
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "",
+                "type": "string",
+                "format": "autocomplete",
+                "query": "[[HasType::Category:OSW1969007d5acf40539642877659a02c23]] |?Display_title_of=label",
+                "previewWikiTextTemplate": "[[:{{result.fulltext}}]]",
+                "labelTemplate": "{{result.printouts.label.[0]}}"
+            },
+            "uniqueItems": true
+        },
+        "postal_address": {
+            "eval_template": {
+                "type": "wikitext",
+                "mode": "render",
+                "value": "{{{street_name|}}} {{{house_no|}}}, {{{postal_code|}}} {{{city|}}}, {{{country|}}}"
+            },
+            "required": [
+                "uuid"
+            ],
+            "defaultProperties": [
+                "uuid",
+                "street_name",
+                "house_no",
+                "postal_code",
+                "city",
+                "country"
+            ],
+            "properties": {
+                "uuid": {
+                    "type": "string",
+                    "format": "uuid",
+                    "options": {
+                        "hidden": true
+                    }
+                },
+                "country": {
+                    "title": "Country",
+                    "title*": {
+                        "en": "Country",
+                        "de": "Land"
+                    },
+                    "type": "string"
+                },
+                "state": {
+                    "title": "State",
+                    "title*": {
+                        "en": "State",
+                        "de": "Bundesland"
+                    },
+                    "type": "string"
+                },
+                "region": {
+                    "title": "Region",
+                    "title*": {
+                        "en": "Region",
+                        "de": "Region"
+                    },
+                    "type": "string"
+                },
+                "post_office_box_no": {
+                    "title": "PO box number",
+                    "title*": {
+                        "en": "PO box number",
+                        "de": "Postfach nummer"
+                    },
+                    "type": "number"
+                },
+                "postal_code": {
+                    "title": "Postal code",
+                    "title*": {
+                        "en": "Postal code",
+                        "de": "Postleitzahl"
+                    },
+                    "type": "string"
+                },
+                "city": {
+                    "title": "City",
+                    "title*": {
+                        "en": "City",
+                        "de": "Stadt"
+                    },
+                    "type": "string"
+                },
+                "street_name": {
+                    "title": "Street",
+                    "title*": {
+                        "en": "Street",
+                        "de": "Straße"
+                    },
+                    "type": "string"
+                },
+                "house_no": {
+                    "title": "House number",
+                    "title*": {
+                        "en": "House number",
+                        "de": "Hausnummer"
+                    },
+                    "type": "string"
+                }
+            },
+            "title": "Postal address",
+            "title*": {
+                "en": "Postal address",
+                "de": "Postalische Adresse"
+            },
+            "type": "object",
+            "description": ""
+        },
+        "site": {
+            "title": "Site",
+            "title*": {
+                "en": "Site",
+                "de": "Standort"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "type": "string",
+                "oneOf": [
+                    {
+                        "title": "Entry with autocomplete",
+                        "title*": {
+                            "de": "Eintrag mit Autocomplete"
+                        },
+                        "format": "autocomplete",
+                        "query": "[[HasType::Category:OSW473d7a1ed48544d1be83b258b5810948]] |?Display_title_of=label",
+                        "previewWikiTextTemplate": "[[:{{result.fulltext}}]]",
+                        "labelTemplate": "{{result.printouts.label.[0]}}"
+                    },
+                    {
+                        "title": "Free text entry",
+                        "title*": {
+                            "de": "Freitext-Eintrag"
+                        },
+                        "format": "string"
+                    }
+                ]
+            },
+            "uniqueItems": true
+        },
+        "superordinate_ou": {
+            "description": "Faculty or organization, the institute belongs to.",
+            "description*": {
+                "en": "Faculty or organization, the institute belongs to.",
+                "de": "Fakultät oder Organisation, zu der das Institut gehört."
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "",
+                "type": "string",
+                "format": "autocomplete",
+                "query": "[[HasType::Category:OSW1969007d5acf40539642877659a02c23]] |?Display_title_of=label",
+                "previewWikiTextTemplate": "[[:{{result.fulltext}}]]",
+                "labelTemplate": "{{result.printouts.label.[0]}}"
+            },
+            "uniqueItems": true
+        }
+    }
+}

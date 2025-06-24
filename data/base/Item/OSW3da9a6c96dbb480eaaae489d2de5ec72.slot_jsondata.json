@@ -1,0 +1,30 @@
+{
+    "type": [
+        "Category:OSW595b282aedf048788f3ee326454792ce"
+    ],
+    "rdf_type": [
+        "schema:Enumeration"
+    ],
+    "uuid": "3da9a6c9-6dbb-480e-aaae-489d2de5ec72",
+    "label": [
+        {
+            "text": "Investment",
+            "lang": "en"
+        },
+        {
+            "text": "Investition",
+            "lang": "de"
+        }
+    ],
+    "description": [
+        {
+            "text": "Budget to be used for investment",
+            "lang": "en"
+        },
+        {
+            "text": "Für Investitionen zu verwendendes Budget",
+            "lang": "de"
+        }
+    ],
+    "name": "Investment"
+}

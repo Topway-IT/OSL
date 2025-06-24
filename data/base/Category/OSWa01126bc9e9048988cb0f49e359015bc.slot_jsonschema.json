@@ -1,0 +1,54 @@
+{
+    "@context": [
+        {
+            "manager": "Property:HasManager",
+            "superordinate_ou": "Property:HasSuperordinateOu"
+        }
+    ],
+    "defaultProperties": [],
+    "properties": {
+        "manager": {
+            "title": "Dean",
+            "title*": {
+                "en": "Dean",
+                "de": "Dekan:in"
+            }
+        },
+        "superordinate_ou": {
+            "description": "University",
+            "description*": {
+                "en": "University",
+                "de": "Universität oder Hochschule"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "",
+                "type": "string",
+                "format": "autocomplete",
+                "query": "[[HasType::Category:OSW11ee14fb9f774b4b89bdb9bb89aac14d]] |?Display_title_of=label",
+                "previewWikiTextTemplate": "[[:{{result.fulltext}}]]",
+                "labelTemplate": "{{result.printouts.label.[0]}}"
+            },
+            "minItems": 1,
+            "default": [
+                ""
+            ]
+        },
+        "type": {
+            "default": [
+                "Category:OSWa01126bc9e9048988cb0f49e359015bc"
+            ]
+        }
+    },
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSWfe3e842b804445c7bb0dd8ee61da2d70?action=raw&slot=jsonschema"
+        }
+    ],
+    "title": "Faculty",
+    "required": [
+        "type"
+    ]
+}

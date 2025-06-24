@@ -1,0 +1,20 @@
+{
+    "subclass_of": [
+        "Category:OSWd02741381aaa4709ae0753a0edc341ce"
+    ],
+    "type": [
+        "Category:Category"
+    ],
+    "uuid": "67f2ef61-ba28-4c91-9fef-a00d0e95a7a0",
+    "label": [
+        {
+            "text": "Project Type",
+            "lang": "en"
+        },
+        {
+            "text": "Projekttyp",
+            "lang": "de"
+        }
+    ],
+    "name": "ProjectType"
+}

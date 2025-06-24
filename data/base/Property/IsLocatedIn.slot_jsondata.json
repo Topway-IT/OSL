@@ -1,0 +1,15 @@
+{
+    "type": [
+        "Category:ObjectProperty"
+    ],
+    "name": "IsLocatedIn",
+    "property_type": "Page",
+    "uuid": "eedbb30c-806c-49bc-b30a-5f38cbb153f8",
+    "label": [
+        {
+            "text": "IsLocatedIn",
+            "lang": "en"
+        }
+    ],
+    "description": []
+}

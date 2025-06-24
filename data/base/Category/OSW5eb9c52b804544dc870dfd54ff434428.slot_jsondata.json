@@ -1,0 +1,40 @@
+{
+    "subclass_of": [
+        "Category:OSWa5812d3b5119416c8da1606cbe7054eb"
+    ],
+    "uuid": "5eb9c52b-8045-44dc-870d-fd54ff434428",
+    "label": [
+        {
+            "text": "Competence",
+            "lang": "en"
+        },
+        {
+            "text": "Kompetenz",
+            "lang": "de"
+        }
+    ],
+    "short_name": [
+        {
+            "text": "Competence",
+            "lang": "en"
+        },
+        {
+            "text": "Kompetenz",
+            "lang": "de"
+        }
+    ],
+    "description": [
+        {
+            "text": "Competence of a person or a group of persons",
+            "lang": "en"
+        },
+        {
+            "text": "Kompetenz einer Person oder Gruppe von Personen",
+            "lang": "en"
+        }
+    ],
+    "name": "Competence",
+    "type": [
+        "Category:Category"
+    ]
+}

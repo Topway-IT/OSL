@@ -1,0 +1,30 @@
+{
+    "type": [
+        "Category:Category"
+    ],
+    "subclass_of": [
+        "Category:OSW0e084decca6f48a7b023d6b7b2c1452d"
+    ],
+    "uuid": "5c7c84f0-bfbe-4347-ba7f-be7b346fd106",
+    "label": [
+        {
+            "text": "Meeting",
+            "lang": "en"
+        },
+        {
+            "text": "Meeting",
+            "lang": "de"
+        }
+    ],
+    "description": [
+        {
+            "text": "A meeting, either local, remote or hybrid. This element is intended to be used to document meetings. It is dedicated especially to notes, resolutions and tasks. For recurring meetings (series), the tasks should be managed there",
+            "lang": "en"
+        },
+        {
+            "text": "Eine Besprechung, entweder lokal, ferngesteuert oder gemischt. Dieses Element ist für die Dokumentation von Besprechungen gedacht. Es ist insbesondere für Notizen, Beschlüsse und Aufgaben vorgesehen. Bei wiederkehrenden Besprechungen (Serien) sollten die Aufgaben dort verwaltet werden",
+            "lang": "de"
+        }
+    ],
+    "name": "Meeting"
+}

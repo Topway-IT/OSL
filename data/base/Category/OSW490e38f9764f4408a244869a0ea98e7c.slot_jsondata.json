@@ -1,0 +1,30 @@
+{
+    "subclass_of": [
+        "Category:OSW2c32802be59040248c85eda3479d484c"
+    ],
+    "type": [
+        "Category:Category"
+    ],
+    "uuid": "490e38f9-764f-4408-a244-869a0ea98e7c",
+    "label": [
+        {
+            "text": "Project (Application) Status",
+            "lang": "en"
+        },
+        {
+            "text": "Projekt(antrags)status",
+            "lang": "de"
+        }
+    ],
+    "name": "ProjectStatus",
+    "description": [
+        {
+            "text": "Status for projects and project applications",
+            "lang": "en"
+        },
+        {
+            "text": "Status für Projekte und Projektanträge",
+            "lang": "de"
+        }
+    ]
+}

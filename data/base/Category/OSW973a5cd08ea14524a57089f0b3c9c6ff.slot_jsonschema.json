@@ -1,0 +1,125 @@
+{
+    "@context": [
+        "/wiki/Category:Item?action=raw&slot=jsonschema",
+        {
+            "requirement_category": {
+                "@id": "Property:IsA",
+                "@type": "@id"
+            },
+            "prio": {
+                "@id": "Property:HasPriority",
+                "@type": "@id"
+            },
+            "dependencies": {
+                "@id": "Property:HasDependency",
+                "@type": "@id"
+            },
+            "related_to": {
+                "@id": "Property:IsRelatedTo",
+                "@type": "@id"
+            }
+        }
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:Item?action=raw&slot=jsonschema"
+        }
+    ],
+    "type": "object",
+    "uuid": "973a5cd0-8ea1-4524-a570-89f0b3c9c6ff",
+    "title": "Requirement",
+    "title*": {
+        "en": "Requirement",
+        "de": "Anforderung"
+    },
+    "description": "A functional or non-functional requirement",
+    "description*": {
+        "en": "A functional or non-functional requirement",
+        "de": "Ein funktionales oder nicht-funktionales requirement"
+    },
+    "required": [
+        "type"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSW973a5cd08ea14524a57089f0b3c9c6ff"
+            ]
+        },
+        "requirement_category": {
+            "type": "string",
+            "format": "autocomplete",
+            "title": "Requirement category",
+            "title*": {
+                "de": "Anforderungskategorie"
+            },
+            "options": {
+                "autocomplete": {
+                    "$comment": "Funtional or non-functional requirement",
+                    "query": "[[Item:OSWbb07a72940554b1b978c44e5db4bd314]] OR [[Item:OSWab093fd8af104a49882704cea3bbaf7b]]|?HasName=label"
+                }
+            }
+        },
+        "prio": {
+            "type": "string",
+            "format": "autocomplete",
+            "title": "Priority",
+            "title*": {
+                "de": "Priorität"
+            },
+            "options": {
+                "autocomplete": {
+                    "category": "Category:OSW65c8449bdd4f4fbcb7f68203a11d6e8f"
+                }
+            }
+        },
+        "dependencies": {
+            "type": "array",
+            "title": "Dependencies",
+            "title*": {
+                "de": "Abhängigkeiten"
+            },
+            "description": "Strict dependency from another requirement",
+            "description*": {
+                "de": "Strenge Abhängigkeit von einer anderen Anforderung"
+            },
+            "items": {
+                "type": "string",
+                "format": "autocomplete",
+                "title": "Dependency",
+                "title*": {
+                    "de": "Abhängigkeit"
+                },
+                "options": {
+                    "autocomplete": {
+                        "category": "Category:OSW973a5cd08ea14524a57089f0b3c9c6ff"
+                    }
+                }
+            }
+        },
+        "related_to": {
+            "type": "array",
+            "title": "Related to",
+            "title*": {
+                "de": "Bezug zu"
+            },
+            "description": "Loose connection to another requirement",
+            "description*": {
+                "de": "Lose Verbindung zu einer anderen Anforderung"
+            },
+            "items": {
+                "type": "string",
+                "format": "autocomplete",
+                "title": "Entry",
+                "title*": {
+                    "de": "Eintrag"
+                },
+                "options": {
+                    "autocomplete": {
+                        "category": "Category:Item"
+                    }
+                }
+            }
+        }
+    }
+}

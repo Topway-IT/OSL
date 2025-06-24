@@ -1,0 +1,21 @@
+{
+    "type": [
+        "Category:OSW490e38f9764f4408a244869a0ea98e7c"
+    ],
+    "rdf_type": [
+        "StatusEnumeration"
+    ],
+    "uuid": "8e711e4a-a6d9-4c5c-8869-3ff26b50f4dc",
+    "label": [
+        {
+            "text": "Accepted",
+            "lang": "en"
+        },
+        {
+            "text": "Akzeptiert",
+            "lang": "de"
+        }
+    ],
+    "description": [],
+    "name": "Accepted"
+}

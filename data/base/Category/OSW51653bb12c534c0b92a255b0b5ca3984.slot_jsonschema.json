@@ -1,0 +1,22 @@
+{
+    "@context": [
+        "/wiki/Category:OSWd02741381aaa4709ae0753a0edc341ce?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSWd02741381aaa4709ae0753a0edc341ce?action=raw&slot=jsonschema"
+        }
+    ],
+    "type": "object",
+    "title": "Function",
+    "required": [
+        "type"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSW51653bb12c534c0b92a255b0b5ca3984"
+            ]
+        }
+    }
+}

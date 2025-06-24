@@ -1,0 +1,34 @@
+{
+    "subproperty_of": "Property:HasMonetaryValue",
+    "base_property": "Property:HasMonetaryValue",
+    "type": [
+        "Category:OSW69f251a900944602a08d1cca830249b5"
+    ],
+    "property_type": "Quantity",
+    "name": "HasBudget",
+    "uuid": "8d4399a3-6351-421f-95ab-fb79e8881590",
+    "label": [
+        {
+            "text": "Budget",
+            "lang": "en"
+        },
+        {
+            "text": "Budget",
+            "lang": "de"
+        }
+    ],
+    "description": [
+        {
+            "text": "Typically the planned costs",
+            "lang": "en"
+        },
+        {
+            "text": "Typischerweise die geplanten Kosten",
+            "lang": "de"
+        }
+    ],
+    "display_units": [
+        "Property:HasMonetaryValue#OSW583190e955a245a0a88cdc4b60d1de92",
+        "Property:HasMonetaryValue#OSWa58c8789101f4772877df5f7d858d14c"
+    ]
+}

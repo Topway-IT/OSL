@@ -1,0 +1,101 @@
+{
+    "@context": [
+        "/wiki/Category:OSWe5aa96bffb1c4d95be7fbd46142ad203?action=raw&slot=jsonschema",
+        {
+            "approver": {
+                "@id": "Property:HasApprover",
+                "@type": "@id"
+            },
+            "orderer": {
+                "@id": "Property:HasOrderer",
+                "@type": "@id"
+            },
+            "contact": {
+                "@id": "Property:HasContact",
+                "@type": "@id"
+            }
+        }
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSWe5aa96bffb1c4d95be7fbd46142ad203?action=raw&slot=jsonschema"
+        }
+    ],
+    "type": "object",
+    "uuid": "fa0d5710-bc0f-4581-9b61-b65fc4fd9656",
+    "title": "StrictParticipantsProcess",
+    "title*": {
+        "en": "Strict participants process",
+        "de": "Prozess mit explizit definierten Teilnehmenden"
+    },
+    "description": "",
+    "description*": {},
+    "required": [
+        "type"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSWfa0d5710bc0f45819b61b65fc4fd9656"
+            ]
+        },
+        "orderer": {
+            "type": "string",
+            "title": "Orderer",
+            "title*": {
+                "de": "Auftraggeber*in"
+            },
+            "description": "Internal or external orderer/customer (person or organizational unit)",
+            "description*": {
+                "de": "Interne(r) oder externe(r) Auftraggeber*in/Kund*in/anordnende Person oder Organisationseinheit"
+            },
+            "format": "autocomplete",
+            "options": {
+                "autocomplete": {
+                    "query": "[[Category:OSW44deaa5b806d41a2a88594f562b110e9]] OR [[Category:OSW3cb8cef2225e403092f098f99bc4c472]] |?Display_title_of=label"
+                }
+            }
+        },
+        "contact": {
+            "type": "string",
+            "format": "autocomplete",
+            "title": "Contact",
+            "title*": {
+                "de": "Ansprechpartner"
+            },
+            "description": "Contact person on the orderer side",
+            "description*": {
+                "de": "Kontakt seitens Auftraggeber"
+            },
+            "options": {
+                "autocomplete": {
+                    "category": "Category:OSW44deaa5b806d41a2a88594f562b110e9"
+                }
+            }
+        },
+        "approver": {
+            "type": "array",
+            "title": "Approver",
+            "title*": {
+                "de": "Genehmiger*in"
+            },
+            "description": "Person or organizational unit that validates the result of the process and approves",
+            "description*": {
+                "de": "Person oder Organisationseinheit, die das Ergebnis des Auftrag validiert und genehmigt"
+            },
+            "items": {
+                "type": "string",
+                "title": "Approver",
+                "title*": {
+                    "de": "Genehmiger*in"
+                },
+                "format": "autocomplete",
+                "options": {
+                    "autocomplete": {
+                        "category": "Category:OSW44deaa5b806d41a2a88594f562b110e9"
+                    }
+                }
+            }
+        }
+    }
+}

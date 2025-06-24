@@ -1,0 +1,23 @@
+{
+    "subclass_of": [
+        "Category:OSW1969007d5acf40539642877659a02c23"
+    ],
+    "type": [
+        "Category:Category"
+    ],
+    "uuid": "9d632428-55e4-4ab8-b26d-6ad9792a67b3",
+    "label": [
+        {
+            "text": "Educational Organization",
+            "lang": "en"
+        },
+        {
+            "text": "Bildungseinrichtung",
+            "lang": "de"
+        }
+    ],
+    "instance_rdf_type": [
+        "schema:EducationalOrganization"
+    ],
+    "name": "EducationalOrganization"
+}

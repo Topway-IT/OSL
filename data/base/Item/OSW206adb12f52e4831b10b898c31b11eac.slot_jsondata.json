@@ -1,0 +1,27 @@
+{
+    "type": [
+        "Category:OSW490e38f9764f4408a244869a0ea98e7c"
+    ],
+    "uuid": "206adb12-f52e-4831-b10b-898c31b11eac",
+    "label": [
+        {
+            "text": "Paused",
+            "lang": "en"
+        },
+        {
+            "text": "Pausiert",
+            "lang": "de"
+        }
+    ],
+    "description": [
+        {
+            "text": "No work is currently taking place, but the project has not yet been completed.",
+            "lang": "en"
+        },
+        {
+            "text": "Es finden aktuell keine Arbeiten statt, Projekt ist jedoch noch nicht beendet.",
+            "lang": "de"
+        }
+    ],
+    "name": "Paused"
+}

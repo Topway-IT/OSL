@@ -1,0 +1,760 @@
+{
+    "@context": [
+        {
+            "abbreviation": {
+                "@id": "Property:HasId",
+                "@type": "xsd:string"
+            },
+            "abbreviation*": {
+                "@id": "Property:HasAbbreviation",
+                "@type": "xsd:string"
+            },
+            "abbreviation**": {
+                "@id": "Property:HasAcronym",
+                "@type": "xsd:string"
+            },
+            "competence": {
+                "@id": "schema:knowsAbout",
+                "@type": "@id"
+            },
+            "competence*": {
+                "@id": "Property:HasCompetence",
+                "@type": "@id"
+            },
+            "deputy_manager": {
+                "@id": "Property:HasDeputyManager",
+                "@type": "@id"
+            },
+            "email": {
+                "@id": "schema:email",
+                "@type": "xsd:string"
+            },
+            "email*": {
+                "@id": "Property:HasEmail",
+                "@type": "xsd:string"
+            },
+            "fax_number": {
+                "@id": "schema:faxNumber",
+                "@type": "xsd:string"
+            },
+            "fax_number*": {
+                "@id": "Property:HasFaxNumber",
+                "@type": "xsd:string"
+            },
+            "founder": {
+                "@id": "schema:founder",
+                "@type": "xsd:string"
+            },
+            "founder*": {
+                "@id": "Property:HasFounder",
+                "@type": "@id"
+            },
+            "founding_date": {
+                "@id": "schema:foundingDate",
+                "@type": "xsd:date"
+            },
+            "founding_date*": {
+                "@id": "Property:HasFoundingDate",
+                "@type": "xsd:date"
+            },
+            "founding_location": {
+                "@id": "schema:foundingLocation",
+                "@type": "@id"
+            },
+            "founding_location*": {
+                "@id": "Property:HasFoundingLocation",
+                "@type": "@id"
+            },
+            "funder": {
+                "@id": "schema:funder",
+                "@type": "@id"
+            },
+            "funder*": {
+                "@id": "Property:HasFunder",
+                "@type": "@id"
+            },
+            "image": {
+                "@id": "schema:logo",
+                "@type": "@id"
+            },
+            "image*": {
+                "@id": "Property:HasLogo",
+                "@type": "@id"
+            },
+            "legal_name": {
+                "@id": "schema:legalName",
+                "@type": "xsd:string"
+            },
+            "legal_name*": {
+                "@id": "Property:HasLegalName",
+                "@type": "xsd:string"
+            },
+            "mailing_list": {
+                "@id": "Property:HasMailingList",
+                "@type": "@id"
+            },
+            "manager": {
+                "@id": "Property:HasManager",
+                "@type": "@id"
+            },
+            "member_ous": {
+                "@id": "schema:member",
+                "@type": "@id"
+            },
+            "member_ous*": {
+                "@id": "Property:HasMember",
+                "@type": "@id"
+            },
+            "member_persons": {
+                "@id": "schema:member",
+                "@type": "@id"
+            },
+            "member_persons*": {
+                "@id": "Property:HasMember",
+                "@type": "@id"
+            },
+            "member_of": {
+                "@id": "schema:memberOf",
+                "@type": "@id"
+            },
+            "member_of*": {
+                "@id": "Property:IsMemberOf",
+                "@type": "@id"
+            },
+            "employees*": {
+                "@id": "schema:employee",
+                "@type": "@id"
+            },
+            "employees**": {
+                "@reverse": "Property:HasOrganization",
+                "@type": "@id"
+            },
+            "phone_number": {
+                "@id": "schema:telephone",
+                "@type": "@id"
+            },
+            "phone_number*": {
+                "@id": "Property:HasPhoneNumber",
+                "@type": "xsd:string"
+            },
+            "postal_address": {
+                "@id": "Property:HasPostalAddress",
+                "@type": "@id",
+                "@context": [
+                    "/wiki/JsonSchema:PostalAddress?action=raw"
+                ]
+            },
+            "ror_id": {
+                "@id": "Property:HasRorId",
+                "@type": "xsd:string"
+            },
+            "secretary": {
+                "@id": "Property:HasSecretary",
+                "@type": "@id"
+            },
+            "site": {
+                "@id": "schema:location",
+                "@type": "@id"
+            },
+            "site*": {
+                "@id": "Property:IsLocatedIn",
+                "@type": "@id"
+            },
+            "superordinate_ou": {
+                "@id": "schema:parentOrganization",
+                "@type": "@id"
+            },
+            "superordinate_ou*": {
+                "@id": "Property:HasSuperordinateOu",
+                "@type": "@id"
+            },
+            "tax_id": {
+                "@id": "schema:taxID",
+                "@type": "xsd:string"
+            },
+            "tax_id*": {
+                "@id": "Property:HasTaxId",
+                "@type": "xsd:string"
+            },
+            "topic": {
+                "@id": "schema:knowsAbout",
+                "@type": "@id"
+            },
+            "topic*": {
+                "@id": "Property:HasTopic",
+                "@type": "@id"
+            },
+            "vat_id": {
+                "@id": "schema:vatID",
+                "@type": "xsd:string"
+            },
+            "vat_id*": {
+                "@id": "Property:HasVatId",
+                "@type": "xsd:string"
+            },
+            "website": {
+                "@id": "schema:subjectOf",
+                "@type": "@id"
+            },
+            "website*": {
+                "@id": "Property:HasWebsite",
+                "@type": "xsd:anyURI"
+            },
+            "associated_acl_roles*": {
+                "@id": "Property:HasAssociatedAclRole"
+            }
+        },
+        "/wiki/Category:Item?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:Item?action=raw&slot=jsonschema"
+        }
+    ],
+    "title": "OrganizationalUnit",
+    "title*": {
+        "de": "Organisationseinheit",
+        "en": "Organizational unit"
+    },
+    "uuid": "3cb8cef2-225e-4030-92f0-98f99bc4c472",
+    "id": "OSW3cb8cef2225e403092f098f99bc4c472",
+    "type": "object",
+    "description": "The most general kind of organizational unit - an organization but also parts of an organization",
+    "description*": {
+        "de": "Die allgemeinste Art von Organisationseinheit - eine Organisation, aber auch Teile einer Organisation",
+        "en": "The most general kind of organizational unit - an organization but also parts of an organization"
+    },
+    "defaultProperties": [
+        "abbreviation"
+    ],
+    "required": [
+        "type"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSW3cb8cef2225e403092f098f99bc4c472"
+            ]
+        },
+        "abbreviation": {
+            "$comment": "should reuse short_name from Entity",
+            "title": "Acronym",
+            "title*": {
+                "de": "Akronym"
+            },
+            "description": "Acronym of the organizational unit.",
+            "description*": {
+                "de": "Akronym der Organisationseinheit."
+            },
+            "type": "string"
+        },
+        "competence": {
+            "title": "Competence(s)",
+            "title*": {
+                "de": "Kompetenz(en)"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "Competence",
+                "title*": {
+                    "de": "Kompetenz"
+                },
+                "type": "string",
+                "format": "autocomplete",
+                "range": "Category:OSW5eb9c52b804544dc870dfd54ff434428"
+            },
+            "uniqueItems": true
+        },
+        "deputy_manager": {
+            "title": "Deputy manager",
+            "title*": {
+                "de": "Stellvertretende:r Manager:in"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "Deputy manager",
+                "title*": {
+                    "de": "Stellvertretende:r Manager:in"
+                },
+                "type": "string",
+                "format": "autocomplete",
+                "range": "Category:OSW44deaa5b806d41a2a88594f562b110e9"
+            },
+            "uniqueItems": true
+        },
+        "founder": {
+            "title": "Founder",
+            "title*": {
+                "de": "Gründer:in"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "Founder",
+                "title*": {
+                    "de": "Gründer:in"
+                },
+                "type": "string",
+                "format": "autocomplete",
+                "range": "Category:OSW44deaa5b806d41a2a88594f562b110e9"
+            },
+            "uniqueItems": true
+        },
+        "founding_date": {
+            "title": "Founding date",
+            "title*": {
+                "en": "Founding date",
+                "de": "Gründungsdatum"
+            },
+            "type": "string",
+            "format": "date"
+        },
+        "founding_location": {
+            "title": "Founding location",
+            "title*": {
+                "en": "Founding location",
+                "de": "Gründungsort"
+            },
+            "type": "string",
+            "format": "text"
+        },
+        "funder": {
+            "title": "Funder",
+            "title*": {
+                "de": "Förderer*in"
+            },
+            "description": "The Funder of a Consortium is the Organization that provides the funding for the Consortium.",
+            "description*": {
+                "de": "Der/die Geldgeber*in eines Konsortiums ist die Organisation, die die Finanzierung des Konsortiums bereitstellt"
+            },
+            "type": "string",
+            "format": "autocomplete",
+            "options": {
+                "autocomplete": {
+                    "query": "[[Category:OSW3cb8cef2225e403092f098f99bc4c472]] OR [[Category:OSW44deaa5b806d41a2a88594f562b110e9]] |?Display_title_of=label"
+                }
+            }
+        },
+        "image": {
+            "title": "Logo",
+            "title*": {
+                "de": "Logo"
+            }
+        },
+        "legal_name": {
+            "title": "Legal name",
+            "title*": {
+                "en": "Legal name",
+                "de": "Rechtlicher Name"
+            },
+            "type": "string",
+            "format": "text"
+        },
+        "legal_form": {
+            "title": "Legal form",
+            "title*": {
+                "en": "Legal form",
+                "de": "Rechtsform"
+            },
+            "type": "string",
+            "format": "text"
+        },
+        "mailing_list": {
+            "title": "Mailing list",
+            "title*": {
+                "de": "E-Mail-Verteiler"
+            },
+            "description": "Mailing list of the organizational unit.",
+            "description*": {
+                "de": "Mailingliste der Organisationseinheit."
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "Mailing list",
+                "title*": {
+                    "de": "E-Mail-Verteiler"
+                },
+                "type": "string",
+                "format": "email"
+            },
+            "uniqueItems": true
+        },
+        "manager": {
+            "title": "Manager",
+            "title*": {
+                "de": "Manager:in"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "Manager",
+                "title*": {
+                    "de": "Manager:in"
+                },
+                "type": "string",
+                "format": "autocomplete",
+                "range": "Category:OSW44deaa5b806d41a2a88594f562b110e9"
+            },
+            "uniqueItems": true
+        },
+        "member_of": {
+            "title": "Member of",
+            "title*": {
+                "de": "Mitglied in"
+            },
+            "description": "The organization(al unit) this organization is a member of.",
+            "description*": {
+                "de": "Die Organisation(seinheit), der diese Organisation angehört."
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "Member of",
+                "title*": {
+                    "de": "Mitglied in"
+                },
+                "type": "string",
+                "format": "autocomplete",
+                "range": "Category:OSW3cb8cef2225e403092f098f99bc4c472"
+            },
+            "uniqueItems": true
+        },
+        "member_persons": {
+            "title": "Member person(s)",
+            "title*": {
+                "de": "Mitgliedsperson(en)"
+            },
+            "description": "The members (persons) of this organization(al unit).",
+            "description*": {
+                "de": "Die Mitglieder (Personen) dieser Organisation(seinheit)."
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "Member person(s)",
+                "title*": {
+                    "de": "Mitgliedsperson(en)"
+                },
+                "type": "string",
+                "format": "autocomplete",
+                "range": "Category:OSW44deaa5b806d41a2a88594f562b110e9"
+            },
+            "uniqueItems": true
+        },
+        "member_ous": {
+            "title": "Member OU(s)",
+            "title*": {
+                "de": "Mitglied OE(s)"
+            },
+            "description": "The members (organization units) of this organization(al unit).",
+            "description*": {
+                "de": "Die Mitglieder (Organisationseinheiten) dieser Organisation(seinheit)."
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "Member OU(s)",
+                "title*": {
+                    "de": "Mitglied OE(s)"
+                },
+                "type": "string",
+                "format": "autocomplete",
+                "range": "Category:OSW3cb8cef2225e403092f098f99bc4c472"
+            },
+            "uniqueItems": true
+        },
+        "secretary": {
+            "title": "Secretary",
+            "title*": {
+                "de": "Sekretär:in"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "Secretary",
+                "title*": {
+                    "de": "Sekretär:in"
+                },
+                "type": "string",
+                "format": "autocomplete",
+                "range": "Category:OSW44deaa5b806d41a2a88594f562b110e9"
+            },
+            "uniqueItems": true
+        },
+        "postal_address": {
+            "allOf": [
+                {
+                    "$ref": "/wiki/JsonSchema:PostalAddress?action=raw"
+                }
+            ]
+        },
+        "ror_id": {
+            "title": "ROR ID",
+            "title*": {
+                "de": "ROR ID"
+            },
+            "description": "ID provided by https://ror.org/",
+            "description*": {
+                "de": "ID bereitgestellt von https://ror.org/"
+            },
+            "type": "string"
+        },
+        "site": {
+            "title": "Site(s)",
+            "title*": {
+                "de": "Standort(e)"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "Site",
+                "title*": {
+                    "de": "Standort"
+                },
+                "type": "string",
+                "format": "autocomplete",
+                "range": "Category:OSW473d7a1ed48544d1be83b258b5810948"
+            },
+            "uniqueItems": true
+        },
+        "superordinate_ou": {
+            "title": "Superordinate OU(s)",
+            "title*": {
+                "de": "Übergeordnete OE(s)"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "Superordinate OU",
+                "title*": {
+                    "de": "Übergeordnete OE"
+                },
+                "type": "string",
+                "format": "autocomplete",
+                "range": "Category:OSW3cb8cef2225e403092f098f99bc4c472"
+            },
+            "uniqueItems": true
+        },
+        "tax_id_obj": {
+            "title": "Tax ID",
+            "title*": {
+                "de": "Steuer-ID"
+            },
+            "description": "Tax ID of the organizational unit.",
+            "description*": {
+                "de": "Steuer-ID der Organisationseinheit."
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "ID and country",
+                "title*": {
+                    "de": "ID und Land"
+                },
+                "type": "object",
+                "properties": {
+                    "tax_id": {
+                        "title": "ID",
+                        "title*": {
+                            "de": "ID"
+                        },
+                        "type": "string"
+                    },
+                    "country": {
+                        "title": "Country",
+                        "title*": {
+                            "de": "Land"
+                        },
+                        "type": "string",
+                        "format": "autocomplete",
+                        "range": "Category:OSW0551abcd6f734047825e3ded4c8a0ffe"
+                    }
+                }
+            }
+        },
+        "vat_id_obj": {
+            "title": "VAT ID",
+            "title*": {
+                "de": "Umsatzsteuer-ID"
+            },
+            "description": "VAT ID of the organizational unit.",
+            "description*": {
+                "de": "Umsatzsteuer-ID der Organisationseinheit."
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "ID and country",
+                "title*": {
+                    "de": "ID und Land"
+                },
+                "type": "object",
+                "properties": {
+                    "vat_id": {
+                        "title": "ID",
+                        "title*": {
+                            "de": "ID"
+                        },
+                        "type": "string"
+                    },
+                    "country": {
+                        "title": "Country",
+                        "title*": {
+                            "de": "Land"
+                        },
+                        "type": "string",
+                        "format": "autocomplete",
+                        "range": "Category:OSW0551abcd6f734047825e3ded4c8a0ffe"
+                    }
+                }
+            }
+        },
+        "topic": {
+            "title": "Topic(s)",
+            "title*": {
+                "de": "Thema/en"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "Topic(s)",
+                "title*": {
+                    "de": "Thema/en"
+                },
+                "type": "string",
+                "format": "autocomplete",
+                "range": "Category:OSW5a13eeda5ed5405ea7ef62ea6feeceec"
+            },
+            "uniqueItems": true
+        },
+        "website": {
+            "title": "Website",
+            "title*": {
+                "de": "Webseite"
+            },
+            "eval_template": {
+                "type": "mustache-wikitext",
+                "mode": "render",
+                "value": "{{#website}}{{{.}}} <br>{{/website}}"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "Website",
+                "title*": {
+                    "de": "Webseite"
+                },
+                "type": "string",
+                "format": "uri"
+            },
+            "uniqueItems": true
+        },
+        "email": {
+            "title": "Email address",
+            "title*": {
+                "de": "E-Mail"
+            },
+            "eval_template": {
+                "type": "mustache-wikitext",
+                "mode": "render",
+                "value": "{{#email}}[mailto:{{.}} {{.}}] <br>{{/email}}"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "Email address",
+                "title*": {
+                    "de": "E-Mail"
+                },
+                "type": "string",
+                "format": "email"
+            },
+            "uniqueItems": true
+        },
+        "phone_number": {
+            "title": "Phone number",
+            "title*": {
+                "de": "Telefonnummer"
+            },
+            "description": "Phone number formatted with country code and hyphens, e.g.. +49-931-4100-172. According to https://www.wikidata.org/wiki/Property:P1329",
+            "description*": {
+                "de": "Telefonnummer mit Landesvorwahl und Bindestrichen formatiert, z.B.. +49-931-4100-172. Entsprechend https://www.wikidata.org/wiki/Property:P1329"
+            },
+            "eval_template": {
+                "type": "mustache-wikitext",
+                "mode": "render",
+                "value": "{{#phone_number}}[tel:{{.}} {{.}}] <br>{{/phone_number}}"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "Phone number",
+                "title*": {
+                    "de": "Telefonnummer"
+                },
+                "type": "string",
+                "pattern": "(?:(?:(?:\\+|00|011)[\\.\\/\\-\\ \\t]*([17]|2(?:[07]|[1-689]\\d)|3(?:[0-4679]|[578]\\d)|4(?:[013-9]|2\\d)|5(?:[1-8]|[09]\\d)|6(?:[0-6]|[789]\\d)|8(?:[1246]|[035789]\\d)|9(?:[0-58]|[679]\\d))[\\.\\/\\-\\ \\t]*|([17])[\\.\\/\\-\\ ])?(?:\\((\\d{1,6})\\)[\\.\\/\\-\\ \\t]*)?(?:(\\d{1,6})[\\.\\/\\-\\ ])?(?:(\\d{1,6})[\\.\\/\\-\\ ])?(?:(\\d{1,6})[\\.\\/\\-\\ ])?(?:(\\d{1,6})[\\.\\/\\-\\ ])?(\\d{0,10}?)(\\d{1,})(?:[\\.\\/\\-;\\ \\t]*e?xt?[\\.\\/\\-=\\ \\t]*(\\d{1,14}))?)?"
+            },
+            "uniqueItems": true
+        },
+        "fax_number": {
+            "title": "Fax number",
+            "title*": {
+                "de": "Faxnummer"
+            },
+            "description": "Fax number formatted with country code and hyphens, e.g.. +49-931-4100-172. According to https://www.wikidata.org/wiki/Property:P1329",
+            "description*": {
+                "de": "Faxnummer mit Landesvorwahl und Bindestrichen formatiert, z.B.. +49-931-4100-172. Entsprechend https://www.wikidata.org/wiki/Property:P1329"
+            },
+            "eval_template": {
+                "type": "mustache-wikitext",
+                "mode": "render",
+                "value": "{{#fax_number}}[tel:{{.}} {{.}}] <br>{{/fax_number}}"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "Fax number",
+                "title*": {
+                    "de": "Faxnummer"
+                },
+                "type": "string",
+                "pattern": "(?:(?:(?:\\+|00|011)[\\.\\/\\-\\ \\t]*([17]|2(?:[07]|[1-689]\\d)|3(?:[0-4679]|[578]\\d)|4(?:[013-9]|2\\d)|5(?:[1-8]|[09]\\d)|6(?:[0-6]|[789]\\d)|8(?:[1246]|[035789]\\d)|9(?:[0-58]|[679]\\d))[\\.\\/\\-\\ \\t]*|([17])[\\.\\/\\-\\ ])?(?:\\((\\d{1,6})\\)[\\.\\/\\-\\ \\t]*)?(?:(\\d{1,6})[\\.\\/\\-\\ ])?(?:(\\d{1,6})[\\.\\/\\-\\ ])?(?:(\\d{1,6})[\\.\\/\\-\\ ])?(?:(\\d{1,6})[\\.\\/\\-\\ ])?(\\d{0,10}?)(\\d{1,})(?:[\\.\\/\\-;\\ \\t]*e?xt?[\\.\\/\\-=\\ \\t]*(\\d{1,14}))?)?"
+            },
+            "uniqueItems": true
+        },
+        "associated_acl_roles": {
+            "title": "Access control roles",
+            "title*": {
+                "de": "Rollen für die Zugriffskontrolle"
+            },
+            "type": "array",
+            "items": {
+                "title": "Role",
+                "title*": {
+                    "de": "Rolle"
+                },
+                "type": "string"
+            }
+        }
+    },
+    "x-oold-reverse-defaultProperties": [
+        "employees"
+    ],
+    "x-oold-reverse-properties": {
+        "employees": {
+            "type": "array",
+            "title": "Employees",
+            "items": {
+                "type": "string",
+                "format": "autocomplete",
+                "title": "Person",
+                "$comment": "range is Person",
+                "range": "Category:OSW44deaa5b806d41a2a88594f562b110e9"
+            }
+        }
+    }
+}

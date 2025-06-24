@@ -1,0 +1,36 @@
+{
+    "type": [
+        "Category:Category"
+    ],
+    "subclass_of": [
+        "Category:OSW92cc6b1a2e6b4bb7bad470dfdcfdaf26"
+    ],
+    "utf8_icon": [
+        "🎓"
+    ],
+    "uuid": "494f660e-6a71-4a1a-9681-c517bbb975da",
+    "name": "Tutorial",
+    "label": [
+        {
+            "text": "Tutorial",
+            "lang": "en"
+        },
+        {
+            "text": "Tutorium",
+            "lang": "de"
+        }
+    ],
+    "description": [
+        {
+            "text": "Instruction in written or cinematic form",
+            "lang": "en"
+        },
+        {
+            "text": "Schriftliche oder filmische Gebrauchsanleitung",
+            "lang": "de"
+        }
+    ],
+    "instance_rdf_type": [
+        "schema:HowTo"
+    ]
+}

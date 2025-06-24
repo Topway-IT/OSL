@@ -1,0 +1,25 @@
+{
+    "subclass_of": [
+        "Category:OSW9d63242855e44ab8b26d6ad9792a67b3"
+    ],
+    "type": [
+        "Category:Category"
+    ],
+    "uuid": "11ee14fb-9f77-4b4b-89bd-b9bb89aac14d",
+    "name": "University",
+    "label": [
+        {
+            "text": "University",
+            "lang": "en"
+        },
+        {
+            "text": "Hochschule",
+            "lang": "de"
+        },
+        {
+            "text": "Universität",
+            "lang": "de"
+        }
+    ],
+    "instance_rdf_type": "schema:CollegeOrUniversity"
+}

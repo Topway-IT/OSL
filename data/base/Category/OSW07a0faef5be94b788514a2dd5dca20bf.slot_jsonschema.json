@@ -1,0 +1,19 @@
+{
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:Item?action=raw&slot=jsonschema"
+        }
+    ],
+    "title": "BuildingFunction",
+    "required": [
+        "type"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSW07a0faef5be94b788514a2dd5dca20bf"
+            ]
+        }
+    }
+}

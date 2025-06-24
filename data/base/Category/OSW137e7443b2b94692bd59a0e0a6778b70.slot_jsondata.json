@@ -1,0 +1,33 @@
+{
+    "subclass_of": [
+        "Category:OSW28f71f2c20ad48c38c4e4d190a95c0b8"
+    ],
+    "type": [
+        "Category:Category"
+    ],
+    "uuid": "137e7443-b2b9-4692-bd59-a0e0a6778b70",
+    "label": [
+        {
+            "text": "Administrative Area",
+            "lang": "en"
+        },
+        {
+            "text": "Verwaltungsbereich",
+            "lang": "de"
+        }
+    ],
+    "description": [
+        {
+            "text": "A geographical region, typically under the jurisdiction of a particular government.",
+            "lang": "en"
+        },
+        {
+            "text": "Eine geografische Region, die in der Regel unter die Zuständigkeit einer bestimmten Regierung fällt.",
+            "lang": "de"
+        }
+    ],
+    "instance_rdf_type": [
+        "schema:AdministrativeArea"
+    ],
+    "name": "AdministrativeArea"
+}

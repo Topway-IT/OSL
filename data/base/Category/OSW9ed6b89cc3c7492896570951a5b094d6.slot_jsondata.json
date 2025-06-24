@@ -1,0 +1,30 @@
+{
+    "type": [
+        "Category:Category"
+    ],
+    "subclass_of": [
+        "Category:OSWf62d07b325124027b82fbec0a7b852df"
+    ],
+    "uuid": "9ed6b89c-c3c7-4928-9657-0951a5b094d6",
+    "label": [
+        {
+            "text": "Meeting Series",
+            "lang": "en"
+        },
+        {
+            "text": "Meetingserie",
+            "lang": "de"
+        }
+    ],
+    "description": [
+        {
+            "text": "A recurring meeting, e.g., a jour fixe",
+            "lang": "en"
+        },
+        {
+            "text": "Ein wiederkehrendes Treffen, z. B. ein Jour Fixe",
+            "lang": "de"
+        }
+    ],
+    "name": "MeetingSeries"
+}

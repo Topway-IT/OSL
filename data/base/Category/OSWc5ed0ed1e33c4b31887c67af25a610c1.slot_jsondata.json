@@ -1,0 +1,26 @@
+{
+    "subclass_of": [
+        "Category:OSW3d238d05316e45a4ac95a11d7b24e36b"
+    ],
+    "type": [
+        "Category:Category"
+    ],
+    "uuid": "c5ed0ed1-e33c-4b31-887c-67af25a610c1",
+    "label": [
+        {
+            "text": "Room",
+            "lang": "en"
+        },
+        {
+            "text": "Raum",
+            "lang": "de"
+        }
+    ],
+    "name": "Room",
+    "instance_rdf_type": [
+        "schema:Room"
+    ],
+    "utf8_icon": [
+        "🚪"
+    ]
+}

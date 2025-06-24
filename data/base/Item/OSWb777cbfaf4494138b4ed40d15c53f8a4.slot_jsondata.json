@@ -1,0 +1,27 @@
+{
+    "type": [
+        "Category:OSW490e38f9764f4408a244869a0ea98e7c"
+    ],
+    "uuid": "b777cbfa-f449-4138-b4ed-40d15c53f8a4",
+    "label": [
+        {
+            "text": "Discontinued",
+            "lang": "en"
+        },
+        {
+            "text": "Aufgegeben",
+            "lang": "de"
+        }
+    ],
+    "description": [
+        {
+            "text": "The application process was stopped prematurely, for example due to poor prospects of success or a lack of partners",
+            "lang": "en"
+        },
+        {
+            "text": "Der Antragsprozess wurde vorzeitig gestoppt, etwa wegen geringer Erfolgsaussichten oder fehlender Partner",
+            "lang": "de"
+        }
+    ],
+    "name": "Discontinued"
+}

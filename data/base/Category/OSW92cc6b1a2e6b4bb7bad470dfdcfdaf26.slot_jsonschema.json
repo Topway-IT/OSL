@@ -1,0 +1,104 @@
+{
+    "@context": [
+        {
+            "File_": {
+                "@id": "wiki:File-3A",
+                "@prefix": true
+            },
+            "headline": {
+                "@id": "schema:headline",
+                "@type": "xsd:string"
+            },
+            "headline*": {
+                "@id": "Property:HasAuthor",
+                "@type": "xsd:string"
+            },
+            "author": {
+                "@id": "schema:author",
+                "@type": "@id"
+            },
+            "author*": {
+                "@id": "Property:HasAuthor",
+                "@type": "@id"
+            },
+            "related_to": {
+                "@id": "Property:IsRelatedTo",
+                "@type": "@id"
+            },
+            "part_of": {
+                "@id": "Property:IsPartOf",
+                "@type": "@id"
+            }
+        },
+        "/wiki/Category:OSW712583f2479944deb2546b77cf860dda?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSW712583f2479944deb2546b77cf860dda?action=raw&slot=jsonschema"
+        }
+    ],
+    "title": "Article",
+    "title*": {
+        "de": "Artikel"
+    },
+    "description": "A generic entry that can contain both text and media content",
+    "description*": {
+        "de": "Ein allgemeiner Eintrag der sowohl Text als auch Medieninhalte enthalten kann"
+    },
+    "type": "object",
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSW92cc6b1a2e6b4bb7bad470dfdcfdaf26"
+            ]
+        },
+        "related_to": {
+            "type": "array",
+            "title": "Related to",
+            "title*": {
+                "de": "Bezug zu"
+            },
+            "items": {
+                "type": "string",
+                "format": "autocomplete",
+                "title": "Entry",
+                "title*": {
+                    "de": "Eintrag"
+                },
+                "options": {
+                    "autocomplete": {
+                        "query": "[[Category:Entity]] OR [[:Category:%2B]] |?Display_title_of=label"
+                    }
+                },
+                "uniqueItems": true
+            }
+        },
+        "part_of": {
+            "type": "array",
+            "title": "Article collection",
+            "title*": {
+                "de": "Artikelsammlung"
+            },
+            "description": "A superordinated element this entry is part of",
+            "description*": {
+                "de": "Ein übergeordnetes Element von dem dieser Eintrag ein Teil ist"
+            },
+            "items": {
+                "type": "string",
+                "format": "autocomplete",
+                "title": "Collection",
+                "title*": {
+                    "de": "Sammlung"
+                },
+                "options": {
+                    "autocomplete": {
+                        "query": "[[Category:Entity]] OR [[:Category:%2B]] |?Display_title_of=label"
+                    }
+                }
+            }
+        }
+    },
+    "required": [
+        "type"
+    ]
+}

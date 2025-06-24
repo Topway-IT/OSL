@@ -1,0 +1,10 @@
+=={{#switch:{{USERLANGUAGECODE}}|en=Instances|de=Instanzen}}==
+{{#ask: [[{{FULLPAGENAME}}]]
+|?HasStartDate={{#switch: {{USERLANGUAGECODE}} |en=Date & time|de=Datum & Uhrzeit|#default=Date & time}}
+|?HasOrganizer={{#switch: {{USERLANGUAGECODE}} |en=Organizer|de=Organisator*in |#default=Organizer}}
+|?HasInvitedPerson={{#switch: {{USERLANGUAGECODE}} |en=Invitee|de=Eingeladene|#default=Invitee}}
+|sort=HasStartDate
+|order=desc
+|format=datatable
+|limit=1000
+}}

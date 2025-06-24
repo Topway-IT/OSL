@@ -1,0 +1,31 @@
+{
+    "@context": [
+        "/wiki/Category:OSW3d238d05316e45a4ac95a11d7b24e36b?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSW3d238d05316e45a4ac95a11d7b24e36b?action=raw&slot=jsonschema"
+        }
+    ],
+    "type": "object",
+    "title": "Site",
+    "title*": {
+        "en": "Site",
+        "de": "Standort"
+    },
+    "uuid": "473d7a1e-d485-44d1-be83-b258b5810948",
+    "description": "A site is a location or place where a particular event, activity, or object exists or is situated.",
+    "description*": {
+        "de": "Ein Standort ist ein Ort oder ein Platz, an dem ein bestimmtes Ereignis, eine Aktivität oder ein Objekt existiert oder sich befindet."
+    },
+    "required": [
+        "type"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSW473d7a1ed48544d1be83b258b5810948"
+            ]
+        }
+    }
+}

@@ -1,0 +1,70 @@
+{
+    "@context": [
+        {
+            "author": {
+                "@id": "schema:Author",
+                "@type": "@id"
+            },
+            "author*": {
+                "@id": "Property:HasAuthor",
+                "@type": "@id"
+            }
+        },
+        "/wiki/Category:Item?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:Item?action=raw&slot=jsonschema"
+        }
+    ],
+    "type": "object",
+    "uuid": "712583f2-4799-44de-b254-6b77cf860dda",
+    "title": "CreativeWork",
+    "title*": {
+        "en": "Creative Work",
+        "de": "Produkt kreativer Arbeit"
+    },
+    "description": "The most generic kind of (product of) creative work, including books, movies, photographs, software programs, etc.",
+    "description*": {
+        "en": "The most generic kind of (product of) creative work, including books, movies, photographs, software programs, etc.",
+        "de": "Die allgemeinste Art eines Produktes kreativer Arbeit, einschließlich Bücher, Filme, Fotos, Softwareprogramme usw."
+    },
+    "required": [
+        "type"
+    ],
+    "defaultProperties": [
+        "author"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSW712583f2479944deb2546b77cf860dda"
+            ]
+        },
+        "author": {
+            "title": "Author(s)",
+            "title*": {
+                "de": "Autor(en)"
+            },
+            "description": "Person or organizational unit that created this work.",
+            "description*": {
+                "de": "Person oder Organisationseinheit, die diese Arbeit erzeugt hat."
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "Author",
+                "title*": {
+                    "de": "Autor"
+                },
+                "type": "string",
+                "format": "autocomplete",
+                "options": {
+                    "autocomplete": {
+                        "query": "[[Category:OSW44deaa5b806d41a2a88594f562b110e9]] OR [[Category:OSW3cb8cef2225e403092f098f99bc4c472]]"
+                    }
+                }
+            }
+        }
+    }
+}

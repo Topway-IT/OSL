@@ -1,0 +1,38 @@
+{
+    "type": [
+        "Category:Category"
+    ],
+    "subclass_of": [
+        "Category:Item"
+    ],
+    "uuid": "3d238d05-316e-45a4-ac95-a11d7b24e36b",
+    "name": "Location",
+    "label": [
+        {
+            "text": "Location",
+            "lang": "en"
+        },
+        {
+            "text": "Örtlichkeit",
+            "lang": "de"
+        }
+    ],
+    "description": [
+        {
+            "text": "A location. Entities that have a somewhat fixed, physical extension.",
+            "lang": "en"
+        },
+        {
+            "text": "Eine Örtlichkeit. Entitaeten, die eine mehr oder weniger feste, physische Ausdehnung haben.",
+            "lang": "de"
+        }
+    ],
+    "instance_rdf_type": [
+        "schema:Place"
+    ],
+    "utf8_icon": [
+        "📍",
+        "📌",
+        "🖈"
+    ]
+}

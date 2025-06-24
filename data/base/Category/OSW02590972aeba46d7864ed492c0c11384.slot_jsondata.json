@@ -1,0 +1,22 @@
+{
+    "subclass_of": [
+        "Category:OSWf0fe562f422d49c6877490b3dfee2f3f"
+    ],
+    "uuid": "02590972-aeba-46d7-864e-d492c0c11384",
+    "name": "Host",
+    "label": [
+        {
+            "text": "Host",
+            "lang": "en"
+        }
+    ],
+    "description": [
+        {
+            "text": "The physical device that acts as a host for, e.g., a virtual machine",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        "Category:Category"
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "type": [
+        "Category:ObjectProperty"
+    ],
+    "name": "HasContact",
+    "property_type": "Page",
+    "uuid": "7b46fb36-eef3-4b15-ae9b-d335bec25626",
+    "label": [
+        {
+            "text": "HasContact",
+            "lang": "en"
+        }
+    ],
+    "description": []
+}

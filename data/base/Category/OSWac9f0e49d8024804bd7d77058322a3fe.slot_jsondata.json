@@ -1,0 +1,20 @@
+{
+    "uuid": "ac9f0e49-d802-4804-bd7d-77058322a3fe",
+    "label": [
+        {
+            "text": "Room usage according to DIN 277",
+            "lang": "en"
+        },
+        {
+            "text": "Raumnutzung nach DIN 277",
+            "lang": "de"
+        }
+    ],
+    "subclass_of": [
+        "Category:OSW51653bb12c534c0b92a255b0b5ca3984"
+    ],
+    "name": "RoomUsage",
+    "type": [
+        "Category:Category"
+    ]
+}

@@ -1,0 +1,57 @@
+<table class="info_box">
+<tr>
+<th class="heading" colspan="2">{{{_label_schema|User}}}</th>
+</tr>
+<tr> 
+<th>{{{_label_username|Username}}}</th> 
+<td>{{{username|}}}</td> 
+</tr>
+<tr> 
+<th>{{{_label_abbreviation|Abbreviation}}}</th> 
+<td>{{{abbreviation|}}}</td> 
+</tr> 
+<tr> 
+<th>{{{_label_room|Office}}}</th> 
+<td>{{#ask:[[{{FULLPAGENAME}}]]|?HasRoom=|format=plain|mainlabel=-}}</td> 
+</tr>
+<tr> 
+<th>{{{_label_superior|Superior}}}</th> 
+<td>{{#ask:[[{{FULLPAGENAME}}]]|?HasSuperior=|format=plain|mainlabel=-}}</td> 
+</tr>
+</table>
+<!-- Room responsibility -->
+{{#if: {{#ask: [[Category:OSWc5ed0ed1e33c4b31887c67af25a610c1]][[HasResponsiblePerson::{{FULLPAGENAME}}]]}} | 
+
+    =={{#switch:{{USERLANGUAGECODE}}|en=Room responsibility|de=Raum-Verantwortung}}==
+    
+    {{#ask: [[Category:OSWc5ed0ed1e33c4b31887c67af25a610c1]][[HasResponsiblePerson::{{FULLPAGENAME}}]] | <!--?HasName={{#switch:{{USERLANGUAGECODE}}|en=Room|de=Raum}} | -->
+        ?HasRoomUsage={{#switch:{{USERLANGUAGECODE}}|en=Function|de=Funktion}} |
+        mainlabel={{#switch:{{USERLANGUAGECODE}}|en=Room|de=Raum}} |
+        format=table
+        }}
+    | }}
+<!-- Tool responsibility -->
+{{#if: {{#ask: [[Category:OSWe427aafafbac4262955b9f690a83405d]][[HasResponsiblePerson::{{FULLPAGENAME}}]]}} |
+
+    =={{#switch:{{USERLANGUAGECODE}}|en=Tool responsibility|de=Werkzeug-Verantwortung|#default=Tool responsibility}}==
+    
+    {{#ask: [[Category:OSWe427aafafbac4262955b9f690a83405d]][[HasResponsiblePerson::{{FULLPAGENAME}}]] |
+        ?HasType={{#switch:{{USERLANGUAGECODE}}|en=Type|de=Typ|#default=Type}} | 
+        ?HasType.SubClassOf={{#switch:{{USERLANGUAGECODE}}|en=Category|de=Kategorie|#default=Category}} |
+        mainlabel={{#switch:{{USERLANGUAGECODE}}|en=Tool|de=Werkzeug|#default=Tool}} |
+        format=table
+        }}
+    | }}
+<!-- Personnel responsibility -->
+{{#if: {{#ask: [[Category:OSW44deaa5b806d41a2a88594f562b110e9]][[HasSuperior::{{FULLPAGENAME}}]][[HasEmploymentContractStatus::Item:OSW62770459451644f3841c502df8a5cb1d]]}} |
+
+    =={{#switch:{{USERLANGUAGECODE}}|en=Personnel responsibility|de=Personal-Verantwortung}}==
+    
+    {{#ask: [[Category:OSW44deaa5b806d41a2a88594f562b110e9]][[HasSuperior::{{FULLPAGENAME}}]] |
+        ?HasOu={{#switch:{{USERLANGUAGECODE}}|en=Department|de=Abteilung|#default=Department}} |
+        mainlabel={{#switch:{{USERLANGUAGECODE}}|en=Name|de=Name|#default=Name}} |
+        format=table
+        }}
+    | }}
+<!-- employment contract status -->
+{{#set: HasEmploymentContractStatus={{{employment_contract_status|Item:OSW62770459451644f3841c502df8a5cb1d}}} }}

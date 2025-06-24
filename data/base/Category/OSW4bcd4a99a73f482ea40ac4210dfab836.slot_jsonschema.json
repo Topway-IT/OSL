@@ -1,0 +1,185 @@
+{
+    "@context": [
+        {
+            "area": {
+                "@id": "schema:floorSize",
+                "@type": "@id"
+            },
+            "area*": {
+                "@id": "Property:HasArea",
+                "@type": "xsd:float"
+            },
+            "construction_year": {
+                "@id": "schema:yearBuilt",
+                "@type": "xsd:integer"
+            },
+            "construction_year*": {
+                "@id": "Property:HasConstructionYear",
+                "@type": "xsd:integer"
+            },
+            "footprint": {
+                "@id": "Property:HasFootprint",
+                "@type": "xsd:float"
+            },
+            "function": {
+                "@id": "Property:HasBuildingFunction",
+                "@type": "@id"
+            },
+            "height": {
+                "@id": "schema:height",
+                "@type": "xsd:float"
+            },
+            "height*": {
+                "@id": "Property:HasHeight",
+                "@type": "xsd:float"
+            },
+            "length": {
+                "@id": "Property:HasLength",
+                "@type": "xsd:float"
+            },
+            "located_in": {
+                "@id": "schema:containedInPlace",
+                "@type": "@id"
+            },
+            "located_in*": {
+                "@id": "Property:IsLocatedIn",
+                "@type": "@id"
+            },
+            "responsible_person": {
+                "@id": "Property:HasResponsiblePerson",
+                "@type": "@id"
+            },
+            "width": {
+                "@id": "schema:width",
+                "@type": "xsd:float"
+            },
+            "width*": {
+                "@id": "Property:HasWidth",
+                "@type": "xsd:float"
+            }
+        },
+        "/wiki/Category:OSW3d238d05316e45a4ac95a11d7b24e36b?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSW3d238d05316e45a4ac95a11d7b24e36b?action=raw&slot=jsonschema"
+        }
+    ],
+    "title": "Building",
+    "title*": {
+        "en": "Building",
+        "de": "Gebäude"
+    },
+    "type": "object",
+    "required": [
+        "type"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSW4bcd4a99a73f482ea40ac4210dfab836"
+            ]
+        },
+        "located_in": {
+            "title": "Site",
+            "title*": {
+                "en": "Site",
+                "de": "Standort"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "",
+                "type": "string",
+                "format": "autocomplete",
+                "range": "Category:OSW473d7a1ed48544d1be83b258b5810948"
+            },
+            "uniqueItems": true
+        },
+        "construction_year": {
+            "title": "Construction year",
+            "title*": {
+                "de": "Baujahr",
+                "en": "Construction year"
+            },
+            "type": "number",
+            "description": "The year in which the construction was completed.",
+            "description*": {
+                "de": "Das Jahr, in dem der Bau abgeschlossen wurde.",
+                "en": "The year in which the construction was completed."
+            }
+        },
+        "length": {
+            "title": "Length",
+            "title*": {
+                "de": "Länge",
+                "en": "Length"
+            },
+            "type": "number"
+        },
+        "width": {
+            "title": "Width",
+            "title*": {
+                "de": "Breite",
+                "en": "Width"
+            },
+            "type": "number"
+        },
+        "height": {
+            "title": "Height",
+            "title*": {
+                "de": "Höhe",
+                "en": "Height"
+            },
+            "type": "number"
+        },
+        "footprint": {
+            "title": "Area at base level",
+            "title*": {
+                "de": "Grundfläche",
+                "en": "Area at base level"
+            },
+            "type": "number"
+        },
+        "area": {
+            "title": "Total floor area",
+            "title*": {
+                "de": "Gesamtfläche",
+                "en": "Total floor area"
+            },
+            "type": "number"
+        },
+        "function": {
+            "title": "Building function",
+            "title*": {
+                "en": "Building function",
+                "de": "Gebäudefunktion"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "",
+                "type": "string",
+                "format": "autocomplete",
+                "range": "Category:OSW07a0faef5be94b788514a2dd5dca20bf"
+            },
+            "uniqueItems": true
+        },
+        "responsible_person": {
+            "title": "Responsible person",
+            "title*": {
+                "de": "Verantwortliche Person",
+                "en": "Responsible person"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "",
+                "type": "string",
+                "format": "autocomplete",
+                "range": "Category:OSWd9aa0bca9b0040d8af6f5c091bf9eec7"
+            },
+            "uniqueItems": true
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "type": [
+        "Category:ObjectProperty"
+    ],
+    "name": "HasResponsiblePerson",
+    "property_type": "Page",
+    "uuid": "103dab9b-7611-4813-a084-9e8fe20f8ae6",
+    "label": [
+        {
+            "text": "HasResponsiblePerson",
+            "lang": "en"
+        }
+    ],
+    "description": []
+}

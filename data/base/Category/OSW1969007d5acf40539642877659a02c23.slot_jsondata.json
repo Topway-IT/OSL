@@ -1,0 +1,30 @@
+{
+    "subclass_of": [
+        "Category:OSW3cb8cef2225e403092f098f99bc4c472"
+    ],
+    "uuid": "1969007d-5acf-4053-9642-877659a02c23",
+    "label": [
+        {
+            "text": "Organization",
+            "lang": "en"
+        },
+        {
+            "text": "Organisation",
+            "lang": "de"
+        }
+    ],
+    "short_name": [
+        {
+            "text": "Organization",
+            "lang": "en"
+        },
+        {
+            "text": "Organisation",
+            "lang": "de"
+        }
+    ],
+    "name": "Organization",
+    "type": [
+        "Category:Category"
+    ]
+}

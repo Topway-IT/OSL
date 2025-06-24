@@ -1,0 +1,29 @@
+{
+    "@context": [
+        "/wiki/Category:OSW1969007d5acf40539642877659a02c23?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSW1969007d5acf40539642877659a02c23?action=raw&slot=jsonschema"
+        }
+    ],
+    "type": "object",
+    "uuid": "9d632428-55e4-4ab8-b26d-6ad9792a67b3",
+    "title": "EducationalOrganization",
+    "title*": {
+        "en": "Educational Organization",
+        "de": "Bildungseinrichtung"
+    },
+    "description": "",
+    "description*": {},
+    "required": [
+        "type"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSW9d63242855e44ab8b26d6ad9792a67b3"
+            ]
+        }
+    }
+}

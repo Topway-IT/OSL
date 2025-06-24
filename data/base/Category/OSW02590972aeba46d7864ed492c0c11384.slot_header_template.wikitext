@@ -1,0 +1,20 @@
+<table class="info_box">
+<tr>
+<th class="heading" colspan="2">{{{_label_schema|Host}}}</th>
+</tr>
+<tr>
+<td class="subheading" colspan="2">Info</td>
+</tr>
+<tr>
+<th>{{{_label_ip4_address|IP4 Address}}}</th>
+<td>{{#ask:[[{{FULLPAGENAME}}]]|?HasIp4Adress=|format=plain|mainlabel=-}}</td>
+</tr>
+<tr>
+<th>{{{_label_network_domain|Network domain}}}</th>
+<td>{{#ask:[[{{FULLPAGENAME}}]]|?HasNetworkDomain=|format=plain|mainlabel=-}}</td>
+</tr>
+<tr>
+<th>{{#switch:{{USERLANGUAGECODE}}|en=Database servers|de=Datenbanken-Server}}</th>
+<td>{{#ask: [[Category:OSWacdb001c926c46b998af3e645d36b13f]][[HasHost::{{FULLPAGENAME}}]]}}</td>
+</tr>
+</table>

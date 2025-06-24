@@ -1,0 +1,15 @@
+{
+    "type": [
+        "Category:ObjectProperty"
+    ],
+    "name": "HasOwner",
+    "property_type": "Page",
+    "uuid": "2823c469-1315-4127-9bac-235834d2beb4",
+    "label": [
+        {
+            "text": "HasOwner",
+            "lang": "en"
+        }
+    ],
+    "description": []
+}

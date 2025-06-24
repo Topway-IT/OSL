@@ -1,0 +1,138 @@
+{
+    "@context": [
+        {
+            "gps_coordinates": {
+                "@id": "schema:geo",
+                "@type": "xsd:string"
+            },
+            "gps_coordinates*": {
+                "@id": "Property:HasGpsCoordinates",
+                "@type": "xsd:string"
+            },
+            "latitude": {
+                "@id": "schema:latitude",
+                "@type": "xsd:float"
+            },
+            "located_in": {
+                "@id": "schema:containedInPlace",
+                "@type": "@id"
+            },
+            "located_in*": {
+                "@id": "Property:IsLocatedIn",
+                "@type": "@id"
+            },
+            "longitude": {
+                "@id": "schema:longitude",
+                "@type": "xsd:float"
+            },
+            "longitude*": {
+                "@id": "Property:HasLongitude",
+                "@type": "xsd:float"
+            },
+            "postal_address": {
+                "@id": "Property:HasPostalAddress",
+                "@type": "@id",
+                "@context": [
+                    "/wiki/JsonSchema:PostalAddress?action=raw"
+                ]
+            }
+        },
+        "/wiki/Category:Item?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:Item?action=raw&slot=jsonschema"
+        }
+    ],
+    "type": "object",
+    "title": "Location",
+    "uuid": "3d238d05-316e-45a4-ac95-a11d7b24e36b",
+    "title*": {
+        "en": "Location",
+        "de": "Örtlichkeit"
+    },
+    "description": "A location. Entities that have a somewhat fixed, physical extension.",
+    "description*": {
+        "de": "Eine Örtlichkeit. Entitaeten, die eine mehr oder weniger feste, physische Ausdehnung haben."
+    },
+    "required": [
+        "type"
+    ],
+    "defaultProperties": [
+        "uuid",
+        "label",
+        "gps_coordinates",
+        "postal_address"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSW3d238d05316e45a4ac95a11d7b24e36b"
+            ]
+        },
+        "postal_address": {
+            "allOf": [
+                {
+                    "$ref": "/wiki/JsonSchema:PostalAddress?action=raw"
+                }
+            ]
+        },
+        "gps_coordinates": {
+            "title": "GPS coordinates",
+            "title*": {
+                "en": "GPS coordinates",
+                "de": "GPS Koordinaten"
+            },
+            "type": "object",
+            "eval_template": {
+                "type": "wikitext",
+                "value": "{{{latitude|}}}, {{{longitude|}}}"
+            },
+            "required": [
+                "uuid"
+            ],
+            "defaultProperties": [
+                "uuid",
+                "latitude",
+                "longitude"
+            ],
+            "properties": {
+                "uuid": {
+                    "type": "string",
+                    "format": "uuid",
+                    "options": {
+                        "hidden": true
+                    }
+                },
+                "latitude": {
+                    "title": "Latitude",
+                    "title*": {
+                        "en": "Latitude",
+                        "de": "Breitengrad"
+                    },
+                    "type": "number",
+                    "description": "Angular measurement ranging from 0 degree at the equator to +90 degree at the North Pole and minus 90 degree at the South Pole.",
+                    "description*": {
+                        "de": "Die Winkelmessung reicht von 0 Grad am Aequator bis +90 Grad am Nordpol und minus 90 Grad am Suedpol."
+                    },
+                    "minimum": -90,
+                    "maximum": 90
+                },
+                "longitude": {
+                    "title": "Longitude",
+                    "title*": {
+                        "en": "Longitude",
+                        "de": "Laengengrad"
+                    },
+                    "type": "number",
+                    "description": "Angular measurement ranging from 0 degree at the Prime Meridian to +180 degree eastward and minus 180 degree westward.",
+                    "description*": {
+                        "de": "Die Winkelmessung reicht von 0 Grad am Nullmeridian bis +180 Grad im Osten und minus 180 Grad im Westen."
+                    },
+                    "minimum": -180,
+                    "maximum": 180
+                }
+            }
+        }
+    }
+}

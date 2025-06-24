@@ -1,0 +1,32 @@
+{
+    "@context": [
+        "/wiki/Category:OSW2c32802be59040248c85eda3479d484c?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSW2c32802be59040248c85eda3479d484c?action=raw&slot=jsonschema"
+        }
+    ],
+    "type": "object",
+    "uuid": "490e38f9-764f-4408-a244-869a0ea98e7c",
+    "title": "ProjectStatus",
+    "title*": {
+        "en": "Project (Application) Status",
+        "de": "Projekt(antrags)status"
+    },
+    "description": "Status for projects and project applications",
+    "description*": {
+        "en": "Status for projects and project applications",
+        "de": "Status für Projekte und Projektanträge"
+    },
+    "required": [
+        "type"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSW490e38f9764f4408a244869a0ea98e7c"
+            ]
+        }
+    }
+}

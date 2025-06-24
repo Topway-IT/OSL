@@ -1,0 +1,33 @@
+{
+    "subclass_of": [
+        "Category:OSW137e7443b2b94692bd59a0e0a6778b70"
+    ],
+    "type": [
+        "Category:Category"
+    ],
+    "uuid": "0551abcd-6f73-4047-825e-3ded4c8a0ffe",
+    "label": [
+        {
+            "text": "Country",
+            "lang": "en"
+        },
+        {
+            "text": "Land",
+            "lang": "de"
+        }
+    ],
+    "description": [
+        {
+            "text": "A distinct part of the world, such as a state, nation, or other political entity",
+            "lang": "en"
+        },
+        {
+            "text": "Ein bestimmter Teil der Welt, z. B. ein Staat, eine Nation oder eine andere politische Einheit",
+            "lang": "de"
+        }
+    ],
+    "name": "Country",
+    "instance_rdf_type": [
+        "schema:Country"
+    ]
+}

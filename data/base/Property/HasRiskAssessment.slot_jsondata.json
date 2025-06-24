@@ -1,0 +1,20 @@
+{
+    "type": [
+        "Category:ObjectProperty"
+    ],
+    "name": "HasRiskAssessment",
+    "property_type": "Page",
+    "uuid": "edd7df18-6d2b-41bf-918c-c5afd80c4d1e",
+    "label": [
+        {
+            "text": "HasRiskAssessment",
+            "lang": "en"
+        }
+    ],
+    "description": [
+        {
+            "text": "This Property indicates that the Object of the Relation is the Risk Assessment applying to the Subject.",
+            "lang": "en"
+        }
+    ]
+}

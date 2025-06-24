@@ -1,0 +1,54 @@
+{
+    "@context": [
+        {
+            "manager": "Property:HasManager",
+            "superordinate_ou": "Property:HasSuperordinateOu"
+        }
+    ],
+    "defaultProperties": [],
+    "properties": {
+        "manager": {
+            "title": "Head",
+            "title*": {
+                "en": "Head",
+                "de": "Leitung"
+            }
+        },
+        "superordinate_ou": {
+            "description": "Faculty, institute or organization, the department belongs to.",
+            "description*": {
+                "en": "Faculty, institute or organization, the department belongs to.",
+                "de": "Fakultät, Institut oder Organisation, zu der die Abteilung gehört."
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "",
+                "type": "string",
+                "format": "autocomplete",
+                "query": "[[HasType::Category:OSW1969007d5acf40539642877659a02c23]] OR [[HasType::Category:OSW5427361692374c8eaa6bd3733b92d343]] OR [[HasType::Category:OSWa01126bc9e9048988cb0f49e359015bc]] |?Display_title_of=label",
+                "previewWikiTextTemplate": "[[:{{result.fulltext}}]]",
+                "labelTemplate": "{{result.printouts.label.[0]}}"
+            },
+            "minItems": 1,
+            "default": [
+                ""
+            ]
+        },
+        "type": {
+            "default": [
+                "Category:OSW94aa074255374580b70337340c5ccc1b"
+            ]
+        }
+    },
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSWfe3e842b804445c7bb0dd8ee61da2d70?action=raw&slot=jsonschema"
+        }
+    ],
+    "title": "Department",
+    "required": [
+        "type"
+    ]
+}

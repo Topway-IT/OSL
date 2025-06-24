@@ -1,0 +1,34 @@
+{
+    "type": [
+        "Category:OSW490e38f9764f4408a244869a0ea98e7c"
+    ],
+    "rdf_type": [
+        "StatusEnumeration"
+    ],
+    "uuid": "0f033296-0dc9-4216-9866-361efb64ac8a",
+    "label": [
+        {
+            "text": "Admitted for the full application",
+            "lang": "en"
+        },
+        {
+            "text": "Für den Vollantrag zugelassen",
+            "lang": "de"
+        },
+        {
+            "text": "Approved for the full application",
+            "lang": "en"
+        }
+    ],
+    "description": [
+        {
+            "text": "A two-stage procedure is common for many tenders. This project status describes a not yet submitted full proposal (second stage).",
+            "lang": "en"
+        },
+        {
+            "text": "Ein zweistufiges Verfahren ist bei vielen Ausschreibungen üblich. Dieser Projektstatus beschreibt einen noch nicht eingereichten Vollantrag (zweite Stufe).",
+            "lang": "en"
+        }
+    ],
+    "name": "AdmittedForTheFullApplication"
+}

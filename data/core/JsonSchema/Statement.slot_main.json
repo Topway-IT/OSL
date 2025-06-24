@@ -1,0 +1,271 @@
+{
+    "@context": {
+        "Property": "https://wiki-dev.open-semantic-lab.org/id/Property-3A",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "subject*": "Property:HasSubject",
+        "subject": "rdf:subject",
+        "predicate*": "Property:HasProperty",
+        "predicate": "rdf:predicate",
+        "property*": "Property:HasProperty",
+        "property": "rdf:predicate",
+        "quantity*": "Property:HasProperty",
+        "quantity": "rdf:predicate",
+        "object*": "Property:HasObject",
+        "object": "rdf:object",
+        "value*": "Property:HasObject",
+        "value": "rdf:object",
+        "unit": "Property:HasUnit",
+        "substatements": "Property:HasStatement",
+        "label*": "Property:HasLabel",
+        "label": "rdfs:label"
+    },
+    "type": "object",
+    "format": "grid-strict",
+    "id": "statement",
+    "headerTemplate": "... {{#if self.predicate}}{{self.predicate}}{{/if}}{{#if self.property}}{{self.property}}{{/if}}{{#if self.quantity}}{{self.quantity}}{{/if}} ...",
+    "required": [
+        "uuid",
+        "rdf_type"
+    ],
+    "options": {
+        "display_required_only": true
+    },
+    "properties": {
+        "rdf_type": {
+            "default": "rdf:Statement",
+            "options": {
+                "hidden": true
+            }
+        },
+        "uuid": {
+            "title": "UUID",
+            "type": "string",
+            "format": "uuid",
+            "options": {
+                "hidden": true
+            }
+        },
+        "label": {
+            "title": "Label",
+            "description": "Human readable name",
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "Label",
+                "title*": {
+                    "de": "Name"
+                },
+                "eval_template": [
+                    {
+                        "type": "wikitext",
+                        "mode": "store",
+                        "value": "{{{text}}}@{{{lang}}}"
+                    }
+                ],
+                "$ref": "/wiki/JsonSchema:Label?action=raw"
+            },
+            "options": {
+                "collapsed": true,
+                "grid_columns": 12
+            }
+        },
+        "subject": {
+            "type": "string",
+            "format": "autocomplete",
+            "title": "Subject",
+            "title*": {
+                "de": "Subjekt"
+            },
+            "options": {
+                "grid_columns": 4,
+                "autocomplete": {
+                    "query": "[[Category:Entity]]OR[[:Category:%2B]]"
+                }
+            }
+        },
+        "substatements": {
+            "title": "Substatements",
+            "type": "array",
+            "format": "tabs",
+            "propertyOrder": 3010,
+            "items": {
+                "$ref": "#"
+            },
+            "options": {
+                "grid_columns": 12
+            }
+        }
+    },
+    "oneOf": [
+        {
+            "title": "Object Statement",
+            "required": [
+                "uuid",
+                "predicate",
+                "object"
+            ],
+            "properties": {
+                "predicate": {
+                    "type": "string",
+                    "format": "autocomplete",
+                    "title": "Predicate",
+                    "title*": {
+                        "de": "Prädikat"
+                    },
+                    "options": {
+                        "grid_columns": 4,
+                        "autocomplete": {
+                            "category": "Category:Property"
+                        }
+                    }
+                },
+                "object": {
+                    "type": "string",
+                    "format": "autocomplete",
+                    "title": "Object",
+                    "title*": {
+                        "de": "Objekt"
+                    },
+                    "options": {
+                        "grid_columns": 4,
+                        "autocomplete": {
+                            "query": "[[Category:Entity]]OR[[:Category:%2B]]"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "title": "Data Statement",
+            "title*": {
+                "de": "Datenangabe"
+            },
+            "required": [
+                "uuid",
+                "property",
+                "value"
+            ],
+            "properties": {
+                "property": {
+                    "type": "string",
+                    "format": "autocomplete",
+                    "title": "Property",
+                    "title*": {
+                        "de": "Attribut"
+                    },
+                    "options": {
+                        "grid_columns": 4,
+                        "autocomplete": {
+                            "category": "Category:DataProperty"
+                        }
+                    }
+                },
+                "value": {
+                    "type": "string",
+                    "title": "Value",
+                    "title*": {
+                        "de": "Wert"
+                    },
+                    "options": {
+                        "grid_columns": 4
+                    }
+                }
+            }
+        },
+        {
+            "title": "Quantity Statement",
+            "title*": {
+                "de": "Größenangabe"
+            },
+            "required": [
+                "uuid",
+                "quantity",
+                "value",
+                "unit",
+                "unit_symbol",
+                "numerical_value"
+            ],
+            "properties": {
+                "quantity": {
+                    "type": "string",
+                    "format": "autocomplete",
+                    "title": "Property",
+                    "title*": {
+                        "de": "Attribut"
+                    },
+                    "options": {
+                        "grid_columns": 4,
+                        "autocomplete": {
+                            "category": "Category:QuantityProperty"
+                        }
+                    }
+                },
+                "numerical_value": {
+                    "type": "string",
+                    "format": "number",
+                    "title": "Value",
+                    "title*": {
+                        "de": "Wert"
+                    },
+                    "options": {
+                        "grid_columns": 2
+                    }
+                },
+                "unit": {
+                    "type": "string",
+                    "format": "autocomplete",
+                    "title": "Unit",
+                    "title*": {
+                        "de": "Einheit"
+                    },
+                    "propertyOrder": 1010,
+                    "watch": {
+                        "quantity": "statement.quantity",
+                        "unit_symbol": "statement.unit_symbol"
+                    },
+                    "options": {
+                        "grid_columns": 2,
+                        "autocomplete": {
+                            "query": "[[-HasInputUnit::{{$(quantity)}}]][[Display_title_of::like:*{{_user_input}}*]]|?Display_title_of=label",
+                            "render_template": {
+                                "type": [
+                                    "handlebars"
+                                ],
+                                "value": "{{result.printouts.label.[0]}}"
+                            },
+                            "field_maps": [
+                                {
+                                    "source_path": "$",
+                                    "template": "{{{result.printouts.label.[0]}}}",
+                                    "target_path": "$(unit_symbol)"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "unit_symbol": {
+                    "type": "string",
+                    "options": {
+                        "hidden": true
+                    }
+                },
+                "value": {
+                    "type": "string",
+                    "title": "Value",
+                    "title*": {
+                        "de": "Wert"
+                    },
+                    "watch": {
+                        "numerical_value": "statement.numerical_value",
+                        "unit_symbol": "statement.unit_symbol"
+                    },
+                    "template": "{{{numerical_value}}} {{{unit_symbol}}}",
+                    "options": {
+                        "hidden": true
+                    }
+                }
+            }
+        }
+    ]
+}

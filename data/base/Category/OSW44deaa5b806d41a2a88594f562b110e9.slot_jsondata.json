@@ -1,0 +1,43 @@
+{
+    "subclass_of": [
+        "Category:Item"
+    ],
+    "type": [
+        "Category:Category"
+    ],
+    "uuid": "44deaa5b-806d-41a2-a885-94f562b110e9",
+    "label": [
+        {
+            "text": "Person",
+            "lang": "en"
+        },
+        {
+            "text": "Person",
+            "lang": "de"
+        }
+    ],
+    "description": [
+        {
+            "text": "Category for a person in general. Subcategories are e.g. 'User', i.e. persons who have a user ID.",
+            "lang": "en"
+        },
+        {
+            "text": "Kategorie für eine Person im Allgemeinen. Unterkategorien sind bsp. 'User', also Personen die über eine Nutzerkennung verfügen.",
+            "lang": "de"
+        }
+    ],
+    "short_name": [
+        {
+            "text": "Person",
+            "lang": "en"
+        },
+        {
+            "text": "Person",
+            "lang": "de"
+        }
+    ],
+    "name": "Person",
+    "instance_rdf_type": [
+        "schema:Person"
+    ]
+}

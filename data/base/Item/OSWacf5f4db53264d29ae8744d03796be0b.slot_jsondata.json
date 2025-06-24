@@ -1,0 +1,27 @@
+{
+    "type": [
+        "Category:OSW781ad17c7eef4161ade5a7b690aca6b5"
+    ],
+    "uuid": "acf5f4db-5326-4d29-ae87-44d03796be0b",
+    "label": [
+        {
+            "text": "Inactive",
+            "lang": "en"
+        },
+        {
+            "text": "Inaktiv",
+            "lang": "de"
+        }
+    ],
+    "description": [
+        {
+            "text": "Describes an inactive emplyoment contract. Includes cases where the employee left the organization, resigned or retired, or the contract was terminated. The former employee is considered an alumni.",
+            "lang": "en"
+        },
+        {
+            "text": "Beschreibt einen inaktiven Angestelltenvertrag. Dazu gehören Fälle, in denen der*die Mitarbeiter*in das Unternehmen verlassen hat, gekündigt oder in den Ruhestand getreten ist oder der Vertrag gekündigt wurde. Der*die ehemalige Mitarbeiter*in wird als Alumni betrachtet.",
+            "lang": "de"
+        }
+    ],
+    "name": "Inactive"
+}

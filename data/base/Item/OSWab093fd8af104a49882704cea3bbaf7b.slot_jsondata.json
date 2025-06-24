@@ -1,0 +1,23 @@
+{
+    "type": [
+        "Category:OSWa5812d3b5119416c8da1606cbe7054eb"
+    ],
+    "uuid": "ab093fd8-af10-4a49-8827-04cea3bbaf7b",
+    "label": [
+        {
+            "text": "Functional requirement",
+            "lang": "en"
+        },
+        {
+            "text": "Funktionale Anforderung",
+            "lang": "de"
+        }
+    ],
+    "name": "FunctionalRequirement",
+    "description": [
+        {
+            "text": "Primary defined by the user, e. g. features",
+            "lang": "en"
+        }
+    ]
+}

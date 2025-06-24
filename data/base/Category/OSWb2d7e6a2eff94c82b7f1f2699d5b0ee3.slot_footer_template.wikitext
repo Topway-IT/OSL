@@ -1,0 +1,78 @@
+== {{{_label_abstract|Abstract}}} == 
+{{{abstract|}}}
+
+== Kanban ==
+
+<div class="Kanban" style="width: 100%" data-config='{
+  "uuid": "",
+  "name": "Kanban Board",
+  "edit": true,
+  "board_preset": "prio_backlog_inwork_done",
+  "board": {
+    "default_jsondata": {"related_to": ["{{FULLPAGENAME}}"], "actionees": []}
+  },
+  "query": {"type": "smw", "value": "[[IsRelatedTo::{{FULLPAGENAME}}]]"}
+}'></div>
+
+== {{#switch:{{USERLANGUAGECODE}} |#default=Documents |en=Documents |de=Dokumente}} ==
+
+{{#tag:gallery|
+{{#ifexist: {{{proposal|}}} | {{{proposal}}} | }}{{!}}{{{_label_proposal|Proposal}}}
+{{#ifexist: {{{report|}}} | {{{report}}} | }}{{!}}{{{_label_other_documents|Report}}}
+{{#arraymap: {{#ask: [[{{FULLPAGENAME}}]] 
+|?HasAdditionalDocument=
+|mainlabel=-
+|format=plain
+}}|,|x|x{{!}}{{{_label_proposal|Additional Documents}}}|\n}}
+|mode="traditional"
+}}
+
+== {{#switch:{{USERLANGUAGECODE}} |#default=Budget |en=Budget |de=Finanzen}} ==
+<div style="display: table;"><div style="float:left;">
+{{#ask:[[-has subobject::{{FULLPAGENAME}}]]
+|?HasBudgetYear
+|?HasBudget
+|format=jqplotchart
+|headers=show
+|charttitle='''{{#switch:{{USERLANGUAGECODE}} |#default=Budget per year |en=Budget per year|de=Budget pro Jahr}}'''
+|mainlabel=-
+|distributionsort=none
+|direction=vertical
+|numbersaxislabel='''Euro'''
+|height=400
+|width=400
+|valueformat=%d
+|ticklabels=1
+|theme=simple
+|filling=1
+|chartlegend=none
+|datalabels=percent
+|charttype=bar
+|sort=HasBudgetYear
+|order=asc
+}}
+</div>
+<div style="float:left;">
+{{#ask:[[-has subobject::{{FULLPAGENAME}}]]
+|?HasType
+|?HasBudget
+|width=400
+|format=jqplotchart
+|charttype=pie
+|direction=horizontal
+|mainlabel=-
+|limit=20
+|link=all
+|headers=show
+|charttitle='''{{#switch:{{USERLANGUAGECODE}} |#default=Budget per Type |en=Budget per Type|de=Budget nach Typ}}'''
+|highlighter=yes
+|datalabels=value
+|valueformat=%d
+|theme=simple
+|colorscheme=rdbu
+|chartcolor=#6dbfa9,#179c7d,#b4dcd3
+|chartlegend=ne
+|sort=HasBudgetYear
+|order=asc
+}}
+</div></div>

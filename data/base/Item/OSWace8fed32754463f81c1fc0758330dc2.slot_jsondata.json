@@ -1,0 +1,21 @@
+{
+    "type": [
+        "Category:OSW67f2ef61ba284c919fefa00d0e95a7a0"
+    ],
+    "rdf_type": [
+        "schema:Enumeration"
+    ],
+    "uuid": "ace8fed3-2754-463f-81c1-fc0758330dc2",
+    "label": [
+        {
+            "text": "Industry project",
+            "lang": "en"
+        },
+        {
+            "text": "Industrieprojekt",
+            "lang": "de"
+        }
+    ],
+    "description": [],
+    "name": "IndustryProject"
+}

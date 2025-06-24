@@ -1,0 +1,15 @@
+{
+    "type": [
+        "Category:ObjectProperty"
+    ],
+    "name": "HasDepartment",
+    "property_type": "Page",
+    "uuid": "73100f51-27ce-4bd3-ba9b-0c20f9683707",
+    "label": [
+        {
+            "text": "HasDepartment",
+            "lang": "en"
+        }
+    ],
+    "description": []
+}

@@ -1,0 +1,31 @@
+=={{#switch:{{USERLANGUAGECODE}}|en=Gantt Chart|de=Gantt Diagramm|#default=Gantt Chart}}==
+{{#ask:
+ [[{{FULLPAGENAME}}]]
+ |?Display title of=task
+ |?Issue Status=status
+ |?HasStartDate=startdate
+ |?HasEndDate=enddate
+ |?Related To Epic=section
+ |?Issue Priority=priority
+ |format=gantt
+ |axisformat=%d/%m/%Y
+ |diagramtitle=Projects
+ |statusmapping=2 (in progress)=>active;3 (completed)=>done
+ |prioritymapping=1 (high)=>crit; 2 (normal)=>crit
+ |sortkey=title
+ |leftpadding=120
+ |titletopmargin=25
+ |bargap=5
+ |barheight=25
+ |theme=neutral
+ |limit=1000
+}}
+
+=={{#switch:{{USERLANGUAGECODE}}|en=Overview Table|de=Übersichtstabelle|#default=Overview Table}}==
+{{#ask: [[{{FULLPAGENAME}}]]
+|?HasDescription={{#switch:{{USERLANGUAGECODE}}|en=Description|de=Beschreibung|#default=Description}} |+lang={{USERLANGUAGECODE}}
+|?HasStartDate={{#switch:{{USERLANGUAGECODE}}|en=Start|de=Beginn|#default=Start}}
+|?HasEndDate={{#switch:{{USERLANGUAGECODE}}|en=End|de=Ende|#default=End}}
+|format=datatable
+|limit=1000
+}}

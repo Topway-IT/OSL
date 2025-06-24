@@ -1,0 +1,30 @@
+{
+    "@context": [
+        "/wiki/Category:OSWcffdc90247c142eca7f23ab6c69e49a1?action=raw&slot=jsonschema",
+        {}
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSWcffdc90247c142eca7f23ab6c69e49a1?action=raw&slot=jsonschema"
+        }
+    ],
+    "title": "Foundation",
+    "title*": {
+        "de": "Stiftung"
+    },
+    "required": [
+        "type"
+    ],
+    "defaultProperties": [
+        "uuid",
+        "label"
+    ],
+    "type": "object",
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSWd7085ef89b0e4a69ac4f2d28bda2d2c0"
+            ]
+        }
+    }
+}

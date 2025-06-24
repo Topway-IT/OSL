@@ -1,0 +1,27 @@
+{
+    "type": [
+        "Category:OSW490e38f9764f4408a244869a0ea98e7c"
+    ],
+    "uuid": "a387769a-552a-4f12-8cf5-1a57979d226b",
+    "label": [
+        {
+            "text": "Aborted",
+            "lang": "en"
+        },
+        {
+            "text": "Abgebrochen",
+            "lang": "de"
+        }
+    ],
+    "description": [
+        {
+            "text": "The project was stopped prematurely after the start, as important milestones may not have been reached.",
+            "lang": "en"
+        },
+        {
+            "text": "Das Projekt wurde nach dem Start vorzeitig gestoppt, da ggf. wichtige Meilensteine nicht erreicht wurden.",
+            "lang": "de"
+        }
+    ],
+    "name": "Aborted"
+}

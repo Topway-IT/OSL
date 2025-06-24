@@ -1,0 +1,121 @@
+<table class="info_box">
+<tr>
+<th class="heading" colspan="2">{{{_label_schema|Building}}}</th>
+</tr>
+<!--
+<tr>
+<td class="subheading" colspan="2">Info</td>
+</tr>
+-->
+<tr>
+<th>{{{_label_construction_year|Construction year}}}</th>
+<td>{{{construction_year|}}}</td>
+</tr>
+<tr><!--
+<th>{{{_label_located_in|Site}}}</th> -->
+<th>{{#switch:{{USERLANGUAGECODE}}
+        |en=Location
+        |de=Lage}}</th>
+<td>{{#ask:[[{{FULLPAGENAME}}]]|?IsLocatedIn=|format=plain|mainlabel=-}}</td>
+</tr>
+<tr>
+<th>{{{_label_function|Function}}}</th>
+<td>{{#ask:[[{{FULLPAGENAME}}]]|?HasBuildingFunction=|format=plain|mainlabel=-}}</td>
+</tr>
+<tr>
+<th>{{#switch:{{USERLANGUAGECODE}}|en=Floors|de=Stockwerke}}</th>
+<td>{{#ask: [[Category:OSW6c4212f1a39342be963d2b9efd19c5c2]][[IsLocatedIn::{{FULLPAGENAME}}]]}}</td>
+</tr>
+<tr>
+<td class="subheading" colspan="2">{{#switch:{{USERLANGUAGECODE}}
+    |en=Dimensions
+    |de=Abmessungen}}</th></td>
+</tr>
+<tr>
+<th>{{{_label_length|Length}}}</th>
+<td>{{{length|}}}</td>
+</tr>
+<tr>
+<th>{{{_label_width|Width}}}</th>
+<td>{{{width|}}}</td>
+</tr>
+<tr>
+<th>{{{_label_height|Height}}}</th>
+<td>{{{height|}}}</td>
+</tr>
+<tr>
+<th>{{{_label_footprint|Footprint}}}</th>
+<td>{{{footprint|}}}</td>
+</tr>
+<tr>
+<th>{{{_label_area|Total floor area}}}</th>
+<td>{{{area|}}}</td>
+</tr>
+<tr>
+<td class="subheading" colspan="2">{{{_label_responsibility|Responsibility}}}</td>
+</tr>
+<tr>
+<th>{{{_label_responsible_person|Responsible person}}}</th>
+<td>{{#ask:[[{{FULLPAGENAME}}]]|?HasResponsiblePerson=|format=plain|mainlabel=-}}</td>
+</tr>
+</table>
+<!-- Overview of floors -->
+=={{#switch:{{USERLANGUAGECODE}}|en=Floors |de=Stockwerke|#default=Floors}}==
+{{#set: HasNumberOfFloors=
+    {{#ask: [[Category:OSW6c4212f1a39342be963d2b9efd19c5c2]][[IsLocatedIn::{{FULLPAGENAME}}]]
+        |format=count
+        |limit=1000
+        }}
+}}
+{{#switch:{{USERLANGUAGECODE}}
+        |en=Number of floors
+        |de=Stockwerke (Anzahl)
+        |#default=Number of floors
+    }}: {{#show: {{FULLPAGENAME}} |?HasNumberOfFloors}}
+{{#ask: [[Category:OSW6c4212f1a39342be963d2b9efd19c5c2]][[IsLocatedIn::{{FULLPAGENAME}}]]
+    |?HasNumberOfRooms={{#switch: {{USERLANGUAGECODE}} |en=Number of rooms |de=Räume (Anzahl) |#default=Number of rooms}}
+    |?HasNumberOfOccupants={{#switch: {{USERLANGUAGECODE}} |en=Number of occupants |de=Belegung (Anzahl) |#default=Number of occupants}}
+    |format=table
+    |limit=1000
+    |sort=Display title of
+    |order=asc
+    }}
+
+<!-- Overview of rooms -->
+=={{#switch:{{USERLANGUAGECODE}}|en=Rooms |de=Räume |#default=Rooms}}==
+{{#set: HasNumberOfRooms=
+    {{#ask: [[Category:OSW6c4212f1a39342be963d2b9efd19c5c2]][[IsLocatedIn::{{FULLPAGENAME}}]]
+        |?HasNumberOfRooms
+        |format=sum
+        }}
+    }}
+{{#switch:{{USERLANGUAGECODE}}
+        |en=Number of rooms
+        |de=Räume (Anzahl)
+        |#default=Number of rooms
+    }}: {{#show: {{FULLPAGENAME}} |?HasNumberOfRooms}}
+{{#ask: [[Category:OSWc5ed0ed1e33c4b31887c67af25a610c1]][[IsLocatedIn::{{FULLPAGENAME}}]]
+    |?HasRoomNumber={{#switch: {{USERLANGUAGECODE}} |en=Room number |de=Raumnummer |#default=Room number}}
+    |?HasArea={{#switch: {{USERLANGUAGECODE}} |en=Area |de=Fläche |#default=Area}}
+    |?HasRoomUsage={{#switch: {{USERLANGUAGECODE}} |en=Room usage |de=Raumnutzung |#default=Room usage}}
+    |?HasRoomUsageType={{#switch: {{USERLANGUAGECODE}} |en=Room usage type |de=Raumnutzungstyp |#default=Room usage type}}
+    |?HasNumberOfOccupants={{#switch: {{USERLANGUAGECODE}} |en=Number of occupants |de=Belegung (Anzahl) |#default=Number of occupants}}
+    |format=datatable
+    |limit=5000
+    |sort=Display title of
+    |order=asc
+    }}
+
+<!-- Occupancy -->
+=={{#switch:{{USERLANGUAGECODE}}|en=Occupancy|de=Belegung|#default=Occupancy}}==
+{{#set: HasNumberOfOccupants=
+    {{#ask: [[Category:OSW6c4212f1a39342be963d2b9efd19c5c2]][[IsLocatedIn::{{FULLPAGENAME}}]]
+        |?HasNumberOfOccupants
+        |format=sum
+        }}
+}}
+{{#switch:{{USERLANGUAGECODE}}
+        |en=Number of occupants
+        |de=Belegung (Anzahl)
+        |#default=Number of occupants
+    }}: {{#show: {{FULLPAGENAME}} |?HasNumberOfOccupants}}

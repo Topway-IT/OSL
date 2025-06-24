@@ -1,0 +1,111 @@
+{
+    "type": "array",
+    "title": "Workflow Runs",
+    "description": "Workflows sheduled for this item",
+    "$comment": "default prefect workflows with only a subject as parameter",
+    "eval_template": [
+        {
+            "type": "mustache-wikitext",
+            "mode": "render",
+            "value": "{{#workflow_runs}} <div class='PrefectStatusBadge' data-config='{\"uuid\":\"{{{uuid}}}\", {{=<% %>=}} \"parent\": \"{{FULLPAGENAME}}\", \"parameters\": {\"request\": {\"subject\":  \"{{FULLPAGENAME}}\" <%={{ }}=%> } } }'></div> {{/workflow_runs}}"
+        }
+    ],
+    "items": {
+        "_$ref": "/wiki/Category:OSWb79812225c7849b78e98f2b3b10498b3?action=raw&slot=jsonschema",
+        "title": "Workflow Run",
+        "required": [
+            "uuid",
+            "tool"
+        ],
+        "properties": {
+            "uuid": {
+                "title": "UUID",
+                "type": "string",
+                "format": "uuid",
+                "options": {
+                    "hidden": true
+                }
+            },
+            "name": {
+                "title": "Name",
+                "description": "Technical / Machine compatible name",
+                "description*": {
+                    "de": "Technischer / Maschinenkompatibler Name"
+                },
+                "type": "string",
+                "options": {
+                    "hidden": true
+                }
+            },
+            "label": {
+                "type": "array",
+                "title": "Labels",
+                "title*": {
+                    "de": "Namen"
+                },
+                "description": "Human readable names. You have to assign at least one.",
+                "description*": {
+                    "de": "Menschenlesbarer Namen. Du musst mindestens einen vergeben."
+                },
+                "format": "table",
+                "eval_template": [
+                    {
+                        "type": "mustache-wikitext",
+                        "mode": "render",
+                        "value": "{{=<% %>=}} {{#switch:{{USERLANGUAGECODE}} <%={{ }}=%> {{#label}} |{{lang}}={{text}} {{/label}} {{=<% %>=}} }}"
+                    }
+                ],
+                "items": {
+                    "title": "Label",
+                    "title*": {
+                        "de": "Name"
+                    },
+                    "eval_template": [
+                        {
+                            "type": "wikitext",
+                            "mode": "store",
+                            "value": "{{{text}}}@{{{lang}}}"
+                        }
+                    ],
+                    "$ref": "/wiki/JsonSchema:Label?action=raw"
+                },
+                "minItems": 1
+            },
+            "status": {
+                "type": "string",
+                "format": "autocomplete",
+                "title": "Status",
+                "default": "Item:OSWaa8d29404288446a9f3ec7afa4e2a512",
+                "options": {
+                    "autocomplete": {
+                        "category": "Category:OSW9725d7a91bab4f1aa68f423e4e9bfcf4"
+                    }
+                }
+            },
+            "tool": {
+                "type": "array",
+                "title": "Workflows",
+                "title*": {
+                    "de": "Workflows"
+                },
+                "minItems": 1,
+                "maxItems": 1,
+                "items": {
+                    "type": "string",
+                    "title": "Workflow",
+                    "title*": {
+                        "de": "Workflow"
+                    },
+                    "format": "autocomplete",
+                    "range": "Category:OSW77e749fc598341ac8b6d2fff21574058",
+                    "options": {
+                        "autocomplete": {
+                            "$comment": "Software hosted by a prefect flow",
+                            "query": "[[Category:OSW77e749fc598341ac8b6d2fff21574058]][[-Hosts.HasSchema::Category:OSW72eae3c8f41f4a22a94dbc01974ed404]]"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

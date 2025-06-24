@@ -1,0 +1,139 @@
+{
+    "@context": [
+        "/wiki/Category:Category?action=raw&slot=jsonschema",
+        {
+            "manufacturer": {
+                "@id": "Property:HasManufacturer",
+                "@type": "@id"
+            },
+            "manual": {
+                "@id": "Property:HasManual",
+                "@type": "@id"
+            },
+            "purpose": {
+                "@id": "Property:HasPurpose",
+                "@type": "@id"
+            },
+            "typical_process": {
+                "@id": "Property:HasTypicalProcess",
+                "@type": "@id"
+            }
+        }
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:Category?action=raw&slot=jsonschema"
+        }
+    ],
+    "type": "object",
+    "uuid": "d845b968-13a3-4445-8f14-0e48c4d063fd",
+    "title": "MetaDeviceCategory",
+    "title*": {
+        "en": "MetaDeviceCategory"
+    },
+    "description": "Helps Creating DeviceCategories",
+    "description*": {},
+    "required": [
+        "type"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSWd845b96813a344458f140e48c4d063fd"
+            ]
+        },
+        "manufacturer": {
+            "type": "string",
+            "format": "autocomplete",
+            "title": "Manufacturer",
+            "title*": {
+                "de": "Hersteller"
+            },
+            "description": "Manufacturer",
+            "$comment": "We may also need a vendor = seller which can be different from the manufacturer and can use custom IDs, etc.",
+            "options": {
+                "autocomplete": {
+                    "$comment": "range are instances of OrganizationalUnit",
+                    "category": "Category:OSW3cb8cef2225e403092f098f99bc4c472"
+                }
+            }
+        },
+        "manufacturer_name": {
+            "type": "string",
+            "title": "Manufacturer (Name)",
+            "title*": {
+                "de": "Hersteller (Name)"
+            },
+            "description": "Name of the manufacturer. Only needed if a link cannot be provided because the entry does not exist yet",
+            "description*": {
+                "de": "Name des Herstellers. Nur notwendig wenn eine Verlinkung nicht möglich ist weil etwa der Eintrag noch nicht existiert."
+            }
+        },
+        "manufacturer_type_id": {
+            "type": "string",
+            "title": "Manufacturer Type ID",
+            "title*": {
+                "de": "Hersteller Typen-ID"
+            },
+            "description": "Product ID provided by the manufacturer",
+            "description*": {
+                "de": "Produkt-ID des Herstellers."
+            }
+        },
+        "manufacturer_type_name": {
+            "type": "string",
+            "title": "Manufacturer Type Name",
+            "title*": {
+                "de": "Hersteller Typenbezeichnung"
+            },
+            "description": "Product name provided by the manufacturer. Often more human friendly than the type id.",
+            "description*": {
+                "de": "Produktname des Herstellers. Oftmals ein einfacherer Alias neben der Typen-ID"
+            }
+        },
+        "manual": {
+            "title": "Manual",
+            "title*": {
+                "de": "Bedienungsanleitung"
+            },
+            "type": "string",
+            "format": "url",
+            "options": {
+                "upload": {}
+            },
+            "links": [
+                {
+                    "href": "{{#if self}}/w/index.php?title=Special:Redirect/file/{{self}}&width=200&height=200{{/if}}"
+                },
+                {
+                    "href": "{{#if self}}/w/index.php?title=Special:Redirect/file/{{self}}{{/if}}",
+                    "rel": "{{#if self}}download{{/if}}",
+                    "download": true
+                }
+            ]
+        },
+        "typical_process_names": {
+            "title": "Typical Processes (Names)",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Name"
+            }
+        },
+        "typical_processes": {
+            "title": "Typical Processes (Links)",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "format": "autocomplete",
+                "title": "Link",
+                "options": {
+                    "autocomplete": {
+                        "$comment": "range are processes / subcategories of Process",
+                        "subcategory": "Category:OSWe5aa96bffb1c4d95be7fbd46142ad203"
+                    }
+                }
+            }
+        }
+    }
+}

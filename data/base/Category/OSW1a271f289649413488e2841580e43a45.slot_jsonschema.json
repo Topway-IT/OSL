@@ -1,0 +1,29 @@
+{
+    "@context": [
+        "/wiki/Category:OSWfa0d5710bc0f45819b61b65fc4fd9656?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSWfa0d5710bc0f45819b61b65fc4fd9656?action=raw&slot=jsonschema"
+        }
+    ],
+    "type": "object",
+    "uuid": "1a271f28-9649-4134-88e2-841580e43a45",
+    "title": "AdministrativeProcess",
+    "title*": {
+        "en": "Administrative process",
+        "de": "Administrativer Prozess"
+    },
+    "description": "",
+    "description*": {},
+    "required": [
+        "type"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSW1a271f289649413488e2841580e43a45"
+            ]
+        }
+    }
+}

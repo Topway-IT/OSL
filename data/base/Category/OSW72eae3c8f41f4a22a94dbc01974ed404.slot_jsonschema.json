@@ -1,0 +1,35 @@
+{
+    "@context": [
+        "/wiki/Category:OSW8c56fd1e858f499da801691c5f2b7309?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSW8c56fd1e858f499da801691c5f2b7309?action=raw&slot=jsonschema"
+        }
+    ],
+    "type": "object",
+    "uuid": "72eae3c8-f41f-4a22-a94d-bc01974ed404",
+    "title": "PrefectFlow",
+    "title*": {
+        "en": "PrefectFlow"
+    },
+    "description": "Part of a Prefect Workflow Environment",
+    "description*": {
+        "en": "Part of a Prefect Workflow Environment"
+    },
+    "required": [
+        "type"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSW72eae3c8f41f4a22a94dbc01974ed404"
+            ]
+        },
+        "flow_id": {
+            "type": "string",
+            "title": "Prefect Flow UUID",
+            "description": "The unique prefect flow id"
+        }
+    }
+}

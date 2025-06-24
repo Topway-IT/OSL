@@ -1,0 +1,45 @@
+{
+    "@context": [
+        "/wiki/Category:OSWcbb09a36336740c6a2cd62db9bf647ec?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSWcbb09a36336740c6a2cd62db9bf647ec?action=raw&slot=jsonschema"
+        }
+    ],
+    "type": "object",
+    "uuid": "25bc4daf-9764-4737-a764-34b88e1d5b21",
+    "title": "Grant",
+    "title*": {
+        "en": "Beihilfe",
+        "de": "Unterstützung"
+    },
+    "description": "A grant, typically financial or otherwise quantifiable, of resources. Typically a funder sponsors some MonetaryAmount to an Organization or Person, sometimes not necessarily via a dedicated or long-lived Project, resulting in one or more outputs, or funded items.",
+    "description*": {
+        "en": "A grant, typically financial or otherwise quantifiable, of resources. Typically a funder sponsors some MonetaryAmount to an Organization or Person, sometimes not necessarily via a dedicated or long-lived Project, resulting in one or more outputs, or funded items.",
+        "de": "Eine - in der Regel finanzielle oder anderweitig quantifizierbare - Zuwendung von Ressourcen. In der Regel stellt ein Geldgeber einer Organisation oder Person einen Geldbetrag zur Verfügung, manchmal nicht unbedingt über ein spezielles oder langfristiges Projekt, das zu einem oder mehreren Outputs oder finanzierten Elementen führt."
+    },
+    "required": [
+        "type",
+        "rdf_type"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSW25bc4daf97644737a76434b88e1d5b21"
+            ]
+        },
+        "rdf_type": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "default": [
+                "schema:Grant"
+            ],
+            "options": {
+                "hidden": true
+            }
+        }
+    }
+}

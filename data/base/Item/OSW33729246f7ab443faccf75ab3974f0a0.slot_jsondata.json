@@ -1,0 +1,21 @@
+{
+    "type": [
+        "Category:OSW490e38f9764f4408a244869a0ea98e7c"
+    ],
+    "rdf_type": [
+        "StatusEnumeration"
+    ],
+    "uuid": "33729246-f7ab-443f-accf-75ab3974f0a0",
+    "label": [
+        {
+            "text": "Rejected",
+            "lang": "en"
+        },
+        {
+            "text": "Abgelehnt",
+            "lang": "de"
+        }
+    ],
+    "description": [],
+    "name": "Rejected"
+}

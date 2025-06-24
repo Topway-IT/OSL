@@ -1,0 +1,20 @@
+{
+    "type": [
+        "Category:Category"
+    ],
+    "subclass_of": [
+        "Category:OSWfa0d5710bc0f45819b61b65fc4fd9656"
+    ],
+    "uuid": "1a271f28-9649-4134-88e2-841580e43a45",
+    "label": [
+        {
+            "text": "Administrative process",
+            "lang": "en"
+        },
+        {
+            "text": "Administrativer Prozess",
+            "lang": "de"
+        }
+    ],
+    "name": "AdministrativeProcess"
+}

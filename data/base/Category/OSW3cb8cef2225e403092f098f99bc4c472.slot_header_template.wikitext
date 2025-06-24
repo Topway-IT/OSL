@@ -1,0 +1,162 @@
+<table class="info_box">
+    <tr>
+        <th class="heading" colspan="2">{{{_label_schema|Organizational unit}}}</th>
+    </tr>
+    <tr>
+        <th>{{{_label_acronym|Acronym}}}</th>
+        <td>{{{abbreviation|}}}</td>
+    </tr>
+    <tr>
+        <td class="subheading" colspan="2">{{#switch:{{USERLANGUAGECODE}}
+            |en=Contact
+            |de=Kontakt
+            |#default=Contact}}
+        </td>
+    </tr>
+    <tr>
+        <th>{{{_label_website|Website}}}</th>
+        <td>{{{website|}}}</td>
+    </tr>
+    <tr>
+        <th>{{{_label_email|E-mail}}}</th>
+        <td>{{{email|}}}</td>
+    </tr>
+    <tr>
+        <th>{{{_label_mailing_list|Mailing list}}}</th>
+        <td>{{#ask:[[{{FULLPAGENAME}}]]|?HasMailingList=|format=plain|mainlabel=-}}</td>
+    </tr>
+    <tr>
+        <th>{{{_label_phone_number|Phone number}}}</th>
+        <td>{{{phone_number|}}}</td>
+    </tr>
+    <tr>
+        <th>{{{_label_fax_number|Fax number}}}</th>
+        <td>{{{fax_number|}}}</td>
+    </tr>
+    <tr>
+        <th>{{{_label_postal_address|Postal address}}}</th>
+        <td>{{{postal_address|}}}</td>
+    </tr>
+    <tr>
+        <th>{{{_label_site|Site}}}</th>
+        <td>{{#ask:[[{{FULLPAGENAME}}]]|?IsLocatedIn=|format=plain|mainlabel=-}}</td>
+    </tr>
+    <tr>
+        <td class="subheading" colspan="2">{{#switch:{{USERLANGUAGECODE}}
+            |en=Management
+            |de=Management
+            |#default=Management}}
+        </td>
+    </tr>
+    <tr>
+        <th>{{{_label_manager|Manager}}}</th>
+        <td>{{#ask:[[{{FULLPAGENAME}}]]|?HasManager=|format=plain|mainlabel=-}}</td>
+    </tr>
+    <tr>
+        <th>{{{_label_deputy_manager|Deputy manager}}}</th>
+        <td>{{#ask:[[{{FULLPAGENAME}}]]|?HasDeputyManager=|format=plain|mainlabel=-}}</td>
+    </tr>
+    <tr>
+        <th>{{{_label_secretary|Secretary}}}</th>
+        <td>{{#ask:[[{{FULLPAGENAME}}]]|?HasSecretary=|format=plain|mainlabel=-}}</td>
+    </tr>
+    <tr>
+        <td class="subheading" colspan="2">{{#switch:{{USERLANGUAGECODE}}
+            |en=Relations
+            |de=Relationen
+            |#default=Relations}}
+        </td>
+    </tr>
+    <tr>
+        <th>{{{_label_superordinate_ou|Superordinate OU}}}</th>
+        <td>{{#ask:[[{{FULLPAGENAME}}]]|?HasSuperOrdinateOu=|format=plain|mainlabel=-}}</td>
+    </tr>
+    <tr>
+        <th>{{#switch:{{USERLANGUAGECODE}}
+            |en=Subordinate OU
+            |de=Untergeordnete OE
+            |#default=Subordinate OU}}
+        </th>
+        <td>{{#ask:
+            [[HasType::Category:OSW3cb8cef2225e403092f098f99bc4c472]][[HasSuperordinateOu::{{FULLPAGENAME}}]]}}
+        </td>
+    </tr>
+    <tr>
+        <th>{{{_label_member_of|Member of}}}</th>
+        <td>{{#ask:[[{{FULLPAGENAME}}]]|?IsMemberOf=|format=plain|mainlabel=-}}</td>
+    </tr>
+    {{#ifeq:
+        {{#ask:[[{{FULLPAGENAME}}]]|?HasType=|format=plain|mainlabel=-}} | Category:OSW1969007d5acf40539642877659a02c23
+         | <!-- is of type Category:Organization: show member (organizations) -->
+        <tr>
+            <th>{{#switch:{{USERLANGUAGECODE}}
+                |en=Member
+                |de=Mitglied
+                |#default=Member}}
+            </th>
+            <td>{{#ask:
+                [[HasType::Category:OSW3cb8cef2225e403092f098f99bc4c472]][[IsMemberOf::{{FULLPAGENAME}}]]}}
+            </td>
+        </tr>
+         | <!-- show nothing -->
+    }}
+    <tr>
+        <th>{{#switch:{{USERLANGUAGECODE}}
+            |en=Employees
+            |de=Mitarbeitende
+            |#default=Employees}}
+        </th>
+        <td>{{#ask:
+            [[Category:OSW44deaa5b806d41a2a88594f562b110e9]][[HasOu::{{FULLPAGENAME}}]]}}
+        </td>
+    </tr>
+    <tr>
+        <td class="subheading" colspan="2">{{#switch:{{USERLANGUAGECODE}}
+            |en=Expertise
+            |de=Expertise
+            |#default=Expertise}}
+        </td>
+    </tr>
+    <tr>
+        <th>{{{_label_competence|Competence}}}</th>
+        <td>{{#ask:[[{{FULLPAGENAME}}]]|?HasCompetence=|format=plain|mainlabel=-}}</td>
+    </tr>
+    <tr>
+        <th>{{{_label_topic|Topic}}}</th>
+        <td>{{#ask:[[{{FULLPAGENAME}}]]|?HasTopic=|format=plain|mainlabel=-}}</td>
+    </tr>
+</table>
+<!-- Overview of Members -->
+=={{#switch:{{USERLANGUAGECODE}}|en=Members |de=Mitarbeitende|#default=Members}}==
+{{#set: HasNumberOfMembers=
+    {{#ask: [[Category:OSW44deaa5b806d41a2a88594f562b110e9]][[HasOu::{{FULLPAGENAME}}]][[HasEmploymentContractStatus::Item:OSW62770459451644f3841c502df8a5cb1d]]
+        |format=count
+        |limit=1000
+        }}
+}}
+{{#switch:{{USERLANGUAGECODE}}
+        |en=Number of members
+        |de=Mitarbeitende (Anzahl)
+        |#default=Number of members
+    }}: {{#show: {{FULLPAGENAME}} |?HasNumberOfMembers}}
+{{#ask: [[Category:OSW44deaa5b806d41a2a88594f562b110e9]][[HasOu::{{FULLPAGENAME}}]][[HasEmploymentContractStatus::Item:OSW62770459451644f3841c502df8a5cb1d]]
+    |?HasRoom={{#switch: {{USERLANGUAGECODE}} |en=Room |de=Raum |#default=Room}}
+    |?HasPhoneNumber={{#switch: {{USERLANGUAGECODE}} |en=Phone |de=Telefon |#default=Phone}}
+    |?HasSuperior={{#switch: {{USERLANGUAGECODE}} |en=Superior |de=Führungskraft |#default=Superior}}
+    |?HasRole={{#switch: {{USERLANGUAGECODE}} |en=Role |de=Rolle |#default=Role}}
+    |format=table
+    |limit=1000
+    |sort=Display title of
+    |order=asc
+    }}
+=={{#switch:{{USERLANGUAGECODE}}|en=Former members |de=Ausgeschiedene Mitarbeitende|#default=Former members}}==
+{{#ask: [[Category:OSW44deaa5b806d41a2a88594f562b110e9]][[HasOu::{{FULLPAGENAME}}]][[HasEmploymentContractStatus::Item:OSWacf5f4db53264d29ae8744d03796be0b]]
+    |?HasRoom={{#switch: {{USERLANGUAGECODE}} |en=Room |de=Raum |#default=Room}}
+    |?HasPhoneNumber={{#switch: {{USERLANGUAGECODE}} |en=Phone |de=Telefon |#default=Phone}}
+    |?HasSuperior={{#switch: {{USERLANGUAGECODE}} |en=Superior |de=Führungskraft |#default=Superior}}
+    |?HasRole={{#switch: {{USERLANGUAGECODE}} |en=Role |de=Rolle |#default=Role}}
+    |format=table
+    |limit=1000
+    |sort=Display title of
+    |order=asc
+    }}

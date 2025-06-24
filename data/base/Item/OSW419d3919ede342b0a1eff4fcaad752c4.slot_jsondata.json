@@ -1,0 +1,30 @@
+{
+    "type": [
+        "Category:OSW67f2ef61ba284c919fefa00d0e95a7a0"
+    ],
+    "rdf_type": [
+        "schema:Enumeration"
+    ],
+    "uuid": "419d3919-ede3-42b0-a1ef-f4fcaad752c4",
+    "label": [
+        {
+            "text": "Public Project",
+            "lang": "en"
+        },
+        {
+            "text": "Öffentliches Projekt",
+            "lang": "de"
+        }
+    ],
+    "description": [
+        {
+            "text": "Project funded by a public or government agency",
+            "lang": "en"
+        },
+        {
+            "text": "Von einer öffentlichen oder staatlichen Stelle finanziertes Projekt",
+            "lang": "de"
+        }
+    ],
+    "name": "PublicProject"
+}

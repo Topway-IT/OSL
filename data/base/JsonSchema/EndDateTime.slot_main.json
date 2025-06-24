@@ -1,0 +1,15 @@
+{
+    "type": "string",
+    "title": "End date and time",
+    "title*": {
+        "de": "Ende (Datum und Uhrzeit)"
+    },
+    "format": "datetime-local",
+    "options": {
+        "flatpickr": {
+            "dateFormat": "Z",
+            "altInput": true,
+            "altFormat": "Y-m-d h:i K"
+        }
+    }
+}

@@ -1,0 +1,7 @@
+=={{{_label_attachments| {{#switch: {{USERLANGUAGECODE}} |en=Instances|de=Instanzen|#default=Instances}} }}}==
+{{#ask: [[{{FULLPAGENAME}}]]
+|?HasStartDate={{#switch: {{USERLANGUAGECODE}} |en=Date & time|de=Datum & Uhrzeit|#default=Date & time}}
+|sort=HasStartDate
+|format=datatable
+|limit=1000
+}}

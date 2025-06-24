@@ -1,0 +1,32 @@
+{
+    "@context": [
+        "/wiki/Category:OSW2c32802be59040248c85eda3479d484c?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSW2c32802be59040248c85eda3479d484c?action=raw&slot=jsonschema"
+        }
+    ],
+    "type": "object",
+    "uuid": "781ad17c-7eef-4161-ade5-a7b690aca6b5",
+    "title": "EmploymentStatus",
+    "title*": {
+        "en": "Employment status",
+        "de": "Status des Beschäftigungsverhältnisses"
+    },
+    "description": "Describes the status of an employment (contract)",
+    "description*": {
+        "en": "Describes the status of an employment (contract)",
+        "de": "Beschreibt den Status eines Arbeitsverhältnisses(vertrages)"
+    },
+    "required": [
+        "type"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSW781ad17c7eef4161ade5a7b690aca6b5"
+            ]
+        }
+    }
+}

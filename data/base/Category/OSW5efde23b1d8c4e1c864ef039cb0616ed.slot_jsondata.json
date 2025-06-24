@@ -1,0 +1,20 @@
+{
+    "uuid": "5efde23b-1d8c-4e1c-864e-f039cb0616ed",
+    "label": [
+        {
+            "text": "Person role",
+            "lang": "en"
+        },
+        {
+            "text": "Personenrolle",
+            "lang": "de"
+        }
+    ],
+    "subclass_of": [
+        "Category:OSW51653bb12c534c0b92a255b0b5ca3984"
+    ],
+    "name": "PersonRole",
+    "type": [
+        "Category:Category"
+    ]
+}

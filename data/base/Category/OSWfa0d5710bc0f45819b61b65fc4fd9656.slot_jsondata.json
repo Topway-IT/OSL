@@ -1,0 +1,20 @@
+{
+    "type": [
+        "Category:Category"
+    ],
+    "subclass_of": [
+        "Category:OSWe5aa96bffb1c4d95be7fbd46142ad203"
+    ],
+    "uuid": "fa0d5710-bc0f-4581-9b61-b65fc4fd9656",
+    "label": [
+        {
+            "text": "Strict participants process",
+            "lang": "en"
+        },
+        {
+            "text": "Prozess mit explizit definierten Teilnehmenden",
+            "lang": "de"
+        }
+    ],
+    "name": "StrictParticipantsProcess"
+}

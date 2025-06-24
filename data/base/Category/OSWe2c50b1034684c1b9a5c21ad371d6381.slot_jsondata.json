@@ -1,0 +1,33 @@
+{
+    "subclass_of": [
+        "Category:OSW712583f2479944deb2546b77cf860dda"
+    ],
+    "type": [
+        "Category:Category"
+    ],
+    "uuid": "e2c50b10-3468-4c1b-9a5c-21ad371d6381",
+    "label": [
+        {
+            "text": "How To",
+            "lang": "en"
+        },
+        {
+            "text": "Anleitung",
+            "lang": "de"
+        }
+    ],
+    "description": [
+        {
+            "text": "Instructions that explain how to achieve a result by performing a sequence of steps.",
+            "lang": "en"
+        },
+        {
+            "text": "Anweisungen, die erklären, wie man ein Ergebnis durch eine Abfolge von Schritten erreicht.",
+            "lang": "de"
+        }
+    ],
+    "instance_rdf_type": [
+        "schema:HowTo"
+    ],
+    "name": "HowTo"
+}

@@ -1,0 +1,26 @@
+{
+    "type": [
+        "Category:Category"
+    ],
+    "subclass_of": [
+        "Category:OSWd02741381aaa4709ae0753a0edc341ce"
+    ],
+    "uuid": "51653bb1-2c53-4c0b-92a2-55b0b5ca3984",
+    "label": [
+        {
+            "text": "Function",
+            "lang": "en"
+        },
+        {
+            "text": "Funktion",
+            "lang": "de"
+        }
+    ],
+    "description": [
+        {
+            "text": "Allgemeiner Funktionsbegriff zur Ordnung von Funktionen, die verschiedenen Objekten zugeordnet sind",
+            "lang": "en"
+        }
+    ],
+    "name": "Function"
+}

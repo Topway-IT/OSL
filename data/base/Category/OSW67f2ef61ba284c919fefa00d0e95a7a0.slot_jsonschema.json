@@ -1,0 +1,29 @@
+{
+    "@context": [
+        "/wiki/Category:OSWd02741381aaa4709ae0753a0edc341ce?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSWd02741381aaa4709ae0753a0edc341ce?action=raw&slot=jsonschema"
+        }
+    ],
+    "type": "object",
+    "uuid": "67f2ef61-ba28-4c91-9fef-a00d0e95a7a0",
+    "title": "ProjectType",
+    "title*": {
+        "en": "Project Type",
+        "de": "Projekttyp"
+    },
+    "description": "",
+    "description*": {},
+    "required": [
+        "type"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSW67f2ef61ba284c919fefa00d0e95a7a0"
+            ]
+        }
+    }
+}

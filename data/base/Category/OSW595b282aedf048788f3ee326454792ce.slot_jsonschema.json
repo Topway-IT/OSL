@@ -1,0 +1,32 @@
+{
+    "@context": [
+        "/wiki/Category:OSWd02741381aaa4709ae0753a0edc341ce?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSWd02741381aaa4709ae0753a0edc341ce?action=raw&slot=jsonschema"
+        }
+    ],
+    "type": "object",
+    "uuid": "595b282a-edf0-4878-8f3e-e326454792ce",
+    "title": "BudgetType",
+    "title*": {
+        "en": "Budget Type",
+        "de": "Budget-Typ"
+    },
+    "description": "Type of usage of a certain budget",
+    "description*": {
+        "en": "Type of usage of a certain budget",
+        "de": "Art der Verwendung eines bestimmten Budgets"
+    },
+    "required": [
+        "type"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSW595b282aedf048788f3ee326454792ce"
+            ]
+        }
+    }
+}

@@ -1,0 +1,129 @@
+{
+    "@context": [
+        {
+            "author": "schema:author",
+            "preparation_duration": "schema:prepTime",
+            "processing_duration": "schema:cookTime",
+            "total_duration": "schema:totalTime",
+            "output_count": "schema:recipeYield",
+            "input": "schema:recipeIngredient",
+            "steps": "schema:recipeInstructions",
+            "step_name": "schema:name",
+            "step_description": "schema:text"
+        },
+        "/wiki/Category:OSWe2c50b1034684c1b9a5c21ad371d6381?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSWe2c50b1034684c1b9a5c21ad371d6381?action=raw&slot=jsonschema"
+        }
+    ],
+    "title": "Recipe",
+    "title*": {
+        "de": "Rezept",
+        "en": "Recipe"
+    },
+    "description": "Preparation instructions, e.g. for a dish",
+    "description*": {
+        "de": "Eine Zubereitungsanleitung, z. B. für ein Gericht",
+        "en": "Preparation instructions, e.g. for a dish"
+    },
+    "type": "object",
+    "uuid": "81e9e22e-7d93-4382-a6a5-6df7d3736957",
+    "required": [
+        "type"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSW81e9e22e7d934382a6a56df7d3736957"
+            ]
+        },
+        "output_count": {
+            "type": "integer",
+            "title": "Yield",
+            "title*": {
+                "de": "Portionen"
+            }
+        },
+        "preparation_duration": {
+            "type": "string",
+            "title": "Preparation time",
+            "title*": {
+                "de": "Vorbereitungszeit"
+            }
+        },
+        "processing_duration": {
+            "type": "string",
+            "title": "Processing time",
+            "title*": {
+                "de": "Verarbeitungszeit"
+            }
+        },
+        "total_duration": {
+            "type": "string",
+            "title": "Total duration",
+            "title*": {
+                "de": "Gesamtdauer"
+            }
+        },
+        "input": {
+            "type": "array",
+            "title": "Ingredients",
+            "title*": {
+                "de": "Zutaten"
+            },
+            "items": {
+                "type": "string",
+                "title": "Ingredient",
+                "title*": {
+                    "de": "Zutat"
+                }
+            }
+        },
+        "steps": {
+            "type": "array",
+            "title": "Steps",
+            "title*": {
+                "de": "Zubereitungsschritte"
+            },
+            "items": {
+                "type": "object",
+                "title": "Step",
+                "title*": {
+                    "de": "Schritt"
+                },
+                "eval_template": {
+                    "type": "wikitext",
+                    "value": "{{{step_name}}}:<br>{{{step_description}}}"
+                },
+                "required": [
+                    "@type"
+                ],
+                "properties": {
+                    "@type": {
+                        "type": "string",
+                        "default": "schema:HowToStep",
+                        "options": {
+                            "hidden": true
+                        }
+                    },
+                    "step_name": {
+                        "type": "string",
+                        "title": "Name",
+                        "title*": {
+                            "de": "Name"
+                        }
+                    },
+                    "step_description": {
+                        "type": "string",
+                        "title": "Description",
+                        "title*": {
+                            "de": "Beschreibung"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "@context": [
+        "/wiki/Category:OSW137e7443b2b94692bd59a0e0a6778b70?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSW137e7443b2b94692bd59a0e0a6778b70?action=raw&slot=jsonschema"
+        }
+    ],
+    "type": "object",
+    "uuid": "807f1da5-b42e-42f2-96b2-13ab06ca873b",
+    "title": "City",
+    "title*": {
+        "en": "Stadt"
+    },
+    "description": "A city or town.",
+    "description*": {
+        "en": "A city or town.",
+        "de": "Eine Stadt oder ein Ort, im Sinne einer Gemeinde"
+    },
+    "required": [
+        "type"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSW807f1da5b42e42f296b213ab06ca873b"
+            ]
+        }
+    }
+}

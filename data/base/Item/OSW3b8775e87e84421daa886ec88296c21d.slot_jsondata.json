@@ -1,0 +1,34 @@
+{
+    "type": [
+        "Category:OSW490e38f9764f4408a244869a0ea98e7c"
+    ],
+    "rdf_type": [
+        "StatusEnumeration"
+    ],
+    "uuid": "3b8775e8-7e84-421d-aa88-6ec88296c21d",
+    "label": [
+        {
+            "text": "Submitted Full Proposal",
+            "lang": "en"
+        },
+        {
+            "text": "Eingereichter Vollantrag",
+            "lang": "de"
+        },
+        {
+            "text": "Submitted Full Application",
+            "lang": "en"
+        }
+    ],
+    "description": [
+        {
+            "text": "A two-stage procedure is common for many funding calls. This project status describes a submitted full proposal (second stage).",
+            "lang": "en"
+        },
+        {
+            "text": "Ein zweistufiges Verfahren ist bei vielen Förderaufrufen üblich. Dieser Projektstatus beschreibt einen eingereichten Vollantrag (zweite Stufe).",
+            "lang": "de"
+        }
+    ],
+    "name": "SubmittedFullProposal"
+}

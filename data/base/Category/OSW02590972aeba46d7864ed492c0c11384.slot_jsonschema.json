@@ -1,0 +1,41 @@
+{
+    "@context": [
+        {
+            "ip4_address": "Property:HasIp4Address",
+            "network_domain": "Property:HasNetworkDomain"
+        }
+    ],
+    "title": "Host",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSWf0fe562f422d49c6877490b3dfee2f3f?action=raw&slot=jsonschema"
+        }
+    ],
+    "properties": {
+        "ip4_address": {
+            "items": {
+                "title": "IP4  Address",
+                "type": "string"
+            },
+            "title": "IP4  Addresses",
+            "type": "array"
+        },
+        "network_domain": {
+            "items": {
+                "title": "Domain",
+                "type": "string"
+            },
+            "title": "Domains",
+            "type": "array"
+        },
+        "type": {
+            "default": [
+                "Category:OSW02590972aeba46d7864ed492c0c11384"
+            ]
+        }
+    },
+    "required": [
+        "type"
+    ]
+}

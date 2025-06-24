@@ -1,0 +1,20 @@
+{
+    "type": [
+        "Category:Category"
+    ],
+    "subclass_of": [
+        "Category:OSW1a271f289649413488e2841580e43a45"
+    ],
+    "uuid": "38867408-59ae-4595-88fe-e73d3bb3c83e",
+    "label": [
+        {
+            "text": "Risk assessment process",
+            "lang": "en"
+        },
+        {
+            "text": "Gefährdungsbeurteilungsprozess",
+            "lang": "de"
+        }
+    ],
+    "name": "RiskAssessmentProcess"
+}

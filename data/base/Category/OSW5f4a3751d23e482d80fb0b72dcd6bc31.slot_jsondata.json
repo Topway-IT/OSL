@@ -1,0 +1,33 @@
+{
+    "subclass_of": [
+        "Category:OSW1969007d5acf40539642877659a02c23"
+    ],
+    "uuid": "5f4a3751-d23e-482d-80fb-0b72dcd6bc31",
+    "name": "Corporation",
+    "label": [
+        {
+            "text": "Corporation",
+            "lang": "en"
+        },
+        {
+            "text": "Company",
+            "lang": "en"
+        },
+        {
+            "text": "Unternehmen",
+            "lang": "de"
+        },
+        {
+            "text": "Firma",
+            "lang": "de"
+        },
+        {
+            "text": "Firm",
+            "lang": "en"
+        },
+        {
+            "text": "Gesellschaft",
+            "lang": "de"
+        }
+    ]
+}

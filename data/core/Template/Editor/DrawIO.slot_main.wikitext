@@ -1,0 +1,96 @@
+<includeonly>{{Template:Helper/UI/VE/Visible
+|icon=browser
+|content=Diagram ''{{{file_name}}}''
+|css_class=drawio-editor-container
+}}
+{{Template:Helper/UI/VE/Hidden 
+|css_class=drawio-editor-container
+|content={{#drawio:{{#if:{{{uuid|}}}|OSW{{#replace:{{{uuid}}}|-|}}|{{#if: {{{page_name|}}}|{{#replace:{{#replace: {{{page_name}}}|/|-}}|:|-}}-|}}{{{file_name}}}}}|type={{{type|svg}}}|max-width={{#ifeq: {{{full_width|0}}}|1|100%| {{{width|500px}}} }} |label={{{file_name|}}} }}
+}}</includeonly><noinclude>[[Category:OSL/Infrastructure/Template/User]]
+<templatedata>
+{
+	"params": {
+		"file_name": {
+			"label": {
+				"en": "Name",
+				"de": "Name"
+			},
+			"description": {
+				"en": "Name of the diagram",
+				"de": "Name des Diagramms"
+			},
+			"type": "string",
+			"required": true
+		},
+		"type": {
+			"label": {
+				"en": "File format",
+				"de": "Dateiformat"
+			},
+			"description": {
+				"en": "The drawing can be saved as a vector or raster graphic",
+				"de": "Die Zeichnung kann als Vektor- oder Rastergraphik gespeichert werden"
+			},
+			"example": "svg oder png",
+			"type": "string",
+			"autovalue": "svg"
+		},
+		"width": {
+			"label": {
+				"en": "Width",
+				"de": "Breite"
+			},
+			"description": {
+				"en": "Display width of the graphic in pixels or percent",
+				"de": "Anzeigebreite der Graphik in Pixeln oder Prozent"
+			},
+			"type": "string",
+			"autovalue": "600px"
+		},
+		"page_name": {
+			"label": {
+				"en": "Page name",
+				"de": "Seitename"
+			},
+			"description": {
+				"en": "is filled in automatically and should not be changed",
+				"de": "wird automatisch ausgefüllt und sollte nicht verändert werden"
+			},
+			"type": "wiki-page-name",
+			"autovalue": "{{subst:FULLPAGENAME}}"
+		},
+		"full_width": {
+			"label": {
+				"en": "Full width",
+				"de": "Gesamte Seitenbreite"
+			},
+			"description": {
+				"en": "Used the full page width to display the diagram",
+				"de": "Nutzt die gesamte Seitenbreite zur Darstellung des Diagramms"
+			},
+			"type": "boolean",
+			"autovalue": "0",
+			"suggested": true
+		},
+		"uuid": {
+			"label": {
+				"en": "Unique ID",
+				"de": "Eindeutige ID"
+			},
+			"description": {
+				"en": "Automatically generated and should not be changed",
+				"de": "Wird automatisch generiert und sollte nicht verändert werden"
+			},
+			"type": "string",
+			"required": true,
+			"autovalue": "{{subst:UUID}}"
+		}
+	},
+	"description": {
+		"en": "Adds a MS-Visio-like diagram editor",
+		"de": "Fügt einen MS Visio ähnlichen Graphikeditor ein"
+	},
+	"format": "block"
+}
+</templatedata>
+</noinclude>

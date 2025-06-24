@@ -1,0 +1,15 @@
+{
+    "type": [
+        "Category:DataProperty"
+    ],
+    "name": "HasInventoryNumber",
+    "property_type": "Text",
+    "uuid": "fd9e10f5-13c2-4672-a0e1-0a524ab946b8",
+    "label": [
+        {
+            "text": "HasInventoryNumber",
+            "lang": "en"
+        }
+    ],
+    "description": []
+}

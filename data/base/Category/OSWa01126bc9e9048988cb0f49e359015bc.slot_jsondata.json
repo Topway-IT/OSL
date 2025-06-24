@@ -1,0 +1,31 @@
+{
+    "subclass_of": [
+        "Category:OSWfe3e842b804445c7bb0dd8ee61da2d70"
+    ],
+    "uuid": "a01126bc-9e90-4898-8cb0-f49e359015bc",
+    "label": [
+        {
+            "text": "Faculty",
+            "lang": "en"
+        },
+        {
+            "text": "Fakultät",
+            "lang": "de"
+        },
+        {
+            "text": "School",
+            "lang": "en"
+        }
+    ],
+    "description": [
+        {
+            "text": "Sub-unit of a universty. Often, \"school\" as in \"Harvard Law School\" will be synonymsly in American English.",
+            "lang": "en"
+        },
+        {
+            "text": "Untereinheit einer Universität, z.B. die Fakultät für Physik.",
+            "lang": "de"
+        }
+    ],
+    "name": "Faculty"
+}

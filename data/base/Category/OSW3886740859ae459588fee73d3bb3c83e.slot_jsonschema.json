@@ -1,0 +1,60 @@
+{
+    "@context": [
+        "/wiki/Category:OSW1a271f289649413488e2841580e43a45?action=raw&slot=jsonschema",
+        {
+            "attachments**": {
+                "@id": "Property:HasOutput",
+                "@type": "@id"
+            }
+        }
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSW1a271f289649413488e2841580e43a45?action=raw&slot=jsonschema"
+        }
+    ],
+    "type": "object",
+    "uuid": "38867408-59ae-4595-88fe-e73d3bb3c83e",
+    "title": "RiskAssessmentProcess",
+    "title*": {
+        "en": "Risk assessment process",
+        "de": "Gefährdungsbeurteilungsprozess"
+    },
+    "description": "",
+    "description*": {},
+    "required": [
+        "type"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSW3886740859ae459588fee73d3bb3c83e"
+            ]
+        },
+        "output": {
+            "title": "Output documents",
+            "title*": {
+                "de": "Ausgabe-Dokumente"
+            },
+            "description": "Laboratory rules or operating instructions",
+            "description*": {
+                "de": "Laborordnung oder Betriebsanweisung"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "type": "string",
+                "title": "Output document",
+                "title*": {
+                    "de": "Ausgabe-Dokumente"
+                },
+                "format": "autocomplete",
+                "options": {
+                    "autocomplete": {
+                        "category": "Category:OSW11a53cdfbdc24524bf8ac435cbf65d9d"
+                    }
+                }
+            }
+        }
+    }
+}

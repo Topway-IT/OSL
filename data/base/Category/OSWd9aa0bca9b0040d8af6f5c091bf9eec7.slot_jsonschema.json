@@ -1,0 +1,129 @@
+{
+    "@context": [
+        {
+            "employment_contract_status": {
+                "@id": "Property:HasEmploymentContractStatus",
+                "@type": "@id"
+            },
+            "room": {
+                "@id": "Property:HasRoom",
+                "@type": "@id"
+            },
+            "superior": {
+                "@id": "Property:HasSuperior",
+                "@type": "@id"
+            },
+            "username": {
+                "@id": "Property:HasUsername",
+                "@type": "xsd:string"
+            }
+        },
+        "/wiki/Category:OSW44deaa5b806d41a2a88594f562b110e9?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:OSW44deaa5b806d41a2a88594f562b110e9?action=raw&slot=jsonschema"
+        }
+    ],
+    "title": "User",
+    "title*": {
+        "de": "Nutzer"
+    },
+    "type": "object",
+    "uuid": "d9aa0bca-9b00-40d8-af6f-5c091bf9eec7",
+    "description": "A person who has a user ID.",
+    "description*": {
+        "de": "Eine Person mit Nutzerkennung"
+    },
+    "required": [
+        "username",
+        "type"
+    ],
+    "defaultProperties": [
+        "username"
+    ],
+    "properties": {
+        "username": {
+            "title": "Username",
+            "title*": {
+                "de": "Nutzername"
+            },
+            "description": "Organization user ID",
+            "description*": {
+                "de": "Organization-User-ID"
+            },
+            "type": "string",
+            "eval_template": [
+                {
+                    "type": "mustache-wikitext",
+                    "mode": "render",
+                    "$comment": "Displays a link to the system user page, preventing redirect to the user entity page",
+                    "value": "{{=<% %>=}} [{{fullurl:User:<%username%>|redirect=no}} <%username%>]"
+                }
+            ]
+        },
+        "room": {
+            "title": "Room(s)",
+            "title*": {
+                "de": "Raum"
+            },
+            "description": "Office",
+            "description*": {
+                "de": "Büro"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "Room",
+                "title*": {
+                    "de": "Raum"
+                },
+                "type": "string",
+                "format": "autocomplete",
+                "range": "Category:OSWc5ed0ed1e33c4b31887c67af25a610c1"
+            },
+            "uniqueItems": true
+        },
+        "superior": {
+            "title": "Superior(s)",
+            "title*": {
+                "de": "Führungsperson(en)"
+            },
+            "description": "Direct superior(s)",
+            "description*": {
+                "de": "Direkte Führungsperson(en)"
+            },
+            "type": "array",
+            "format": "table",
+            "items": {
+                "title": "Supervisor",
+                "title*": {
+                    "de": "Führungsperson"
+                },
+                "type": "string",
+                "format": "autocomplete",
+                "range": "Category:OSWd9aa0bca9b0040d8af6f5c091bf9eec7"
+            },
+            "uniqueItems": true
+        },
+        "employment_contract_status": {
+            "title": "Status of the employment contract",
+            "title*": {
+                "de": "Status des Arbeitsvertrages"
+            },
+            "description": "Whether a user has an active employment contract (stil employed) or not",
+            "description*": {
+                "de": "Gibt an, ob ein Nutzer einen aktiven Arbeitsvertrag hat (noch beschäftigt ist) oder nicht"
+            },
+            "type": "string",
+            "format": "autocomplete",
+            "range": "Category:OSW781ad17c7eef4161ade5a7b690aca6b5",
+            "default": "Item:OSW62770459451644f3841c502df8a5cb1d"
+        },
+        "type": {
+            "default": [
+                "Category:OSWd9aa0bca9b0040d8af6f5c091bf9eec7"
+            ]
+        }
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "type": [
+        "Category:OSW781ad17c7eef4161ade5a7b690aca6b5"
+    ],
+    "uuid": "62770459-4516-44f3-841c-502df8a5cb1d",
+    "label": [
+        {
+            "text": "Active",
+            "lang": "en"
+        },
+        {
+            "text": "Aktiv",
+            "lang": "de"
+        }
+    ],
+    "description": [
+        {
+            "text": "Describes an active employment contract",
+            "lang": "en"
+        },
+        {
+            "text": "Beschreibt einen aktiven Arbeitsvertrag",
+            "lang": "de"
+        }
+    ],
+    "name": "Active"
+}

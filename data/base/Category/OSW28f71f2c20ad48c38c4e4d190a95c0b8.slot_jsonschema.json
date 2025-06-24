@@ -1,0 +1,32 @@
+{
+    "@context": [
+        "/wiki/Category:Item?action=raw&slot=jsonschema"
+    ],
+    "allOf": [
+        {
+            "$ref": "/wiki/Category:Item?action=raw&slot=jsonschema"
+        }
+    ],
+    "type": "object",
+    "uuid": "28f71f2c-20ad-48c3-8c4e-4d190a95c0b8",
+    "title": "Place",
+    "title*": {
+        "en": "Place",
+        "de": "Ort"
+    },
+    "description": "Entities that have a somewhat fixed, physical extension.",
+    "description*": {
+        "en": "Entities that have a somewhat fixed, physical extension.",
+        "de": "Entitäten, die eine gewisse feste, physische Ausdehnung haben."
+    },
+    "required": [
+        "type"
+    ],
+    "properties": {
+        "type": {
+            "default": [
+                "Category:OSW28f71f2c20ad48c38c4e4d190a95c0b8"
+            ]
+        }
+    }
+}
