@@ -21,6 +21,7 @@
  * @author 
  * @copyright 
  */
+use MediaWiki\MediaWikiServices;
 
 class OSLRef {
 	public static function initialize() {

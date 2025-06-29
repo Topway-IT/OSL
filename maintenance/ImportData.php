@@ -58,7 +58,8 @@ class ImportData extends Maintenance {
 		$context->setTitle( $title );
 		$context->setUser( $user );
 
-		$import = static function ( $namespace, $path ) use ( &$error_messages ) {
+		$import = null; // Declare first for recursion
+		$import = static function ( $namespace, $path ) use ( &$error_messages, $context, $importer, &$import ) {
 			$files = scandir( $path );
 			foreach ( $files as $file ) {
 				if ( $file === '.' || $file === '..' ) {
@@ -67,7 +68,7 @@ class ImportData extends Maintenance {
 				$filePath_ = "$path/$file";
 
 				if ( is_dir( $filePath_ ) ) {
-					$import( $filePath_, $callback );
+					$import( $namespace, $filePath_ );
 
 				} elseif ( is_file( $filePath_ ) ) {				
 					[ $pagename, $slot, $contentModel ] = explode( '.', $file, 3 );
@@ -110,7 +111,7 @@ class ImportData extends Maintenance {
 						$importer->doImportSelf( $pagename, $contents );
 						echo ' (success)' . PHP_EOL;
 
-					} catch ( Exception $e ) {
+					} catch ( \Exception $e ) {
 						echo ' ( ***error)' . PHP_EOL;
 						$error_messages[$pagename] = $e->getMessage();
 					}
@@ -122,9 +123,9 @@ class ImportData extends Maintenance {
 		$dirPath = __DIR__ . '/../data';
 		$namespaces = [ 'Category', 'File', 'Item', 'Module', 'JsonSchema', 'Property', 'Template' ];
 
-		foreach ( [ 'base', 'core' ] ) {		
-			foreach ( $namespaces as $namepace ) {
-				$import( $namepace, "$dirPath/$namepace" );
+		foreach ( [ 'base', 'core' ] as $repo ) {
+			foreach ( $namespaces as $namespace ) {
+				$import( $namespace, "$dirPath/$repo/$namespace" );
 			}
 		}
 
