@@ -105,14 +105,25 @@ class ImportData extends Maintenance {
 						]
 					];
 
+					if ( $slotRole !== SlotRecord::MAIN ) {
+						array_unshift( $contents, [
+							'role' => SlotRecord::MAIN,
+							'model' => 'wikitext',
+							'text' => ''
+						] );
+					}
+
+					echo "importing $namespace:$pagename". PHP_EOL;
+					// print_r($contents);
+					
 					try {
 						$title_ = TitleClass::newFromText( "$namespace:$pagename" );
 						$context->setTitle( $title_ );
-						$importer->doImportSelf( $pagename, $contents );
+						$importer->doImportSelf( "$namespace:$pagename", $contents );
 						echo ' (success)' . PHP_EOL;
 
 					} catch ( \Exception $e ) {
-						echo ' ( ***error)' . PHP_EOL;
+						echo '***error ' . $e->getMessage();
 						$error_messages[$pagename] = $e->getMessage();
 					}
 					
@@ -130,7 +141,6 @@ class ImportData extends Maintenance {
 		}
 
 		if ( count( $error_messages ) ) {
-			print_r( $error_messages );
 			echo '(OSLRef) ***error importing ' . count( $error_messages ) . ' articles' . PHP_EOL;
 		}
 	}
