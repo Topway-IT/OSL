@@ -58,8 +58,13 @@ class ImportData extends Maintenance {
 		$context->setTitle( $title );
 		$context->setUser( $user );
 
+		// Group files by page name first
+		$pageSlots = [];
+
 		$import = null; // Declare first for recursion
+
 		$import = static function ( $namespace, $path, $relPath = '' ) use ( &$error_messages, $context, $importer, &$import ) {
+
 			$files = scandir( $path );
 			foreach ( $files as $file ) {
 				if ( $file === '.' || $file === '..' || strpos( $file, '.' ) === 0 ) {
@@ -68,6 +73,7 @@ class ImportData extends Maintenance {
 				$filePath_ = "$path/$file";
 
 				if ( is_dir( $filePath_ ) ) {
+
 					// A recurse into subdirectory, append to relPath
 					$import( $namespace, $filePath_, $relPath === '' ? $file : "$relPath/$file" );
 
@@ -181,8 +187,8 @@ class ImportData extends Maintenance {
 					} catch ( \Exception $e ) {
 						echo '***error ' . $e->getMessage();
 						$error_messages[$pagePath] = $e->getMessage();
+
 					}
-					
 				}
 			}
 		};
@@ -196,6 +202,47 @@ class ImportData extends Maintenance {
 			}
 		}
 
+		// Import all slots for each page in one call
+		foreach ( $pageSlots as $pageName => $slots ) {
+			echo "importing $pageName" . PHP_EOL;
+			
+			// Ensure main slot is present if we have non-main slots
+			$hasMainSlot = false;
+			foreach ( $slots as $slot ) {
+				if ( $slot['role'] === SlotRecord::MAIN ) {
+					$hasMainSlot = true;
+					break;
+				}
+			}
+			
+			if ( !$hasMainSlot && count( $slots ) > 0 ) {
+				array_unshift( $slots, [
+					'role' => SlotRecord::MAIN,
+					'model' => 'wikitext',
+					'text' => ''
+				] );
+			}
+			
+			try {
+				$title_ = TitleClass::newFromText( $pageName );
+				$context->setTitle( $title_ );
+				$importer->doImportSelf( $pageName, $slots );
+				
+				// Debug: Check slots after import
+				$wikiPage = new WikiPage($title_);
+				$revisionRecord = $wikiPage->getRevisionRecord();
+				$actualSlots = $revisionRecord->getSlots()->getSlots();
+				echo "DEBUG Import - Available slots after import for '$pageName': ";
+				var_dump(array_keys($actualSlots));
+				
+				echo ' (success)' . PHP_EOL;
+				
+			} catch ( \Exception $e ) {
+				echo '***error ' . $e->getMessage();
+				$error_messages[$pageName] = $e->getMessage();
+			}
+		}
+
 		if ( count( $error_messages ) ) {
 			echo '(OSLRef) ***error importing ' . count( $error_messages ) . ' articles' . PHP_EOL;
 			foreach ( $error_messages as $pagename => $message ) {
@@ -203,6 +250,83 @@ class ImportData extends Maintenance {
 			}
 		}
 	}
+}
+
+/**
+ * Extract page name from file path
+ * Improved to handle the OSW UUID naming pattern
+ */
+function extractPageName( $file, $namespace, $relPath ) {
+	// Split by first dot to get the base name (OSW UUID)
+	$parts = explode( '.', $file, 2 );
+	$baseName = $parts[0];
+	
+	// For files in subdirectories, construct the full path
+	$pagePath = $relPath === '' ? $baseName : "$relPath/$baseName";
+	
+	// For Module namespace, keep / for sub-modules, otherwise use :
+	if ( $namespace === 'Module' ) {
+		$fullPageName = "$namespace:$pagePath";
+	} else {
+		$pagePath = str_replace( '/', ':', $pagePath );
+		$fullPageName = "$namespace:$pagePath";
+	}
+	
+	return $fullPageName;
+}
+
+/**
+ * Extract slot data from file
+ * Improved to handle the slot naming pattern
+ */
+function extractSlotData( $file, $filePath ) {
+	// Split by dots to get parts: baseName.slot_type.contentModel
+	$parts = explode( '.', $file, 3 );
+	
+	if ( count( $parts ) < 2 ) {
+		return null; // Invalid file format
+	}
+	
+	$slot = $parts[1] ?? '';
+	$contentModel = $parts[2] ?? '';
+
+	// Map content models to MediaWiki content models
+	if ( $contentModel === 'lua' ) {
+		$contentModel = 'Scribunto';
+	}
+	if ( $contentModel === 'svg' ) {
+		$contentModel = 'wikitext'; // SVG files should be treated as wikitext
+	}
+
+	// slots defined using $wgWSSlotsDefinedSlots
+	switch ( $slot ) {
+		case 'slot_main':
+			$slotRole = SlotRecord::MAIN;
+			break;
+
+		case 'slot_header': 
+			$slotRole = 'header';
+			break;
+
+		case 'slot_footer': 
+			$slotRole = 'footer';
+			break;
+
+		case 'slot_jsondata':
+			$slotRole = 'jsondata';
+			break;
+
+		default:
+			$slotRole = str_replace( 'slot_', '', $slot );
+	}
+
+	$content = file_get_contents( $filePath );
+
+	return [
+		'role' => $slotRole,
+		'model' => $contentModel,
+		'text' => $content
+	];
 }
 
 $maintClass = ImportData::class;
