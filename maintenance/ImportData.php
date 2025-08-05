@@ -62,7 +62,9 @@ class ImportData extends Maintenance {
 		$pageSlots = [];
 
 		$import = null; // Declare first for recursion
-		$import = static function ( $namespace, $path, $relPath = '' ) use ( &$error_messages, $context, $importer, &$import, &$pageSlots ) {
+
+		$import = static function ( $namespace, $path, $relPath = '' ) use ( &$error_messages, $context, $importer, &$import ) {
+
 			$files = scandir( $path );
 			foreach ( $files as $file ) {
 				if ( $file === '.' || $file === '..' || strpos( $file, '.' ) === 0 ) {
@@ -71,16 +73,121 @@ class ImportData extends Maintenance {
 				$filePath_ = "$path/$file";
 
 				if ( is_dir( $filePath_ ) ) {
-					// Recurse into subdirectory, append to relPath
+
+					// A recurse into subdirectory, append to relPath
 					$import( $namespace, $filePath_, $relPath === '' ? $file : "$relPath/$file" );
 
 				} elseif ( is_file( $filePath_ ) ) {
-					// Extract page name and slot data
-					$pageName = extractPageName( $file, $namespace, $relPath );
-					$slotData = extractSlotData( $file, $filePath_ );
-					
-					if ( $pageName && $slotData ) {
-						$pageSlots[$pageName][] = $slotData;
+					// Split filename into base and slot/model
+					$parts = explode( '.', $file, 3 );
+					$baseName = $parts[0];
+					$slot = $parts[1] ?? '';
+					$contentModel = $parts[2] ?? '';
+
+					// Let Map content models to MediaWiki content models
+					if ( $contentModel === 'lua' ) {
+						$contentModel = 'Scribunto';
+					}
+
+					//  slots degined using $wgWSSlotsDefinedSlots
+					switch ( $slot ) {
+						case 'slot_main':
+							$slotRole = SlotRecord::MAIN;
+							break;
+
+						case 'slot_header': 
+							$slotRole = 'header';
+							break;
+
+						case 'slot_footer': 
+							$slotRole = 'footer';
+							break;
+
+						case 'slot_jsondata':
+							$slotRole = 'jsondata';
+							break;
+
+						default:
+							$slotRole = str_replace( 'slot_', '', $slot );
+					}
+
+					$content = file_get_contents( $filePath_ );
+
+					$contents = [
+						[
+							'role' => $slotRole,
+							'model' => $contentModel,
+							'text' => $content
+						]
+					];
+
+					if ( $slotRole !== SlotRecord::MAIN ) {
+						array_unshift( $contents, [
+							'role' => SlotRecord::MAIN,
+							'model' => 'wikitext',
+							'text' => ''
+						] );
+					}
+
+					// let build full page name with submodule support
+					$pagePath = $relPath === '' ? $baseName : "$relPath/$baseName";
+					// For Module namespace, keep / for sub-modules, otherwise use :
+					if ( $namespace === 'Module' ) {
+						$fullPageName = "$namespace:$pagePath";
+					} else {
+						$pagePath = str_replace( '/', ':', $pagePath );
+						$fullPageName = "$namespace:$pagePath";
+					}
+
+					echo "importing $fullPageName". PHP_EOL;
+					// print_r($contents);
+
+					try {
+						$title_ = TitleClass::newFromText( $fullPageName );
+						$context->setTitle( $title_ );
+						$importer->doImportSelf( $fullPageName, $contents );
+						
+						// Debug: Check slots after import
+						$wikiPage = new WikiPage($title_);
+						$revisionRecord = $wikiPage->getRevisionRecord();
+						$slots = $revisionRecord->getSlots()->getSlots();
+						echo "DEBUG Import - Available slots after import for '$fullPageName': ";
+						var_dump(array_keys($slots));
+
+						// --- SLOT FIX: Ensure latest revision has all non-main slots ---
+						$slotRoles = [ 'jsondata', 'header', 'footer' ];
+						$services = MediaWikiServices::getInstance();
+						$slotRoleRegistry = $services->getSlotRoleRegistry();
+						$revisionStore = $services->getRevisionStore();
+						$latestRev = $revisionRecord;
+						$latestRevId = $latestRev->getId();
+						foreach ( $slotRoles as $roleName ) {
+							if ( !$latestRev->hasSlot( $roleName ) ) {
+								// Walk back to find most recent revision with this slot
+								$prevRev = $revisionStore->getPreviousRevision( $latestRev );
+								while ( $prevRev ) {
+									if ( $prevRev->hasSlot( $roleName ) ) {
+										$content = $prevRev->getContent( $roleName );
+										// Add the slot to the latest revision
+										$user = User::newSystemUser( 'Import Script', [ 'steal' => true ] );
+										$pageUpdater = $wikiPage->newPageUpdater( $user );
+										$pageUpdater->setContent( $roleName, $content );
+										$pageUpdater->saveRevision( CommentStoreComment::newUnsavedComment( 'Restored missing slot' ), EDIT_SUPPRESS_RC );
+										echo "Restored missing slot '$roleName' for $fullPageName\n";
+										break;
+									}
+									$prevRev = $revisionStore->getPreviousRevision( $prevRev );
+								}
+							}
+						}
+						// --- END SLOT FIX ---
+
+						echo ' (success)' . PHP_EOL;
+
+					} catch ( \Exception $e ) {
+						echo '***error ' . $e->getMessage();
+						$error_messages[$pagePath] = $e->getMessage();
+
 					}
 				}
 			}
