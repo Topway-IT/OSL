@@ -172,84 +172,203 @@ OSLRef = ( function () {
         },
     };
 	return {
-		_onsubmit: function(params = {}) {
-		let meta = params.meta;
-		let json = params.json || this.jsoneditor.getValue()
-		document.activeElement.blur(); //ensure input is defocused to update final jsondata
-		const promise = new Promise((resolve, reject) => {
-			this.getSyntaxErrors().then((errors) => {
-				if (!json) json = this.jsoneditor.getValue();
-				const validation_errors = this.jsoneditor.validate();
-				if (errors.length || validation_errors.length) {
-					let msg = mw.message("mwjson-editor-fields-contain-error").text() + ":<br><ul>";
-					for (const err of validation_errors) {
-						var error_path = err.path;
-						try {
-							const keys = err.path.split('.'); // root
-							var path = keys.shift();
-							var labelPath = "";
-							for (const key of keys) {
-								path += "." + key;
-								if (labelPath !== "") labelPath += " > ";
-								var pathElement = key;
-								const e = this.jsoneditor.editors[path];
-								const i = Number.parseInt(key)
-								if (!Number.isNaN(i)) pathElement = "Element " + (i+1).toString();
-								else if (e && e.schema && e.schema.title) {
-									pathElement = e.schema.title
-								}
-								labelPath += pathElement;
-							}
-							error_path = labelPath;
-						} catch (error) {
-							console.error("Error while generating label path: ", error);
-						}
-						msg += "<li>" + error_path + ": " + err.message + "</li>";
-					}
-					msg += "</ul>";
-					if (this.config.allow_submit_with_errors) {
-						msg += "<br>" + mw.message("mwjson-editor-save-anyway").text();
-						mwjson.editor.prototype.confirm(msg).then((confirmed) => {
-							if (confirmed) {
-									if (this.config.mode !== 'query') mw.notify(mw.message("mwjson-editor-do-not-close-window").text(), { title: mw.message("mwjson-editor-saving").text() + "...", type: 'warn' });
-									const submit_promise = this.config.onsubmit(json, meta);
-									if (submit_promise) submit_promise.then(() => {
-										resolve();
-										if (this.config.mode !== 'query') mw.notify(mw.message("mwjson-editor-saved").text(), { type: 'success' });
-									}).catch();
-									else {
-										resolve();
-										if (this.config.mode !== 'query') mw.notify(mw.message("mwjson-editor-saved").text(), { type: 'success' });
-									}
-							} else {
-								reject();
-							}
-						});
-					}
-					else {
-						msg += "<br><br>" + mw.message("mwjson-editor-fix-all-errors").text();
-						mwjson.editor.prototype.alert(msg).then(() => {
-							reject();
-						});
-					}
-			}
-			else {
-				if (this.config.mode !== 'query') mw.notify(mw.message("mwjson-editor-do-not-close-window").text(), { title: mw.message("mwjson-editor-saving").text() + "...", type: 'warn'});
-				const submit_promise = this.config.onsubmit(json, meta);
-					console.log(submit_promise);
-					if (submit_promise) submit_promise.then(() => {
-						resolve();
-						if (this.config.mode !== 'query') mw.notify(mw.message("mwjson-editor-saved").text(), { type: 'success'});
-					}).catch();
-					else {
-						resolve();
-				if (this.config.mode !== 'query') mw.notify(mw.message("mwjson-editor-saved").text(), { type: 'success'});
-			}
+		// Hook into MwJson editor automatically
+		hookIntoMwJsonEditor: function() {
+			// Wait for mwjson.editor to be available
+			if (typeof mwjson !== 'undefined' && mwjson.editor && mwjson.editor.prototype) {
+				console.log('OSLRef: Hooking into MwJson editor...');
+				
+				// Check if we've already hooked
+				if (mwjson.editor.prototype._oslRefHooked) {
+					console.log('OSLRef: Already hooked into MwJson editor');
+					return true;
 				}
-		});
-		});
-		return promise;
+				
+				// Store the original _onsubmit method
+				const originalOnSubmit = mwjson.editor.prototype._onsubmit;
+				
+				// Replace with our enhanced version
+				mwjson.editor.prototype._onsubmit = function(params) {
+					console.log('OSLRef: Hooked into MwJson _onsubmit');
+					
+					// Call the original method
+					const result = originalOnSubmit.call(this, params);
+					
+					// Add our OSL processing
+					if (result && result.then) {
+						result.then(() => {
+							let json = params.json || this.jsoneditor.getValue();
+							let meta = params.meta || {};
+							
+							console.log('OSLRef: Processing data for OSL', { json, meta });
+							
+							// Process through OSL
+							if (typeof OSLRef !== 'undefined' && OSLRef.DataProcessor) {
+								OSLRef.DataProcessor.processDataForOSL(json, meta, this.config);
+							}
+						});
+					}
+					
+					return result;
+				};
+				
+				// Mark as hooked to prevent double-hooking
+				mwjson.editor.prototype._oslRefHooked = true;
+				
+				console.log('OSLRef: Successfully hooked into MwJson editor');
+				return true;
+			}
+			return false;
+		},
+		
+		// Initialize the hooking
+		init: function() {
+			console.log('OSLRef: Initializing...');
+			
+			// Try to hook immediately if mwjson is already available
+			if (this.hookIntoMwJsonEditor()) {
+				return;
+			}
+			
+			// If not available yet, wait for it
+			const checkInterval = setInterval(() => {
+				if (this.hookIntoMwJsonEditor()) {
+					clearInterval(checkInterval);
+					clearTimeout(timeoutId);
+				}
+			}, 100);
+			
+			// Stop checking after 10 seconds
+			const timeoutId = setTimeout(() => {
+				clearInterval(checkInterval);
+				console.log('OSLRef: Could not hook into MwJson editor after 10 seconds');
+			}, 10000);
+			
+			// Create OSLRef editor button
+			this.createOSLRefEditorButton();
+		},
+		
+		// a button that opens OSLRef editor
+		createOSLRefEditorButton: function() {
+			console.log('OSLRef: Creating editor button...');
+			
+			// Create a simple, fixed-position button that will definitely be visible
+			const createFixedButton = function() {
+				console.log('OSLRef: Creating fixed-position button...');
+				
+				// Remove any existing buttons first
+				$('.oslref-editor-btn-fixed').remove();
+				
+				// Create a fixed-position button that will be visible
+				const fixedButton = $('<button class="btn btn-primary oslref-editor-btn-fixed" style="position: fixed; top: 50px; right: 50px; background-color: #007bff; border-color: #007bff; color: white; padding: 12px 24px; font-size: 16px; font-weight: bold; border-radius: 6px; cursor: pointer; z-index: 9999;">OSLRef Editor</button>');
+				
+				// Add to body
+				$('body').append(fixedButton);
+				
+				// Add click handler
+				fixedButton.on('click', function() {
+					console.log('OSLRef: Fixed button clicked!');
+					OSLRef.openOSLRefEditor();
+				});
+				
+				console.log('OSLRef: Fixed button created successfully at top-right corner');
+			};
+			
+			// Create the fixed button immediately
+			createFixedButton();
+			
+			// Also create it after delays to ensure it appears
+			setTimeout(createFixedButton, 1000);
+			setTimeout(createFixedButton, 3000);
+			
+		},
+		
+		// Open OSLRef editor
+		openOSLRefEditor: function() {
+			console.log('OSLRef: Loading OSLRef editor...');
+			
+			// Load our OSLRef editor module
+			mw.loader.using('ext.OSLRef.editor').then(function() {
+				console.log('OSLRef: Editor module loaded successfully');
+				
+				// Get current page info
+				const currentPage = mw.config.get('wgPageName');
+				const currentNamespace = mw.config.get('wgNamespaceNumber');
+				
+				// Create basic editor configuration
+				const config = {
+					target: currentPage,
+					target_namespace: currentNamespace === 0 ? '' : mw.config.get('wgCanonicalNamespace'),
+					target_slot: 'jsondata',
+					mode: 'default',
+					popup: true,
+					popupConfig: {
+						msg: {
+							"dialog-title": "OSLRef Editor",
+							"continue": "Save",
+							"cancel": "Cancel",
+						}
+					}
+				};
+				
+				// Create and open the editor
+				if (typeof OSLRef.editor !== 'undefined') {
+					console.log('OSLRef: Creating OSLRef editor with config:', config);
+					const editor = new OSLRef.editor(config);
+				} else {
+					console.error('OSLRef: OSLRef.editor is not defined!');
+					mw.notify('OSLRef editor not available', { type: 'error' });
+				}
+				
+			}).catch(function(error) {
+				console.error('OSLRef: Failed to load editor module:', error);
+				console.error('OSLRef: Error details:', error);
+				mw.notify('Failed to load OSLRef editor: ' + error.message, { type: 'error' });
+			});
+		},
+		
+		util: {
+			getShortUid: function() {
+				return Math.random().toString(36).substr(2, 9);
+			},
+			OswId: function(uuid) {
+				return uuid || 'new';
+			},
+			mergeDeep: function(target, source) {
+				const result = { ...target };
+				for (const key in source) {
+					if (source[key] && typeof source[key] === 'object' && !Array.isArray(source[key])) {
+						result[key] = this.mergeDeep(result[key] || {}, source[key]);
+					} else {
+						result[key] = source[key];
+					}
+				}
+				return result;
+			}
+		},
+		
+		schema: class {
+			constructor(config) {
+				this.config = config;
+				this.schema = config.jsonschema;
+			}
+			bundle() {
+				return Promise.resolve();
+			}
+			preprocess() {
+				return Promise.resolve();
+			}
+			getSchema() {
+				return this.schema;
+			}
 		},
         SMW: SMWFunctions
 	};
 }() );
+
+// Initialize OSLRef when the page loads
+$(document).ready(function() {
+	if (typeof OSLRef !== 'undefined') {
+		OSLRef.init();
+	}
+});

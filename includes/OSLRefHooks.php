@@ -92,4 +92,17 @@ class OSLRefHooks {
 			];
 		}
 	}
+
+	/**
+	 * @param array &$vars
+	 * @param string $skin
+	 * @param Config $config
+	 * @return void
+	 */
+	public static function onResourceLoaderGetConfigVars( &$vars, $skin, $config ) {
+		$vars['wgOSLRefEditorConfig'] = [
+			'debug' => $config->get( 'DebugToolbar' ),
+			'apiUrl' => wfScript( 'api' ),
+		];
+	}
 }

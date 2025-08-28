@@ -7,7 +7,16 @@
 	"license-name": "GPL-2.0-or-later",
 	"type": "parserhook",
 	"requires": {
-		"MediaWiki": ">= 1.35.3"
+		"MediaWiki": ">= 1.35.3",
+		"extensions": {
+			"WSSlots": "*",
+			"SemanticMediaWiki": "*",
+			"SemanticCompoundQueries": "*",
+			"CodeEditor": "*",
+			"CodeMirror": "*",
+			"VEForAll": "*",
+			"MwJson": "*"
+		}
 	},
 	"MessagesDirs": {
 		"OSLRef": [
@@ -32,7 +41,8 @@
 		"BeforeInitialize": "OSLRefHooks::onBeforeInitialize",
 		"ParserFirstCallInit": "OSLRefHooks::onParserFirstCallInit",
 		"BeforePageDisplay": "OSLRefHooks::onBeforePageDisplay",
-		"SkinBuildSidebar": "OSLRefHooks::onSkinBuildSidebar"
+		"SkinBuildSidebar": "OSLRefHooks::onSkinBuildSidebar",
+		"ResourceLoaderGetConfigVars": "OSLRefHooks::onResourceLoaderGetConfigVars"
 	},
 	"SpecialPages": {
 	},
@@ -67,7 +77,7 @@
 		"ext.OSLRef": {
 			"position": "top",
 			"localBasePath": "resources",
-			"remoteExtPath": "OSLRef/resources",
+			"remoteExtPath": "OSL/resources",
 			"scripts": [
 				"script.js"
 			],
@@ -78,6 +88,31 @@
 			],
 			"messages": [
 			]
+		},
+		"ext.OSLRef.editor": {
+			"localBasePath": "resources/ext.MwJson.editor",
+			"remoteExtPath": "OSL/resources/ext.MwJson.editor",
+			"styles": [
+			],
+			"scripts": [
+				"handlebars.min.js",
+				"autocomplete.min.js",
+				"imask.min.js",
+				"signature_pad.umd.min.js",
+				"flatpickr.min.js",
+				"json-editor.min.js",
+				"jsoneditor.min.js",
+				"OSLRef_editor.js",
+				"OSLRef_editor_ui.js",
+				"OSLRef_editor_init.js"
+			],
+			"dependencies": [
+				"ext.OSLRef",
+				"ext.mwjson.util",
+				"ext.mwjson.api",
+				"ext.mwjson.parser"
+			],
+			"position": "bottom"
 		}
 	},
 	"config": {
