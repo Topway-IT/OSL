@@ -89,7 +89,7 @@ OSLRef.editor = class {
 			ajax_cache_responses: false,
 			disable_collapse: false,
 			disable_edit_json: true,
-			disable_properties: true,
+			disable_properties: false, // Allow properties to be edited
 			use_default_values: true,
 			required_by_default: false,
 			display_required_only: false,
@@ -99,13 +99,13 @@ OSLRef.editor = class {
 			disable_array_delete_all_rows: false,
 			disable_array_delete_last_row: false,
 			keep_oneof_values: false,
-			no_additional_properties: true,
+			no_additional_properties: false, // Allow additional properties
 			case_sensitive_property_search: false,
 			form_name_root: this.jsonschema.getSchema().id,
 			//custom settings
 			user_language: this.config.lang,
 		}
-		this.config.JSONEditorConfig = mwjson.util.mergeDeep(defaultJSONEditorConfig, this.config.JSONEditorConfig);
+		this.config.JSONEditorConfig = OSLRef.util.mergeDeep(defaultJSONEditorConfig, this.config.JSONEditorConfig);
 		this.config.JSONEditorConfig.schema = this.jsonschema.getSchema(),
 		console.log(this.config.JSONEditorConfig);
 
@@ -128,24 +128,40 @@ OSLRef.editor = class {
 				}
 				this.flags["initial-data-load"] = false;
 			}
-			if (this.config.target) mwjson.api.getPage(this.config.target).then((page) => {
-				//return;
-				if (page.content_model[this.config.target_slot] === 'wikitext') {
-					mwjson.parser.parsePage(page);
-					this.targetPage = page;
-					//load data from page if exist
-					if (this.targetPage.content !== "") {
-						console.log("Load data:", this.targetPage.dict);
-						var schemaJson = mwjson.editor.mwjson.parser.wikiJson2SchemaJson(this.targetPage.dict);
-						console.log(schemaJson);
-						this.jsoneditor.setValue(schemaJson);
+			if (this.config.target) {
+				// Use OSLRef API (copied from MwJson)
+				console.log("OSLRef: Loading data using OSLRef API");
+				OSLRef.api.getPage(this.config.target).then((page) => {
+					if (page.content_model[this.config.target_slot] === 'wikitext') {
+						// Use MwJson parser if available
+						if (typeof OSLRef !== 'undefined' && OSLRef.parser && OSLRef.parser.parsePage) {
+							OSLRef.parser.parsePage(page);
+							this.targetPage = page;
+							//load data from page if exist
+							if (this.targetPage.content !== "") {
+								console.log("Load data:", this.targetPage.dict);
+								var schemaJson = OSLRef.editor.OSLRef.parser.wikiJson2SchemaJson(this.targetPage.dict);
+								console.log(schemaJson);
+								this.jsoneditor.setValue(schemaJson);
+							}
+						} else {
+							console.log("Wikitext parsing not available - MwJson parser not loaded");
+						}
 					}
-				}
-				if (page.content_model[this.config.target_slot] === 'json') {
-					console.log(page.slots[this.config.target_slot]);
-					this.jsoneditor.setValue(page.slots[this.config.target_slot] ? page.slots[this.config.target_slot] : {});
-				}
-			})
+					if (page.content_model[this.config.target_slot] === 'json') {
+						console.log("OSLRef: Loading JSON data:", page.slots[this.config.target_slot]);
+						try {
+							const jsonData = JSON.parse(page.slots[this.config.target_slot]);
+							this.jsoneditor.setValue(jsonData);
+						} catch (e) {
+							console.warn("OSLRef: Failed to parse JSON data:", e);
+							this.jsoneditor.setValue({});
+						}
+					}
+				}).catch((error) => {
+					console.error("OSLRef: Failed to load page data:", error);
+				});
+			}
 			this.updateSubjectId();
 		});
 
@@ -213,15 +229,15 @@ OSLRef.editor = class {
 						//user has entered a value in the field but did not select a result from the suggestion list
 						//reset the state of the input to empty
 						subeditor.unhandled_input = false;
-						mwjson.util.setJsonEditorAutocompleteField(subeditor, null, null); // clear the field
-						//mwjson.util.setJsonEditorAutocompleteField(subeditor, input.value_id ? input.value_id : null, input.value_label ? input.value_label : null); // restore previous value
+						OSLRef.util.setJsonEditorAutocompleteField(subeditor, null, null); // clear the field
+						//OSLRef.util.setJsonEditorAutocompleteField(subeditor, input.value_id ? input.value_id : null, input.value_label ? input.value_label : null); // restore previous value
 					}
 					else if (subeditor.unhandled_input && input.value === "") {
 						//field was already filled yet.
 						//user has removed the value from field so it's now empty
 						//reset the state of the input to empty
 						subeditor.unhandled_input = false;
-						mwjson.util.setJsonEditorAutocompleteField(subeditor, null, null);
+						OSLRef.util.setJsonEditorAutocompleteField(subeditor, null, null);
 					}
 
 					if (subeditor.getValue() && subeditor.getValue() !== "" && !input.value_label){
@@ -256,7 +272,7 @@ OSLRef.editor = class {
 						$container.append($create_inline_button);
 
 						$create_inline_button.find(".inline-clear-btn").on("click", (function (subeditor, e) { 
-							mwjson.util.setJsonEditorAutocompleteField(subeditor, null, null); 
+							OSLRef.util.setJsonEditorAutocompleteField(subeditor, null, null); 
 						}).bind(this, subeditor));
 						$create_inline_button.find(".inline-edit-btn").on("click", (function (subeditor, e) {
 							//console.log("Click ", subeditor);
@@ -269,12 +285,12 @@ OSLRef.editor = class {
 							// so subeditor.value would be the search string and no valid page name
 							if (subeditor.input.value_id && !subeditor.unhandled_input) {
 								this.config.onEditInline({page_title: subeditor.input.value_id}).then((page) => {
-									mwjson.util.setJsonEditorAutocompleteField(subeditor, page.title, null);
+									OSLRef.util.setJsonEditorAutocompleteField(subeditor, page.title, null);
 								});
 							}
 							else {
 								this.config.onCreateInline({categories: categories, super_categories: super_categories}).then((page) => {
-									mwjson.util.setJsonEditorAutocompleteField(subeditor, page.title, null);
+									OSLRef.util.setJsonEditorAutocompleteField(subeditor, page.title, null);
 								});
 							}
 						}).bind(this, subeditor));
@@ -282,7 +298,7 @@ OSLRef.editor = class {
 							subeditor.unhandled_input = false;
 							if (subeditor.input.value_id && !subeditor.unhandled_input) {
 								this.config.onEditInline({page_title: subeditor.input.value_id, mode: 'copy'}).then((page) => {
-									mwjson.util.setJsonEditorAutocompleteField(subeditor, page.title, null);
+									OSLRef.util.setJsonEditorAutocompleteField(subeditor, page.title, null);
 								});
 							}
 						}).bind(this, subeditor));
@@ -462,7 +478,7 @@ OSLRef.editor = class {
 
 			if (this.data_jsoneditors) {
 				var jsondata = this.jsoneditor.getValue();
-				jsondata = mwjson.util.mergeDeep({"@context": this.jsonschema.getContext()}, jsondata)
+				jsondata = OSLRef.util.mergeDeep({"@context": this.jsonschema.getContext()}, jsondata)
 				console.log("add context", this.jsonschema.getContext());
 				this.data_jsoneditors.set(jsondata);
 			}
@@ -485,7 +501,7 @@ OSLRef.editor = class {
 					//subeditor.input.value_label = null;
 					//subeditor.input.value_id = null;
 					//subeditor.change();
-					mwjson.util.setJsonEditorAutocompleteField(subeditor, subeditor.getValue(), null);
+					OSLRef.util.setJsonEditorAutocompleteField(subeditor, subeditor.getValue(), null);
 				}
 			}
 		}
@@ -515,12 +531,13 @@ OSLRef.editor = class {
 		});
 	}
 
+
 	// remove properties named in options.copy_ignore but keep empty values for required and defaultProperties
 	applyCopyIgnoreOption(editor) {
 		let ignored_properties = [];
 		if (editor.schema?.options?.copy_ignore) ignored_properties = ignored_properties.concat(editor.schema?.options?.copy_ignore);
 		if (editor.parent?.schema?.options?.array_copy_ignore) ignored_properties = ignored_properties.concat(editor.parent?.schema?.options?.array_copy_ignore);
-		let value = mwjson.util.deepCopy(editor.getValue());
+		let value = JSON.parse(JSON.stringify(editor.getValue()));
 		let changed = false;
 		for (let p of ignored_properties) {
 			let keep = (editor.schema?.required?.includes(p) || editor.schema?.defaultProperties?.includes(p))
@@ -614,7 +631,7 @@ OSLRef.editor = class {
 				debug: false,
 
 			};
-			context = mwjson.util.mergeDeep(context, jseditor_editor.schema?.options?.global_index);
+			context = OSLRef.util.mergeDeep(context, jseditor_editor.schema?.options?.global_index);
 			if (!jseditor_editor.schema?.dynamic_template) return;
 			if (jseditor_editor.schema?.options?.data_maps) {
 				for (const map of jseditor_editor.schema.options.data_maps) {
@@ -753,10 +770,10 @@ OSLRef.editor = class {
 			container.append($("<a type='Button' class='btn btn-primary btn-block' id='" + btn_id + "' style='color:white'>" + btn_label + "</a>"));
 			$("#" + btn_id).click(() => {
 				//var jsondata = this.jsoneditor.getValue();
-				//jsondata = mwjson.util.mergeDeep({"@context": this.jsonschema.getContext()}, jsondata)
+				//jsondata = OSLRef.util.mergeDeep({"@context": this.jsonschema.getContext()}, jsondata)
 				//console.log("add context", this.jsonschema.getContext());
 				var jsondata = this.data_jsoneditors.get();
-				mwjson.util.downloadTextAsFile("metadata.jsonld", JSON.stringify(jsondata, null, 4));
+				OSLRef.util.downloadTextAsFile("metadata.jsonld", JSON.stringify(jsondata, null, 4));
 			});
 		}
 	}
@@ -938,41 +955,55 @@ OSLRef.editor = class {
 
 	onsubmitPage(json, meta) {
 		meta = meta || {}
-		meta.comment = meta.comment || "Edited with JsonEditor";
+		meta.comment = meta.comment || "Edited with OSLRef Editor";
 		const promise = new Promise((resolve, reject) => {
 			if (!this.config.target) {
 				this.config.target = "";
 				if (this.config.target_namespace !== "") this.config.target += this.config.target_namespace + ":";
-				this.config.target += mwjson.util.OslId(json.uuid);
+				this.config.target += OSLRef.util.OswId(json.uuid);
 			}
 			console.log("Save form");
 			var url = window.location.href.replace(/\?.*/, '');
 			url += '?target=' + encodeURIComponent(this.config.target);
-			url += '&data=' + encodeURIComponent(mwjson.util.objectToCompressedBase64(json));
+			url += '&data=' + encodeURIComponent(OSLRef.util.objectToCompressedBase64(json));
 
 			console.log(JSON.stringify(json));
-			mwjson.api.getPage(this.config.target).then((page) => {
+			
+			// Use OSLRef API (copied from MwJson)
+			console.log("OSLRef: Saving data using OSLRef API");
+			OSLRef.api.getPage(this.config.target).then((page) => {
 				if (page.content_model[this.config.target_slot] === 'wikitext') {
-					page.content = mwjson.editor.mwjson.parser.data2template(json)
-					//add edit link with base64 encode data
-					//page.content = "<noinclude>[" + url + " Edit Template]</noinclude>\n<br\>" + page.content;
-					page.changed = true;
-					//console.log(page.content);
-					var wikiJson = mwjson.editor.mwjson.parser.schemaJson2WikiJson(json)
-					page.dict = wikiJson;
-					mwjson.parser.updateContent(page);
-					console.log(wikiJson);
-					console.log(page.content);
+					// Use OSLRef parser if available
+					if (typeof OSLRef !== 'undefined' && OSLRef.editor && OSLRef.editor.OSLRef && OSLRef.editor.OSLRef.parser) {
+						page.content = OSLRef.editor.OSLRef.parser.data2template(json);
+						page.changed = true;
+						var wikiJson = OSLRef.editor.OSLRef.parser.schemaJson2WikiJson(json);
+						page.dict = wikiJson;
+						if (typeof OSLRef !== 'undefined' && OSLRef.parser && OSLRef.parser.updateContent) {
+							OSLRef.parser.updateContent(page);
+						}
+						console.log(wikiJson);
+						console.log(page.content);
+					} else {
+						console.log("Wikitext parsing not available - OSLRef parser not loaded");
+					}
 				}
 				if (page.content_model[this.config.target_slot] === 'json') {
 					page.slots[this.config.target_slot] = json;
 					page.slots_changed[this.config.target_slot] = true;
 				}
-				mwjson.api.updatePage(page, meta).then(() => {
+				
+				OSLRef.api.updatePage(page, meta).then(() => {
 					resolve();
 					window.location.href = mw.util.getUrl(page.title);
+				}).catch((error) => {
+					console.error("OSLRef: Failed to update page:", error);
+					reject(error);
 				});
-			}).catch();
+			}).catch((error) => {
+				console.error("OSLRef: Failed to get page for saving:", error);
+				reject(error);
+			});
 		});
 		return promise;
 	}
@@ -1138,11 +1169,11 @@ OSLRef.editor = class {
 					}
 
 					//create a copy here since we add addition properties
-					var jsondata = mwjson.util.deepCopy(jseditor_editor.jsoneditor.getValue());
+					var jsondata = OSLRef.util.deepCopy(jseditor_editor.jsoneditor.getValue());
 					jsondata['_user_input'] = input; 
 					jsondata['_user_input_lowercase'] = input.toLowerCase(); 
-					jsondata['_user_input_normalized'] = mwjson.util.normalizeString(input); 
-					jsondata['_user_input_normalized_tokenized'] = mwjson.util.normalizeAndTokenizeString(input); 
+					jsondata['_user_input_normalized'] = OSLRef.util.normalizeString(input); 
+					jsondata['_user_input_normalized_tokenized'] = OSLRef.util.normalizeAndTokenizeString(input); 
 					jsondata['_user_lang'] = jseditor_editor.jsoneditor.options.user_language; 
 					var template = Handlebars.compile(query);
 					query = template(jsondata);
@@ -1193,7 +1224,7 @@ OSLRef.editor = class {
 									}
 									//filter list
 									/*resultList = resultList.filter(result => {
-										return mwjson.util.normalizeString(JSON.stringify(result)).includes(mwjson.util.normalizeString(input)); //slow but generic
+										return OSLRef.util.normalizeString(JSON.stringify(result)).includes(OSLRef.util.normalizeString(input)); //slow but generic
 									});*/
 									//sort list
 									resultList.sort((a, b) => input.length/b.displaytitle.length - input.length/a.displaytitle.length)
@@ -1205,9 +1236,9 @@ OSLRef.editor = class {
 				renderResult_smw: (jseditor_editor, result, props) => {
 					if (!result.printouts) return "";
 					// normalize multilanguage printouts (e. g. description)
-					result = mwjson.util.normalizeSmwMultilangResult(result, jseditor_editor.jsoneditor.options.user_language);
+					result = OSLRef.util.normalizeSmwMultilangResult(result, jseditor_editor.jsoneditor.options.user_language);
 
-					var previewTemplate = mwjson.util.deepCopy(mwjson.schema.getAutocompletePreviewTemplate(jseditor_editor.schema)); //use custom value
+					var previewTemplate = OSLRef.util.deepCopy(mwjson.schema.getAutocompletePreviewTemplate(jseditor_editor.schema)); //use custom value
 					if (previewTemplate.type.shift() === 'handlebars') {
 						if (previewTemplate.type[0] === 'wikitext') previewTemplate.value = previewTemplate.value.replaceAll("\\{", "&#123;").replaceAll("\\}", "&#125;"); //escape curly-brackets with html entities. ToDo: Do this once for the whole schema
 						var template = Handlebars.compile(previewTemplate.value);
@@ -1245,7 +1276,7 @@ OSLRef.editor = class {
 				getResultValue_smw: (jseditor_editor, result) => {
 					var label = result.fulltext;
 					if (result.displaytitle && result.displaytitle !== "") label = result.displaytitle;
-					var labelTemplate = mwjson.util.deepCopy(mwjson.schema.getAutocompleteLabelTemplate(jseditor_editor.schema)); //use custom value
+					var labelTemplate = OSLRef.util.deepCopy(mwjson.schema.getAutocompleteLabelTemplate(jseditor_editor.schema)); //use custom value
 					if (labelTemplate.type.shift() === 'handlebars') {
 						label = Handlebars.compile(labelTemplate.value)({ result: result });
 					}
@@ -1255,7 +1286,7 @@ OSLRef.editor = class {
 				onSubmit_smw: (jseditor_editor, result) => {
 					console.log("Selected: " + result.displaytitle + " / " + result.fulltext);
 					var result_value = result.fulltext;
-					var storeTemplate = mwjson.util.deepCopy(mwjson.schema.getAutocompleteStoreTemplate(jseditor_editor.schema)); //use custom value
+					var storeTemplate = OSLRef.util.deepCopy(mwjson.schema.getAutocompleteStoreTemplate(jseditor_editor.schema)); //use custom value
 					if (storeTemplate && storeTemplate.type.shift() === 'handlebars') {
 						result_value = Handlebars.compile(storeTemplate.value)({ result: result });
 					}
@@ -1264,7 +1295,7 @@ OSLRef.editor = class {
 					jseditor_editor.input.value_id = result_value;
 					jseditor_editor.onChange(true);*/
 					jseditor_editor.unhandled_input = false; // mark finalized user input
-					mwjson.util.setJsonEditorAutocompleteField(jseditor_editor, result_value, result.printouts.label[0]);
+					OSLRef.util.setJsonEditorAutocompleteField(jseditor_editor, result_value, result.printouts.label[0]);
 					//jseditor_editor.input.value_label = result.printouts.label[0];
 					
 					if (jseditor_editor.schema?.options?.autocomplete?.field_maps) {
@@ -1287,7 +1318,7 @@ OSLRef.editor = class {
 					var mwjson_editor = jseditor.jsoneditor.mwjson_editor; //get the owning mwjson editor class instance
 					const label = file.name;
 					const upload_file_extension = file.name.split('.').pop().toLowerCase();
-					var target = mwjson.util.OswId() + "." + upload_file_extension; //use the final file extension, e.g. 'png' in 'my.something.png'
+					var target = OSLRef.util.OswId() + "." + upload_file_extension; //use the final file extension, e.g. 'png' in 'my.something.png'
 					if (jseditor.value && jseditor.value !== "") target = jseditor.value.replace("File:", ""); // reupload
 					if (jseditor.key === "file" && mwjson_editor.jsonschema.subschemas_uuids.includes("11a53cdf-bdc2-4524-bf8a-c435cbf65d9d")) { //uuid of Category:WikiFile
 						mwjson_editor.config.target_namespace = "File";
@@ -1481,7 +1512,7 @@ OSLRef.editor = class {
 		// {{__uuid__}}
 		// e. g. {{__uuid__}} => ad56b31f-9fe5-466a-8be7-89bce58045f1
 		Handlebars.registerHelper('_uuid_', function (options) {
-			//return mwjson.util.uuidv4();
+			//return OSLRef.util.uuidv4();
 			return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
 				(c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
 			);
