@@ -7,6 +7,141 @@ OSLRef.editor.prototype.addCss = function () {
     button.json-editor-btn-edit_properties::after {
         content: " ${mw.message("mwjson-editor-select-additional-properties").text()}"
     }
+    
+    /* OSLRef Data-Editor Modal Styling */
+    .oslref-data-editor-modal .modal-dialog {
+        max-width: 900px;
+        margin: 20px auto;
+    }
+    
+    .oslref-data-editor-modal .modal-content {
+        border-radius: 12px;
+        border: none;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    }
+    
+    .oslref-data-editor-modal .modal-header {
+        background: #f8f9fa;
+        border-bottom: 1px solid #e1e5e9;
+        padding: 20px 24px;
+        border-radius: 12px 12px 0 0;
+    }
+    
+    .oslref-data-editor-modal .modal-title {
+        color: #2c3e50;
+        font-size: 20px;
+        font-weight: 600;
+        margin: 0;
+    }
+    
+    .oslref-data-editor-modal .modal-body {
+        padding: 24px;
+        background: white;
+    }
+    
+    .oslref-data-editor-modal .modal-footer {
+        background: #f8f9fa;
+        border-top: 1px solid #e1e5e9;
+        padding: 16px 24px;
+        border-radius: 0 0 12px 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .oslref-data-editor-modal .input-group {
+        margin-bottom: 0;
+        flex: 1;
+        margin-right: 16px;
+    }
+    
+    .oslref-data-editor-modal .input-group-text {
+        background: white;
+        border: 1px solid #ced4da;
+        border-right: none;
+        color: #6c757d;
+        font-size: 14px;
+    }
+    
+    .oslref-data-editor-modal .form-control {
+        border: 1px solid #ced4da;
+        border-left: none;
+        border-radius: 0 6px 6px 0;
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+    
+    .oslref-data-editor-modal .btn {
+        border-radius: 6px;
+        font-weight: 500;
+        padding: 10px 20px;
+        transition: all 0.2s;
+    }
+    
+    .oslref-data-editor-modal .btn-outline-secondary {
+        border-color: #6c757d;
+        color: #6c757d;
+    }
+    
+    .oslref-data-editor-modal .btn-outline-secondary:hover {
+        background-color: #6c757d;
+        border-color: #6c757d;
+        color: white;
+    }
+    
+    .oslref-data-editor-modal .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+    
+    .oslref-data-editor-modal .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+    
+    .oslref-data-editor-modal .btn-close {
+        background: none;
+        border: none;
+        font-size: 20px;
+        color: #6c757d;
+        padding: 4px;
+        border-radius: 4px;
+        transition: background-color 0.2s;
+    }
+    
+    .oslref-data-editor-modal .btn-close:hover {
+        background-color: #e9ecef;
+    }
+    
+    /* JSON Editor styling improvements */
+    .oslref-data-editor-modal .json-editor {
+        border: 1px solid #e1e5e9;
+        border-radius: 8px;
+        background: white;
+    }
+    
+    .oslref-data-editor-modal .json-editor .je-header {
+        background: #f8f9fa;
+        border-bottom: 1px solid #e1e5e9;
+        padding: 12px 16px;
+        border-radius: 8px 8px 0 0;
+    }
+    
+    .oslref-data-editor-modal .json-editor .je-object {
+        padding: 16px;
+    }
+    
+    .oslref-data-editor-modal .json-editor .form-control {
+        border: 1px solid #ced4da;
+        border-radius: 6px;
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+    
+    .oslref-data-editor-modal .json-editor .form-control:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+    }
     `;
     document.head.appendChild(styleSheet);
 }
@@ -124,8 +259,8 @@ OSLRef.editor.prototype.createPopupDialog = function (_config) {
         size: "medium", //small, medium, large, larger or full,
         toggle_fullscreen: false, //enable toggle fullscreen button
         msg: {
-            "dialog-title": "JSONEditor",
-            "continue": "Continue",
+            "dialog-title": "Data-Editor",
+            "continue": "Save",
             "cancel": "Cancel",
             "toggle-fullscreen": "Leave / enter fullscreen",
             "edit-comment": mw.message("mwjson-editor-edit-comment-input-label").text(),
@@ -191,8 +326,9 @@ OSLRef.editor.prototype.createPopupDialog = function (_config) {
     dataEditor_modal = OSLRef.editor.createModal({
         id: "dataEditorModal_" + editor.config.id, title: _config.msg["dialog-title"], description: "",
         size: "xxl",
+        class: "oslref-data-editor-modal",
         body: query_body + `
-        <div id="${editor.config.id}" style="min-height:1000px;"></div>
+        <div id="${editor.config.id}" style="min-height:600px; background: white; border-radius: 8px; padding: 20px;"></div>
         `,
         footer: footer,
         buttons: [
@@ -221,8 +357,8 @@ OSLRef.editor.prototype.createPopupDialog = function (_config) {
                 }
 
             }},
-            {label: _config.msg["cancel"], class: "btn btn-secondary", closing: false, onclick: confirmClose},
-            {label: _config.msg["continue"], id: `${editor.config.id}_btn-submit`, closing: false, onclick: () => {
+            {label: _config.msg["cancel"], class: "btn btn-outline-secondary", closing: false, onclick: confirmClose},
+            {label: _config.msg["continue"], id: `${editor.config.id}_btn-submit`, class: "btn btn-primary", closing: false, onclick: () => {
                 let meta = {};
                 if (editor.config.mode !== "query" && _config.edit_comment) 
                     meta.comment = document.getElementById(`${editor.config.id}_edit-comment-input`).value;
@@ -258,8 +394,8 @@ OSLRef.editor.prototype.createPopupDialog_old = function (_config) {
         size: "medium", //small, medium, large, larger or full,
         toggle_fullscreen: false, //enable toggle fullscreen button
         msg: {
-            "dialog-title": "JSONEditor",
-            "continue": "Continue",
+            "dialog-title": "Data-Editor",
+            "continue": "Save",
             "cancel": "Cancel",
             "toggle-fullscreen": "Leave / enter fullscreen",
             "edit-comment": mw.message("mwjson-editor-edit-comment-input-label").text(),
@@ -563,7 +699,7 @@ mwjson.editor.createPageDialog = function (_config) {
         "template_query": "",
         msg: {
             "dialog-title": "Create new page",
-            "continue": "Continue",
+            "continue": "Save",
             "cancel": "Cancel",
             "title-label": "Click continue to create a page with the given name",
             "template-label": "Here you can select an optional template (any existing site).",

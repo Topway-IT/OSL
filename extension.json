@@ -89,9 +89,38 @@
 			"messages": [
 			]
 		},
+		"ext.OSLRef.util": {
+			"localBasePath": "resources/ext.OSLRef.util",
+			"remoteExtPath": "OSL/resources/ext.OSLRef.util",
+			"scripts": [
+				"lz-string.min.js",
+				"json-schema-ref-parser.js",
+				"jsonpath.min.js",
+				"OSLRef_util.js",
+				"OSLRef_schema.js",
+				"OSLRef_extData.js",
+				"jsonschema-jsonschema.js"
+			],
+			"dependencies": [
+				"ext.OSLRef"
+			],
+			"position": "bottom"
+		},
+		"ext.OSLRef.api": {
+			"localBasePath": "resources/ext.OSLRef.api",
+			"remoteExtPath": "OSL/resources/ext.OSLRef.api",
+			"scripts": [
+				"OSLRef_cache.js",
+				"OSLRef_api.js"
+			],
+			"dependencies": [
+				"ext.OSLRef.util"
+			],
+			"position": "bottom"
+		},
 		"ext.OSLRef.editor": {
-			"localBasePath": "resources/ext.MwJson.editor",
-			"remoteExtPath": "OSL/resources/ext.MwJson.editor",
+			"localBasePath": "resources/ext.OSLRef.editor",
+			"remoteExtPath": "OSL/resources/ext.OSLRef.editor",
 			"styles": [
 			],
 			"scripts": [
@@ -108,9 +137,8 @@
 			],
 			"dependencies": [
 				"ext.OSLRef",
-				"ext.mwjson.util",
-				"ext.mwjson.api",
-				"ext.mwjson.parser"
+				"ext.OSLRef.util",
+				"ext.OSLRef.api"
 			],
 			"position": "bottom"
 		}
